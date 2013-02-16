@@ -1,0 +1,165 @@
+key,ja,en,es,zh_CN
+Content purported to be compressed with %s but failed to decompress.,,Content purported to be compressed with %s but failed to decompress.
+Unsupported value for qop: %s.,,Unsupported value for qop: %s.
+Unsupported value for algorithm: %s.,,Unsupported value for algorithm: %s.
+"The challenge doesn't contain a server nonce, or this one is empty.",,"The challenge doesn't contain a server nonce, or this one is empty."
+Unsupported value for pw-algorithm: %s.,,Unsupported value for pw-algorithm: %s.
+Redirected but the response is missing a Location: header.,,Redirected but the response is missing a Location: header.
+Redirected more times than rediection_limit allows.,,Redirected more times than rediection_limit allows.
+Sorry.,ごめんね,Sorry.,Lo siento.,哎呀，真是抱歉。
+Something is wrong with me.,たまには僕も調子が悪くなるんです…,Something is wrong with me.,A veces tambien me pongo mal.,我偶尔也会出现一些这样那样的问题...
+Terms,利用規約,Terms & Conditions,Condiciones de uso,利用规范
+The following accounts are registered.,以下のアカウントが登録されています。,The following accounts are registered.,Estan registradas las siguientes cuentas.,以下帐号已被使用。
+Add Another Account,別のアカウントを追加,Add Another Account,Añadir Otra Cuenta,追加另外一个帐号
+Delete,削除,Delete,Eliminar,删除
+There is no account of Chatter.,まだChatterのアカウントがありません。,There is no Chatter account.,"No hay ninguna cuenta de \""Chatter\"".",尚未登录Chatter的帐号。
+Add Account,アカウントを追加,Add Account,Añadir Cuenta,添加帐号
+Please select an account.,アカウントを選択してください。,Please select an account.,Elige Una Cuenta Por Favor,请选择帐号。
+Please select the type of timeline.,メッセージのタイプを選択してください。,Please select a message type.,Elige El Tipo de Mensage,请选择消息类型。
+There is no account of Cybozu Live.,まだサイボウズLiveのアカウントがありません。,There is no Cybozu Live account.,"No hay ninguna cuenta de \""Cybozu Live\"".",尚未登录Cybozu的帐号。
+All Updates,すべての新着情報,All Updates,Todas Las Actualizaciones,所有更新消息
+My Schedule,マイスケジュール,My Schedule,Mi Calendario,我的日程
+Group Events,グループイベント,Group Events,Eventos de Grupo,组的活动
+Messages,メッセージ,Messages,Mensages,消息
+ToDo List,ToDoリスト,ToDo List,Lista ToDo,TODO一览
+Forum Cybozu,掲示板,Forum,Foros,电子公告板
+Share Folder,共有フォルダ,Shared Folder,Carpeta Compartida,共有文件夹
+Join/Leave Group,グループへの入退会,Join/Leave Group,Unirte/Salir del Grupo,加入/离开组
+There is no account of Facebook.,まだFacebookのアカウントがありません。,There is no Facebook account.,"No hay ninguna cuenta de \""Facebook\"".",尚未登录Facebook帐号。
+Feed,フィード,Feed,,源
+Groups,グループ,Groups,Grupos
+Your pages,あなたの管理しているFacebookページ,Your managed Facebook pages,Tus Paginas de Facebook
+Your favorite pages,あなたがいいね！と言っているFacebookページ,Your favorite Facebook pages,Tus Paginas favoritas de Facebook
+Search,検索,Search,Busqueda,检索
+Friend list,友達リスト,Friend list,Lista de amigos
+Your applications,あなたのFacebookアプリ,Your Facebook applications
+Select a friend list.,友達リストを選択してください。,Please select a friend list.
+Select a group.,グループを選択してください。,Please select a group.
+Enter a search term.,検索キーワードを入力してください。,Please enter a search keyword.,,请输入检索关键字。
+Select a page.,Facebookページを選択してください。,Please select a Facebook page.
+Select an app.,Facebookアプリを選択してください。,Please select a Facebook application.
+Load More,ギャップを取得,Load More,Leer Mas,载入跳空的时间流
+Loading More...,ギャップを取得中,Loading...,Cargando,正载入跳空的时间流...
+You must re-authenticate to get these information. Please click here.,この情報を取得するには再認可が必要です。こちらをクリックしてください。,Re-authentication is required to get more information. Please click here.,Para contiuar necesitas reautorizar. Click aqui.,必须再次许可之后才可获取这类信息。请点击这里。
+Failed to load timeline. Click to reload.,読み込みに失敗しました。クリックで再読み込みします。,Failed to load timeline. Click to reload.,Error de coneccion. Click para reintentar.,未能成功载入。请点击之后重载。
+More,もっと読む,More,Mas,更多
+Loading,読み込み中,Loading,Cargando,载入中
+You cannot use desktop notifications. This feature is available in Google Chrome only.,デスクトップ通知はこのブラウザでは使用できません。現在はGoogle Chromeのみでご利用いただけます。,You cannot use desktop notifications. This feature is only available in Google Chrome.,Crowy no puede activar la alerta al escritorio.Esta option solo es valida para Google Chrome.,您所使用的浏览器并不支持桌面通知功能。现在只有Google Chrome才可以使用桌面通知。
+Crowy don't notify you as the overall settings for the notification feature is off. Would you like to enable the settings?,全体のデスクトップ通知設定がOFFのため、通知は行われません。全体の設定もONにしますか？,Crowy cannot send notifications as your desktop notification settings are disabled. Would you like to enable these settings?,Todas las alertas de escritorio estan desactivadas.Deseas que Crowy haga aparecer alertas?,因为全局的桌面通知设置当前为OFF的状态，所以您将不会得到任何通知。是否将全局的桌面通知设置为ON吗？
+"Desktop notifications of \""$(name)\"" successfully changed.",「$(name)」のデスクトップ通知を切り替えました。,"Desktop notifications of \""$(name)\"" have been successfully changed.","Los cambios de alerta de \""$(name)\"" han sido guardados.","已成功切换\""$(name)\""的桌面通知。"
+"Failed to change desktop notifications of \""$(name)\"".",「$(name)」のデスクトップ通知の切り替えに失敗しました。,"Failed to change desktop notifications of \""$(name)\"".","Crowy fallo al guardar los cambios de alerta de \""$(name)\"" ","未能成功切换\""$(name)\""的桌面通知功能。"
+"Are you sure you want to delete this column \""$(name)\""?",本当にカラム「$(name)」を削除していいですか？,"Are you sure you want to delete the column \""$(name)\""?","Estas seguro de eliminar la columna \""$(name)\""?","确定删除\""$(name)\""栏目吗？"
+Desktop notifications($(status)),デスクトップ通知(現在$(status)),Desktop notifications(current$(status)),Alertas al escritorio ($(status)),桌面通知(现在$(status))
+Message posted.,投稿しました。,Message posted.,Mensage depositado.,已成功投稿。
+Failed to post message.,投稿に失敗しました。,Failed to post message.,Fallo al depositar mensage,未能成功投稿。
+Press Shift+Enter to post.,Shift+Enterで投稿,Press Shift+Enter to post.,"\""Shift+Enter\"" para depositar.",按Shift+Enter键推送消息。
+Close,閉じる,Close,Cerrar,关闭
+Send,投稿,Send,Enviar,发送
+Clear,クリア,Clear,Clear,清除
+Advanced,詳細編集,Advanced,Cambios avanzados,详细编辑
+Are you sure you'd like to add automatically major timelines of this service?,このサービスの主なタイムラインを自動で追加します。よろしいですか？,Are you sure you want to automatically add major timelines of this service?,Deseas que agrege las principales TimeLines?,是否自动追加该服务的时间流？
+Delete Tab,タブの削除,Delete Tab,Eliminar pestaña,删除标签
+You cannot delete the last tab.,タブを一つくらいは残してください。,You must have at least one tab.,Tienes que conservar por lomenos una pestaña,最后一个标签不能被删除。
+Are you sure you want to delete this tab?,本当にこのタブを削除していいですか？,Are you sure you want to delete this tab?,Es tas sequro de eliminar esta ?,你确定要删除这个标签吗？
+Cancel,キャンセル,Cancel,Cancelar,取消
+Add Column,カラム追加,Add New Column,Agregar nueva columna,添加新栏目
+"Message posted to \""$(name)\"".",$(name)へ投稿しました。,"Message posted to \""$(name)\"".","Mensage depositado a \""$(name)\""","已成功向\""$(name)\""投稿。"
+"Failed to post message to \""$(name)\"".",$(name)への投稿に失敗しました。,"Failed to post message to \""$(name)\"".","Crowy fallo al depositar el mensage a \""$(name)\""","未能成功向\""$(name)\""投稿。"
+Please enter a new shortcut name.,ショートカットのラベルを入力してください。,Please enter a shortcut label.,,请输入一个新的捷径名。
+"Shortcut \""$(name)\"" successfully saved.",ショートカット「$(name)」を保存しました。,"Shortcut \""$(name)\"" has been saved.",,"已成功保存了捷径\""$(name)\""。"
+"Failed to save shortcut \""$(name)\"".",ショートカット「$(name)」の保存に失敗しました。,"Failed to save shortcut \""$(name)\"".",,"未能成功保存捷径 \""$(name)\"" 。"
+Failed to shrink URL.,URLの短縮に失敗しました。,Failed to shrink URL.,Crowy fallo al encoger la URL.,未能成功短缩URL。
+"Shortcut successfully renamed to \""$(name)\"".",ショートカット「$(name)」にラベルを変更しました。,"Shortcut has been renamed to \""$(name)\"".",,"已成功更改捷径 \""$(name)\""的标签。 "
+"Failed to rename shortcut \""$(name)\"".",ショートカット「$(name)」のラベル名変更に失敗しました。,"Failed to rename shortcut \""$(name)\"".",,"未能成功更改捷径 \""$(name)\"" 的标签。"
+Are you sure you want to delete this shortcut?,このショートカットを削除してよろしいですか？,Are you sure you want to delete this shortcut?,,确认删除这个捷径吗？
+"Shortcut \""$(name)\"" successfully deleted.",ショートカット「$(name)」を削除しました。,"Shortcut \""$(name)\"" has been deleted.",,"已成功删除捷径 \""$(name)\"" 。"
+"Failed to delete shortcut \""$(name)\"".",ショートカット「$(name)」の削除に失敗しました。,"Failed to delete shortcut \""$(name)\"".",,"未能成功删除捷径 \""$(name)\"" 。"
+Rename,ラベル名変更,Rename Label,Cambiar nombre de etiqueta,更改捷径名
+Label Color,ラベルの色,Label Color,Color de etiqueta,捷径标签颜色
+"Color of the shortcut \""$(name)\"" successfully changed.",ショートカット「$(name)」のラベルの色を変更しました。,"Color of the shortcut \""$(name)\"" has been changed.",,"已成功更改捷径 \""$(name)\"" 标签颜色。"
+"Failed to change the color of shortcut \""$(name)\"".",ショートカット「$(name)」のラベルの色の変更に失敗しました。,"Failed to change the color of shortcut \""$(name)\"".",,"未能成功更改捷径 \""$(name)\"" 标签颜色"
+Desktop notifications successfully changed.,デスクトップ通知を切り替えました。,Desktop notifications have been changed successfully.,Los cambios de alertas al escritorio  han sido guardados corectamente.,已成功切换桌面通知功能。
+Failed to change desktop notifications.,デスクトップ通知の切り替えに失敗しました。,Failed to change desktop notifications.,Crowy fallo al guardar los cambios de alertas al escritorio.,未能成功切换桌面通知功能。
+"<div>allows Crowy to display popup notifications on your desktop.<br/>If notifications setting of a column is off, Crowy don't notify you.<br/>You can set notification setting of a column in right top triangle of every column.</div>",<div>デスクトップ通知をON/OFFします。<br/>カラム毎のデスクトップ通知が有効になっていないと通知されませんので、ご注意ください。<br/>カラム毎の通知設定は各カラムの右上の「▼」より行うことができます。</div>,<div>Toggle Crowy desktop notifications.<br/>Crowy will not send notifications for a column that has notifications turned off.<br/>Notification settings for each column can be changed by clicking the right top triangle in each column.</div>,"<div>Activar y desactivar las alertas al escritorio.<br/>Si no estan activadas las alertas al  escritorio, no aparecera ninguna alerte visual.<br/>Los cambios de cada columna se pueden hacer desdel boton ▼ en la parte superior-derecha de cada columna.</div>",<div>切换（ON/OFF）桌面通知功能。<br/>请注意必须将需要通知的各个栏的桌面通知功能设定为ON。<br/>各栏的桌面通知功能由按钮“▼”显示的下拉菜单中设定。</div>
+"Are you sure you want to delete account \""$(name)\""?\\nIf delete, all column of this account will be deleted.",本当に$(name)を削除していいですか？\\nこのアカウントで追加したカラムも消えちゃいますよ。,"Are you sure you want to delete the account, \""$(name)\""?\\nIf deleted, all columns of this account will be deleted as well.",Estas seguro que quieres borar la cuenta $(name) de crowy?Todas las columnas sobre esta cuenta desapareceran tambien.,确认删除$(name)吗？\\n这个操作会删除从这个帐号加入的所有栏。
+This account successfully deleted. Crowy reload now.,アカウントを削除しました。ページを再読み込みします。,This account has been deleted successfully. Reloading Crowy...,Crowy ha borado la cuenta correctamente.carganndo...,已成功删除帐号，正重载页面。
+Failed to delete this account.,アカウントの削除に失敗しました。,Failed to delete account.,Crowy fallo al borrar la cuenta.,未能成功删除帐号。
+View Conversation,会話履歴の表示,View Conversation,ver conversation,表示对话记录。
+More>>,もっと読む>>,More>>,Mas>>,更多>>
+<<Close,<<閉じる,<<Close,Cerrar<<,<<关闭
+Retweet this to your followers?\\n$(tweet),あなたのフォロワーにこれをリツイートしますか？\\n「$(tweet)」,Re-tweet this to your followers?\\n$(tweet),Retwittear a tus seguidores \\n$(tweet)?,回推给跟随你的所有好友们吗？\\n“$(tweet)”
+Message successfully retweeted.,リツイートしました。,Message has been re-tweeted.,El mensage ha sido retwitteado.,已成功回推。
+Failed to retweet message.,リツイートに失敗しました。,Failed to re-tweet message.,Crowy fallo al retwittear el mensage.,未能成功回推。
+Message successfully favorited,お気に入りに追加しました。,Message has been favorited,Mensage ha sido agregado a favoritos.,已成功加入到我的最爱。
+Failed to favorite message.,お気に入りへの追加に失敗しました。,Failed to favorite message.,Crowy fallo al agregar el mensage a favoritos.,未能成功加入我的最爱。
+Failed to load comments.,コメントの取得に失敗しました。,Failed to load comments.,Crowy fallo al recivir comentos.,未能成功获取评论。
+Message successfully liked.,Likeしました。,Message has been liked.,"Mensage en \""Like\""",已成功设置成“Like”。
+Failed to like message.,Likeに失敗しました。,Failed to like message.,"Fallo al \""Like\""",未能成功设置成“Like”。
+Message successfully unliked.,Likeを取り消しました。,Message has been unliked.,"Mensage en \""Unlike\""",已成功设置成“Unlike”。
+Failed to unlike message.,Likeの取り消しに失敗しました。,Failed to unlike message.,"Fallo al \""Unlike\""",未能成功设置成“Unlike”。
+People who like this,「いいね！」と言っている人,People who liked this.,,觉得这挺赞的朋友
+Anyone don't like this.,誰も「いいね！」と言っていません。,No one has liked this.
+Your Facebook Pages,あなたのFacebookページ,Your Facebook Page(s)
+Add,追加,Add
+Retweeted by $(account),$(account)がリツイート,Re-tweeted by $(account),,回推$(account)
+Retweeted by $(account) and $(count) others,$(account)他$(count)人がリツイート,Re-tweeted by $(account) and $(count) others
+OK,OK,OK
+$(service) returns error. Try again later.,$(service)でエラーが発生しました。しばらく待ってからお試しください。,$(service) has encountered an error. Please wait and try again.
+Cybozu Live,サイボウズLive,Cybozu Live
+Press Ctrl+Enter to post.,Ctrl+Enterで投稿,Press Ctrl+Enter to post.,"\""Ctrl+Enter\"" para depositar.",按Ctrl+Enter键推送消息。
+There is no account of LinkedIn.,まだLinkedInのアカウントがありません。,There is no LinkedIn account.,"No hay ninguna cuenta de \""Linkedln\"".",尚未登录LinkedIn帐号。
+Settings,設定,Settings,Ajustes,设定
+Logout,ログアウト,Logout,Cerrar sesión,登出
+Help,ヘルプ,Help,Ayuda,帮助
+Forum,フォーラム,Forum,Foros,论坛
+Blog,ブログ,Blog,Blog,博客
+Compose message,メッセージの作成,Compose message,Nuevo mensage,发布新消息
+Add Tab,タブ追加,Add Tab,Agregar pestaña,添加标签
+Refresh,更新,Refresh,Actualizar,更新
+<h2>This tab has no column.</h2><p>You can add a column in which a timeline of various services displays.</p><button>Add Column</button>,<h2>このタブにはまだカラムがありません。</h2><p>各カラムにソーシャルネットワークのメッセージタイムラインを表示することができます。</p><button>カラム追加</button>,<h2>This tab has no column.</h2><p>You can add a column that will display information from a social network service.</p><button>Add Column</button>,,<h2>在这个标签中还没有栏目。</h2><p>各个栏目可以用来表示社交媒体的消息时间流。</p><button>添加栏目</button>
+About Us,運営会社,About Us,,运行服务商
+lang,ja,lang,Español,zh_CN
+Services,連携サービス,Services,,服务提携
+Preferences,基本設定,Preferences,,基本设定
+<h3>Welcome to Crowy!</h3>At first you must add other service.<br>Please click the tab which you connect with and click [Connect].,<h3>Crowyにようこそ！</h3>まず初めに他のソーシャルメディアとの連携設定を行う必要があります。<br>連携したいサービスのタブをクリックし、「アカウントを追加」をクリックしてください。,"<h3>Welcome to Crowy!</h3>Before you begin use, you must setup the social media services you would like to use.<br>Please select the tab for the service you would like to use and click [Add Account].",,<h3>欢迎加入Crowy！</h3>首先需要设定您所参加的社交网络或微型部落格服务。<br>請选择想连接的服务标签，然后点击“添加帐号”按钮。
+You can add connections with other services and remove them.,他のサービスとの連携設定の追加・削除を行うことができます。,You can add or remove accounts with other services.,,添加或删除与其他服务的连接。
+Cybozu Live(Lab),サイボウズLive(Lab),Cybozu Live(Lab),,Cybozu Live(Lab)
+Please select the service which you want to add.,追加するカラムに表示したいサービスを選択してください。,Please select the service you would like to add.,,请选择想在栏目中显示的服务。
+Like,Like,Like,,Like
+Unlike,Unlike,Unlike,,Unlike
+Show Conversation,会話履歴の表示,Show Conversation,,表示对话记录
+Thread,会話,Thread,,对话
+Reply,返信,Reply,,回复
+Reply all,全員に返信,Reply all,,回复所有人
+Classic RT,非公式RT,Classic RT,,非官方回推
+Old RT,RT,RT,,Old RT
+Retweet,公式リツイート,Re-tweet,,官方正式回推
+RT,公式RT,RT,,RT
+Direct Message,ダイレクトメッセージ,Direct Message,,私密消息
+DM,,DM,,DM
+Favorite,お気に入り,Favorite,,我的最爱
+Comment,コメント,Comment
+To:,投稿先:,To:,,至：
+File,ファイル添付,Attachment,,附件
+URL:,URL:,URL:,,URL：
+Shrink,URL短縮,Shrink URL,,短缩URL
+Add these addresses to shortcuts.,この宛先をショートカットして保存する,Add these addresses to your shortcuts.,,加这个地址为短缩捷径。
+Paste a feed url.,フィードのURLを入力してください。,Input a feed URL.,,请输入RSS URL。
+Input a valid URL.,正しいURLを入力してください。,Input a valid URL.,,请输入一个正确的RSS URL。
+Language,言語,Language,,语言
+Keyboard Shortcuts,キーボードショートカット,Keyboard Shortcuts
+Post:,投稿：,Post:
+Save Changes,変更を保存,Save Changes,,保存更新
+Preferences successfully saved.,基本設定を保存しました。,Preferences have been saved.,,成功保存了基本设定。
+Failed to save preferences.,基本設定の保存に失敗しました。,Failed to save preferences.,,未能成功保存基本设定。
+There is no account of Twitter.,まだTwitterのアカウントがありません。,There is no Twitter account.,,尚未有推特的帐号。
+List,リスト,List,,一览
+Select the type of feed.,フィードを選択してください。,Select the type of feed.,,请选择源。
+Select the list.,リストを選択してください。,Select a list.,,请选择一览。
+There is no account of Yammer.,まだYammerのアカウントがありません。,There is no Yammer account.,,尚未登录Yammer的帐号。
+Please select an network.,ネットワークを選択してください。,Please select a network.,,请选择网络。
+"<h2>1. Get an access code from Yammer</h2><p>Login to Yammer and grant Crowy access to your Yammer Account. After 4 digit access code is displayed, enter the code into the text box of No.2.<br></p>",<h2>1. Yammerからアクセスコードの取得</h2><p>まず、Yammerにログインし、CrowyのYammerへのアクセスを許可してください。<br>4桁のアクセスコードが表示されたら、そのアクセスコードを2. の入力ボックスに入力してください。</p>,"<h2>1. Retrieve your access code from Yammer</h2><p>Login to Yammer and grant Crowy access to your Yammer Account. <br>After the 4-digit access code is displayed, enter the code into the text box of No. 2.<br></p>",,<h2>1. 获取Yammer的访问码</h2><p>登录Yammer之后，允许Crowy访问Yammer.<br>将Yammer显示的4位访问码输入到2号输入框中。</p>
+Get access code from Yammer,Yammerにログイン,Retrieve access code from Yammer,,登录Yammer
+<h2>2. Enter an access code.</h2><p>Enter the access code and click the following button.</p>,<h2>2. アクセスコードの入力</h2><p>1. で取得したアクセスコードを以下の入力ボックスに入力し、下のボタンをクリックしてください。</p>,<h2>2. Enter an access code.</h2><p>Enter the access code and click the button below.</p>,,<h2>2. 输入访问码</h2><p>在下面的输入框中输入在步骤1中获取的访问码，点击下面的按钮。</p>
+Connect with Yammer,Yammerに接続,Connect with Yammer,,连接Yammer
+There is no account of youRoom.,まだyouRoomのアカウントがありません。,There is no youRoom account.,,尚未登录youRoom帐号

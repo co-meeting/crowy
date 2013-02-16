@@ -1,0 +1,121 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="description" content="Facebook/Twitter/LinkedIn/Yammer/サイボウズLie/youRoomをまとめるソーシャル・コミュニケーション・ダッシュボード" /> 
+<meta name="keywords" content="Facebookグループ,Facebookクライアント,Twitterクライアント,Yammer,サイボウズLive,youRoom,ソーシャルメディア,グループコミュニケーション,マルチカラム" />
+<meta name="copyright" content="" /> 
+<meta property="og:title" content="Crowy - Social Communication Dashboard" />
+<meta property="og:url" content="http://www.crowy.net/" />
+<meta property="og:site_name" content="Crowy" />
+<meta property="og:image" content="http://pic.crowy.net/images/crowyStripe.png" />
+<meta property="og:type" content="article" />
+<meta property="og:description" content="Facebook/Twitter/LinkedIn/Yammer/サイボウズLie/youRoomをまとめるソーシャル・コミュニケーション・ダッシュボード">
+<link rel="apple-touch-icon" href="http://pic.crowy.net/images/crowy-appletouch.png" />
+{%if production%}
+<link rel="stylesheet" type="text/css" href="http://pic.crowy.net/css/index_link.css?{{version}}" />
+{%else%}
+<link rel="stylesheet" type="text/css" href="static/css/index_link.css?{{version}}" />
+{%endif%}
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://pic.crowy.net/js/jquery.cookie.js"></script>
+{%if production%}
+<script type="text/javascript" src="http://pic.crowy.net/js/index.min.js?{{version}}"></script>
+{%else%}
+<script type="text/javascript" src="static/js/index.js?{{version}}"></script>
+{%endif%} 
+<title>Crowy - Social Communication Dashboard</title>
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<style>
+  article, aside, dialog, figure, footer, header,
+  hgroup, menu, nav, section { display: block; }
+  #description-window {display:none;}
+</style>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-19252844-1']);
+  _gaq.push(['_setDomainName', 'crowy.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+
+<body>
+
+<div id="mainVisual"><!-- mainVisual -->
+	<div id="top-bar">
+		<header>
+			<section>
+				<hgroup id="mainLogo">
+					<h1>Crowy</h1>
+					<h2>Beta</h2>
+					<h2>Social Communication Dashboard</h2>
+				</hgroup>
+				<div id="crowyLogo"></div>
+				<p>Crowyは、Facebookページやグループ、Twitterのハッシュタグ、youRoomやYammer のようなグループコミュニケーションサービスに対応した、無料で使えるコミュニケーションダッシュボードです。</p>
+			</section>
+			
+			<nav>
+				<ul id="grobalNav"><!-- grobalNav -->
+					<li id="function"><a href="#;">機能</a></li>
+					<li id="invention"><a href="#;">Crowyが生まれた理由</a></li>
+				</ul><!-- /grobalNav -->
+				<ul id="loginItems"><!-- loginItems -->
+					<li id="googleLogin"><a href="login">Googleログイン</a></li>
+					<li id="fbLogin"><a href="facebook/login">Facebookログイン</a></li>
+				</ul><!-- /loginItems -->
+				<label id="remember-me">
+					<input type="checkbox" value="on" checked="checked">
+					<span>ログイン状態を保存</span>
+				</label>
+			</nav>
+		</header>
+	</div>
+</div><!-- /mainVisual -->
+
+<div id="explanation"><!-- explanation -->
+	<article>
+		<h1 id="articleHeader">Crowy機能概要</h1>
+		<section id="facebook-page"><!-- facebook-page -->
+			<h1>Facebookページ、グループに対応</h1>
+			<p>急速に利用者が増えているFacebook。Crowyでは、ニュースフィードだけでなく、Facebookページやグループにも対応しています。また、Facebook上ではあまり目立たないフィードの検索にも対応しています。</p>
+			<div class="detailButton"><a href="#;">もっと詳しく</a></div>
+		</section><!-- /facebook-page -->
+		
+		<section id="groupCommunication"><!-- groupCommunication -->
+			<h1>グループコミュニケーションサービス対応</h1>
+			<p>Yammer、youRoom、サイボウズLiveといった特定のグループおよび企業内での利用を 目的とした各種サービスにも対応しています。</p>
+			<div class="detailButton"><a href="#;">もっと詳しく</a></div>
+		</section><!-- /groupCommunication -->
+		
+		<section id="columnView"><!-- columnView -->
+			<h1>快速マルチカラムビュー</h1>
+			<p>複数のグループや様々な検索条件に応じたタイムラインを同時に表示できる快速マルチカラム設計。様々なグループのアクティビティの確認とコメントをストレスなく行えます。</p>
+			<div class="detailButton"><a href="#;">もっと詳しく</a></div>
+		</section><!-- /columnView -->
+	</article>
+</div><!-- /explanation -->
+
+<footer>
+	<div id="footerItems">
+		<ul id="footerNav"><!-- footerNav -->
+			<li id="termOfService"><a href="http://pic.crowy.net/terms_{% trans "en" %}.html" target="_blank">{% trans "Terms" %}</a></li>
+			<li id="companyInfo"><a href="http://about.co-meeting.com/" target="_blank">{% trans "About Us" %}</a></li>
+		</ul><!-- /footerNav -->
+		
+		<p>&copy;2011 co-meeting, Inc. All Rights Reserved.</p>
+	</div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "Crowy",
+  "description": "Facebook/Twitter/LinkedIn/Yammer/サイボウズLive/youRoomをまとめるソーシャル・コミュニケーション・ダッシュボード",
+  "version": "0.6.2",
+  "app": {
+    "urls": [
+      "*://www.crowy.net/"
+    ],
+    "launch": {
+      "web_url": "http://www.crowy.net/login"
+    }
+  },
+  "icons": {
+    "128": "icon_128.png"
+  },
+  "permissions": [
+    "notifications"
+  ]
+}

@@ -1,0 +1,906 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-11-16 21:35+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: httplib2/__init__.py:358
+#, python-format
+msgid "Content purported to be compressed with %s but failed to decompress."
+msgstr "Content purported to be compressed with %s but failed to decompress."
+
+#: httplib2/__init__.py:468
+#, python-format
+msgid "Unsupported value for qop: %s."
+msgstr "Unsupported value for qop: %s."
+
+#: httplib2/__init__.py:471 httplib2/__init__.py:532
+#, python-format
+msgid "Unsupported value for algorithm: %s."
+msgstr "Unsupported value for algorithm: %s."
+
+#: httplib2/__init__.py:529
+msgid "The challenge doesn't contain a server nonce, or this one is empty."
+msgstr "The challenge doesn't contain a server nonce, or this one is empty."
+
+#: httplib2/__init__.py:535
+#, python-format
+msgid "Unsupported value for pw-algorithm: %s."
+msgstr "Unsupported value for pw-algorithm: %s."
+
+#: httplib2/__init__.py:924
+msgid "Redirected but the response is missing a Location: header."
+msgstr "Redirected but the response is missing a Location: header."
+
+#: httplib2/__init__.py:949
+msgid "Redirected more times than rediection_limit allows."
+msgstr "Redirected more times than rediection_limit allows."
+
+#: view/500.html:74
+msgid "Sorry."
+msgstr "Sorry."
+
+#: view/500.html:75
+msgid "Something is wrong with me."
+msgstr "Something is wrong with me."
+
+#: view/500.html:82 view/index-en.html:107 view/index.html:111
+#: view/main.html:145
+msgid "Terms"
+msgstr "Terms & Conditions"
+
+#: view/chatter_accounts.html:1 view/cybozulive_accounts.html:1
+#: view/facebook_accounts.html:1 view/linkedin_accounts.html:1
+#: view/twitter_accounts.html:1 view/yammer_accounts.html:1
+#: view/youroom_accounts.html:1
+msgid "The following accounts are registered."
+msgstr "The following accounts are registered."
+
+#: view/chatter_accounts.html:1 view/chatter_add_column.html:1
+#: view/cybozulive_accounts.html:1 view/cybozulive_add_column.html:1
+#: view/facebook_accounts.html:1 view/facebook_add_column.html:1
+#: view/linkedin_accounts.html:1 view/linkedin_add_column.html:1
+#: view/twitter_accounts.html:1 view/twitter_add_column.html:1
+#: view/yammer_accounts.html:1 view/yammer_add_column.html:1
+#: view/youroom_accounts.html:1 view/youroom_add_column.html:1
+msgid "Add Another Account"
+msgstr "Add Another Account"
+
+#: view/chatter_accounts.html:1 view/cybozulive_accounts.html:1
+#: view/facebook_accounts.html:1 view/i18n_js.html:20
+#: view/linkedin_accounts.html:1 view/main.html:221
+#: view/twitter_accounts.html:1 view/yammer_accounts.html:1
+#: view/youroom_accounts.html:1
+msgid "Delete"
+msgstr "Delete"
+
+#: view/chatter_accounts.html:1 view/chatter_add_column.html:1
+msgid "There is no account of Chatter."
+msgstr "There is no Chatter account."
+
+#: view/chatter_accounts.html:1 view/chatter_add_column.html:1
+#: view/cybozulive_accounts.html:1 view/cybozulive_add_column.html:1
+#: view/facebook_accounts.html:1 view/facebook_add_column.html:1
+#: view/linkedin_accounts.html:1 view/twitter_accounts.html:1
+#: view/twitter_add_column.html:1 view/yammer_accounts.html:1
+#: view/yammer_add_column.html:1 view/youroom_accounts.html:1
+#: view/youroom_add_column.html:1
+msgid "Add Account"
+msgstr "Add Account"
+
+#: view/chatter_add_column.html:1 view/cybozulive_add_column.html:1
+#: view/facebook_add_column.html:1 view/linkedin_add_column.html:1
+#: view/twitter_add_column.html:1 view/youroom_add_column.html:1
+msgid "Please select an account."
+msgstr "Please select an account."
+
+#: view/chatter_add_column.html:1 view/cybozulive_add_column.html:1
+#: view/facebook_add_column.html:1 view/googleplus_add_column.html:1
+#: view/linkedin_add_column.html:1 view/twitter_add_column.html:1
+#: view/yammer_add_column.html:1 view/youroom_add_column.html:1
+msgid "Please select the type of timeline."
+msgstr "Please select a message type."
+
+#: view/cybozulive_accounts.html:1 view/cybozulive_add_column.html:1
+msgid "There is no account of Cybozu Live."
+msgstr "There is no Cybozu Live account."
+
+#: view/cybozulive_add_column.html:1 view/i18n_js.html:64
+msgid "All Updates"
+msgstr "All Updates"
+
+#: view/cybozulive_add_column.html:1
+msgid "My Schedule"
+msgstr "My Schedule"
+
+#: view/cybozulive_add_column.html:1
+msgid "Group Events"
+msgstr "Group Events"
+
+#: view/cybozulive_add_column.html:1
+msgid "Messages"
+msgstr "Messages"
+
+#: view/cybozulive_add_column.html:1
+msgid "ToDo List"
+msgstr "ToDo List"
+
+#: view/cybozulive_add_column.html:1
+msgid "Forum Cybozu"
+msgstr "Forum"
+
+#: view/cybozulive_add_column.html:1
+msgid "Share Folder"
+msgstr "Shared Folder"
+
+#: view/cybozulive_add_column.html:1
+msgid "Join/Leave Group"
+msgstr "Join/Leave Group"
+
+#: view/facebook_accounts.html:1 view/facebook_add_column.html:1
+msgid "There is no account of Facebook."
+msgstr "There is no Facebook account."
+
+#: view/facebook_add_column.html:1 view/twitter_add_column.html:1
+msgid "Feed"
+msgstr "Feed"
+
+#: view/facebook_add_column.html:1
+msgid "Groups"
+msgstr "Groups"
+
+#: view/facebook_add_column.html:1
+msgid "Your pages"
+msgstr "Your managed Facebook pages"
+
+#: view/facebook_add_column.html:1
+msgid "Your favorite pages"
+msgstr "Your favorite Facebook pages"
+
+#: view/facebook_add_column.html:1 view/googleplus_add_column.html:1
+#: view/i18n_js.html:73 view/twitter_add_column.html:1
+msgid "Search"
+msgstr "Search"
+
+#: view/facebook_add_column.html:1
+msgid "Friend list"
+msgstr "Friend list"
+
+#: view/facebook_add_column.html:1
+msgid "Your applications"
+msgstr "Your Facebook applications"
+
+#: view/facebook_add_column.html:1
+msgid "Select a friend list."
+msgstr "Please select a friend list."
+
+#: view/facebook_add_column.html:1
+msgid "Select a group."
+msgstr "Please select a group."
+
+#: view/facebook_add_column.html:1 view/googleplus_add_column.html:1
+#: view/twitter_add_column.html:1
+msgid "Enter a search term."
+msgstr "Please enter a search keyword."
+
+#: view/facebook_add_column.html:1
+msgid "Select a page."
+msgstr "Please select a Facebook page."
+
+#: view/facebook_add_column.html:1
+msgid "Select an app."
+msgstr "Please select a Facebook application."
+
+#: view/i18n_js.html:8
+msgid "Load More"
+msgstr "Load More"
+
+#: view/i18n_js.html:9
+msgid "Loading More..."
+msgstr "Loading..."
+
+#: view/i18n_js.html:10
+msgid "You must re-authenticate to get these information. Please click here."
+msgstr ""
+"Re-authentication is required to get more information. Please click here."
+
+#: view/i18n_js.html:11
+msgid "Failed to load timeline. Click to reload."
+msgstr "Failed to load timeline. Click to reload."
+
+#: view/i18n_js.html:12
+msgid "More"
+msgstr "More"
+
+#: view/i18n_js.html:13
+msgid "Loading"
+msgstr "Loading"
+
+#: view/i18n_js.html:14
+msgid ""
+"You cannot use desktop notifications. This feature is available in Google "
+"Chrome only."
+msgstr ""
+"You cannot use desktop notifications. This feature is only available in "
+"Google Chrome."
+
+#: view/i18n_js.html:15
+msgid ""
+"Crowy don't notify you as the overall settings for the notification feature "
+"is off. Would you like to enable the settings?"
+msgstr ""
+"Crowy cannot send notifications as your desktop notification settings are "
+"disabled. Would you like to enable these settings?"
+
+#: view/i18n_js.html:16
+msgid "Desktop notifications of \"$(name)\" successfully changed."
+msgstr "Desktop notifications of \"$(name)\" have been successfully changed."
+
+#: view/i18n_js.html:17
+msgid "Failed to change desktop notifications of \"$(name)\"."
+msgstr "Failed to change desktop notifications of \"$(name)\"."
+
+#: view/i18n_js.html:18
+msgid "Are you sure you want to delete this column \"$(name)\"?"
+msgstr "Are you sure you want to delete the column \"$(name)\"?"
+
+#: view/i18n_js.html:19
+msgid "Desktop notifications($(status))"
+msgstr "Desktop notifications(current $(status))"
+
+#: view/i18n_js.html:21
+msgid "Message posted."
+msgstr "Message posted."
+
+#: view/i18n_js.html:22
+msgid "Failed to post message."
+msgstr "Failed to post message."
+
+#: view/i18n_js.html:23
+msgid "Press Shift+Enter to post."
+msgstr "Press Shift+Enter to post."
+
+#: view/i18n_js.html:24
+msgid "Close"
+msgstr "Close"
+
+#: view/i18n_js.html:25 view/main.html:256
+msgid "Send"
+msgstr "Send"
+
+#: view/i18n_js.html:26 view/main.html:257
+msgid "Clear"
+msgstr "Clear"
+
+#: view/i18n_js.html:27
+msgid "Advanced"
+msgstr "Advanced"
+
+#: view/i18n_js.html:28
+msgid ""
+"Are you sure you'd like to add automatically major timelines of this service?"
+msgstr ""
+"Are you sure you want to automatically add major timelines of this service?"
+
+#: view/i18n_js.html:29
+msgid "Delete Tab"
+msgstr "Delete Tab"
+
+#: view/i18n_js.html:30
+msgid "You cannot delete the last tab."
+msgstr "You must have at least one tab."
+
+#: view/i18n_js.html:31
+msgid "Are you sure you want to delete this tab?"
+msgstr "Are you sure you want to delete this tab?"
+
+#: view/i18n_js.html:32
+msgid "Cancel"
+msgstr "Cancel"
+
+#: view/i18n_js.html:33 view/main.html:108 view/main.html.py:178
+msgid "Add Column"
+msgstr "Add New Column"
+
+#: view/i18n_js.html:34
+msgid "Message posted to \"$(name)\"."
+msgstr "Message posted to \"$(name)\"."
+
+#: view/i18n_js.html:35
+msgid "Failed to post message to \"$(name)\"."
+msgstr "Failed to post message to \"$(name)\"."
+
+#: view/i18n_js.html:36
+msgid "Please enter a new shortcut name."
+msgstr "Please enter a shortcut label."
+
+#: view/i18n_js.html:37
+msgid "Shortcut \"$(name)\" successfully saved."
+msgstr "Shortcut \"$(name)\" has been saved."
+
+#: view/i18n_js.html:38
+msgid "Failed to save shortcut \"$(name)\"."
+msgstr "Failed to save shortcut \"$(name)\"."
+
+#: view/i18n_js.html:39
+msgid "Failed to shrink URL."
+msgstr "Failed to shrink URL."
+
+#: view/i18n_js.html:40
+msgid "Shortcut successfully renamed to \"$(name)\"."
+msgstr "Shortcut has been renamed to \"$(name)\"."
+
+#: view/i18n_js.html:41
+msgid "Failed to rename shortcut \"$(name)\"."
+msgstr "Failed to rename shortcut \"$(name)\"."
+
+#: view/i18n_js.html:42
+msgid "Are you sure you want to delete this shortcut?"
+msgstr "Are you sure you want to delete this shortcut?"
+
+#: view/i18n_js.html:43
+msgid "Shortcut \"$(name)\" successfully deleted."
+msgstr "Shortcut \"$(name)\" has been deleted."
+
+#: view/i18n_js.html:44
+msgid "Failed to delete shortcut \"$(name)\"."
+msgstr "Failed to delete shortcut \"$(name)\"."
+
+#: view/i18n_js.html:45
+msgid "Rename"
+msgstr "Rename Label"
+
+#: view/i18n_js.html:46
+msgid "Label Color"
+msgstr "Label Color"
+
+#: view/i18n_js.html:47
+msgid "Color of the shortcut \"$(name)\" successfully changed."
+msgstr "Color of the shortcut \"$(name)\" has been changed."
+
+#: view/i18n_js.html:48
+msgid "Failed to change the color of shortcut \"$(name)\"."
+msgstr "Failed to change the color of shortcut \"$(name)\"."
+
+#: view/i18n_js.html:49
+msgid "Desktop notifications successfully changed."
+msgstr "Desktop notifications have been changed successfully."
+
+#: view/i18n_js.html:50
+msgid "Failed to change desktop notifications."
+msgstr "Failed to change desktop notifications."
+
+#: view/i18n_js.html:51
+msgid ""
+"<div>allows Crowy to display popup notifications on your desktop.<br/>If "
+"notifications setting of a column is off, Crowy don't notify you.<br/>You "
+"can set notification setting of a column in right top triangle of every "
+"column.</div>"
+msgstr ""
+"<div>Toggle Crowy desktop notifications.<br/>Crowy will not send "
+"notifications for a column that has notifications turned off.<br/"
+">Notification settings for each column can be changed by clicking the right "
+"top triangle in each column.</div>"
+
+#: view/i18n_js.html:52
+msgid ""
+"Are you sure you want to delete account \"$(name)\"?\\nIf delete, all column "
+"of this account will be deleted."
+msgstr ""
+"Are you sure you want to delete the account, \"$(name)\"?\\nIf deleted, all "
+"columns of this account will be deleted as well."
+
+#: view/i18n_js.html:53
+msgid "This account successfully deleted. Crowy reload now."
+msgstr "This account has been deleted successfully. Reloading Crowy..."
+
+#: view/i18n_js.html:54
+msgid "Failed to delete this account."
+msgstr "Failed to delete account."
+
+#: view/i18n_js.html:55 view/main.html:201
+msgid "Show Conversation"
+msgstr "Show Conversation"
+
+#: view/i18n_js.html:56
+msgid "More>>"
+msgstr "More>>"
+
+#: view/i18n_js.html:57
+msgid "<<Close"
+msgstr "<<Close"
+
+#: view/i18n_js.html:58
+msgid "Retweet this to your followers?"
+msgstr "Retweet this to your followers?"
+
+#: view/i18n_js.html:59
+msgid "Message has been retweeted by $(account)."
+msgstr "Message has been retweeted by $(account)."
+
+#: view/i18n_js.html:60
+msgid "Failed to retweet by $(account)."
+msgstr "Failed to retweet by $(account)."
+
+#: view/i18n_js.html:61
+msgid "Message successfully favorited"
+msgstr "Message has been favorited"
+
+#: view/i18n_js.html:62
+msgid "Failed to favorite message."
+msgstr "Failed to favorite message."
+
+#: view/i18n_js.html:63
+msgid "Failed to load comments."
+msgstr "Failed to load comments."
+
+#: view/i18n_js.html:65
+msgid "Message successfully liked."
+msgstr "Message has been liked."
+
+#: view/i18n_js.html:66
+msgid "Failed to like message."
+msgstr "Failed to like message."
+
+#: view/i18n_js.html:67
+msgid "Message successfully unliked."
+msgstr "Message has been unliked."
+
+#: view/i18n_js.html:68
+msgid "Failed to unlike message."
+msgstr "Failed to unlike message."
+
+#: view/i18n_js.html:69
+msgid "People who like this"
+msgstr "People who liked this."
+
+#: view/i18n_js.html:70
+msgid "Anyone don't like this."
+msgstr "No one has liked this."
+
+#: view/i18n_js.html:71
+msgid "Your Facebook Pages"
+msgstr "Your Facebook Page(s)"
+
+#: view/i18n_js.html:72
+msgid "Add"
+msgstr "Add"
+
+#: view/i18n_js.html:74
+msgid "Retweeted by $(account)"
+msgstr "Retweeted by $(account)"
+
+#: view/i18n_js.html:75
+msgid "Retweeted by $(account) and $(count) others"
+msgstr "Retweeted by $(account) and $(count) others"
+
+#: view/i18n_js.html:76
+msgid "OK"
+msgstr "OK"
+
+#: view/i18n_js.html:77
+msgid "$(service) returns error. Try again later."
+msgstr "$(service) has encountered an error. Please wait and try again."
+
+#: view/i18n_js.html:78
+msgid "Cybozu Live"
+msgstr "Cybozu Live"
+
+#: view/i18n_js.html:79
+#, fuzzy
+msgid "Press Ctrl+Enter to post."
+msgstr "Press Ctrl+Enter to post."
+
+#: view/i18n_js.html:80
+msgid "Can\\'t upload image in $(services)."
+msgstr ""
+
+#: view/i18n_js.html:81
+msgid "This tweet has been deleted successfully."
+msgstr ""
+
+#: view/i18n_js.html:82
+#, fuzzy
+msgid "Failed to delete this tweet"
+msgstr "Failed to delete account."
+
+#: view/i18n_js.html:83
+#, fuzzy
+msgid "Are you sure you want to delete this tweet?\\n$(tweet)"
+msgstr "Are you sure you want to delete this tab?"
+
+#: view/i18n_js.html:84
+#, fuzzy
+msgid "Message successfully unfavorited"
+msgstr "Message has been favorited"
+
+#: view/i18n_js.html:85
+#, fuzzy
+msgid "Failed to unfavorite message."
+msgstr "Failed to favorite message."
+
+#: view/i18n_js.html:86
+#, fuzzy
+msgid "Anyone don't retweet this."
+msgstr "No one has liked this."
+
+#: view/i18n_js.html:87
+#, fuzzy
+msgid "Color"
+msgstr "Label Color"
+
+#: view/i18n_js.html:88
+#, fuzzy
+msgid "Color of the column \"$(name)\" has been changed."
+msgstr "Color of the shortcut \"$(name)\" has been changed."
+
+#: view/i18n_js.html:89
+#, fuzzy
+msgid "Failed to change color of the column \"$(name)\"."
+msgstr "Failed to change the color of shortcut \"$(name)\"."
+
+#: view/i18n_js.html:90 view/main.html:209
+msgid "Retweet"
+msgstr "Retweet"
+
+#: view/i18n_js.html:91
+msgid "Follow"
+msgstr ""
+
+#: view/i18n_js.html:92
+msgid "Unfollow"
+msgstr ""
+
+#: view/i18n_js.html:93 view/i18n_js.html.py:100
+msgid "Following"
+msgstr ""
+
+#: view/i18n_js.html:94
+msgid "Followers"
+msgstr ""
+
+#: view/i18n_js.html:95
+#, fuzzy
+msgid "Tweets"
+msgstr "Retweet"
+
+#: view/i18n_js.html:96
+#, fuzzy
+msgid "Favorites"
+msgstr "Favorite"
+
+#: view/i18n_js.html:97
+#, fuzzy
+msgid "Friendships"
+msgstr "Friend list"
+
+#: view/i18n_js.html:98
+#, fuzzy
+msgid "Friends"
+msgstr "Friend list"
+
+#: view/i18n_js.html:99
+msgid "Fan"
+msgstr ""
+
+#: view/i18n_js.html:101
+msgid "Your follow request has been sent."
+msgstr ""
+
+#: view/i18n_js.html:102 view/main.html:220
+msgid "DM"
+msgstr "DM"
+
+#: view/i18n_js.html:103 view/main.html:202
+msgid "Reply"
+msgstr "Reply"
+
+#: view/i18n_js.html:104
+#, fuzzy
+msgid "You should connect to Twitter."
+msgstr "There is no Twitter account."
+
+#: view/i18n_js.html:105
+#, fuzzy
+msgid "Please select an account linked to the new column."
+msgstr "Please select an account."
+
+#: view/i18n_js.html:106
+#, fuzzy
+msgid "Are you sure you want to logout from Google?"
+msgstr "Are you sure you want to delete this tab?"
+
+#: view/i18n_js.html:107
+msgid "Only Crowy"
+msgstr ""
+
+#: view/i18n_js.html:108
+msgid "Crowy and Google"
+msgstr ""
+
+#: view/i18n_js.html:109
+msgid ""
+"<a class=\"friend-name\"/> posted about <a class=\"this-product\">this "
+"product</a>"
+msgstr ""
+
+#: view/index-en.html:107 view/index.html:111 view/main.html:145
+msgid "en"
+msgstr "en"
+
+#: view/index-en.html:108 view/index.html:112 view/main.html:144
+msgid "About Us"
+msgstr "About Us"
+
+#: view/linkedin_accounts.html:1 view/linkedin_add_column.html:1
+msgid "There is no account of LinkedIn."
+msgstr "There is no LinkedIn account."
+
+#: view/main.html:83 view/main.html.py:151
+msgid "Settings"
+msgstr "Settings"
+
+#: view/main.html:84
+msgid "Logout"
+msgstr "Logout"
+
+#: view/main.html:86
+msgid "Help"
+msgstr "Help"
+
+#: view/main.html:87
+msgid "Blog"
+msgstr "Blog"
+
+#: view/main.html:96
+msgid "Compose message"
+msgstr "Compose message"
+
+#: view/main.html:104
+msgid "Add Tab"
+msgstr "Add Tab"
+
+#: view/main.html:107
+msgid "Refresh"
+msgstr "Refresh"
+
+#: view/main.html:123
+msgid ""
+"<h2>This tab has no column.</h2><p>You can add a column in which a timeline "
+"of various services displays.</p><button>Add Column</button>"
+msgstr ""
+"<h2>This tab has no column.</h2><p>You can add a column that will display "
+"information from a social network service.</p><button>Add Column</button>"
+
+#: view/main.html:154
+msgid "Services"
+msgstr "Services"
+
+#: view/main.html:155 view/settings_basic.html:4
+msgid "Preferences"
+msgstr "Preferences"
+
+#: view/main.html:159
+msgid ""
+"<h3>Welcome to Crowy!</h3>At first you must add other service.<br>Please "
+"click the tab which you connect with and click [Connect]."
+msgstr ""
+"<h3>Welcome to Crowy!</h3>Before you begin use, you must setup the social "
+"media services you would like to use.<br>Please select the tab for the "
+"service you would like to use and click [Add Account]."
+
+#: view/main.html:161
+msgid "You can add connections with other services and remove them."
+msgstr "You can add or remove accounts with other services."
+
+#: view/main.html:171 view/main.html.py:190
+msgid "Cybozu Live(Lab)"
+msgstr "Cybozu Live(Lab)"
+
+#: view/main.html:180
+msgid "Please select the service which you want to add."
+msgstr "Please select the service you would like to add."
+
+#: view/main.html:199
+msgid "Like"
+msgstr "Like"
+
+#: view/main.html:200
+msgid "Unlike"
+msgstr "Unlike"
+
+#: view/main.html:201
+msgid "Thread"
+msgstr "Thread"
+
+#: view/main.html:203
+msgid "Comment"
+msgstr "Comment"
+
+#: view/main.html:205
+msgid "RT"
+msgstr "RT"
+
+#: view/main.html:208
+msgid "Classic RT"
+msgstr "Classic RT"
+
+#: view/main.html:213
+msgid "Favorite"
+msgstr "Favorite"
+
+#: view/main.html:214
+#, fuzzy
+msgid "Unfavorite"
+msgstr "Favorite"
+
+#: view/main.html:216
+msgid "Others"
+msgstr ""
+
+#: view/main.html:219
+msgid "Reply all"
+msgstr "Reply all"
+
+#: view/main.html:220
+msgid "Direct Message"
+msgstr "Direct Message"
+
+#: view/main.html:226
+msgid "Multi post"
+msgstr ""
+
+#: view/main.html:233
+msgid "To:"
+msgstr "To:"
+
+#: view/main.html:262
+msgid "Add these addresses to shortcuts."
+msgstr "Add these addresses to your shortcuts."
+
+#: view/rss_add_column.html:1
+msgid "Paste a feed url."
+msgstr "Input a feed URL."
+
+#: view/rss_add_column.html:1
+msgid "Input a valid URL."
+msgstr "Input a valid URL."
+
+#: view/settings_basic.html:6
+msgid "Display Density:"
+msgstr ""
+
+#: view/settings_basic.html:8
+msgid "Comfortable"
+msgstr ""
+
+#: view/settings_basic.html:9
+msgid "Normal"
+msgstr ""
+
+#: view/settings_basic.html:10
+msgid "Compact"
+msgstr ""
+
+#: view/settings_basic.html:14
+#, fuzzy
+msgid "Language:"
+msgstr "Language"
+
+#: view/settings_basic.html:21
+msgid "Keyboard Shortcuts"
+msgstr "Keyboard Shortcuts"
+
+#: view/settings_basic.html:23
+msgid "Post:"
+msgstr "Post:"
+
+#: view/settings_basic.html:30
+msgid "Save Changes"
+msgstr "Save Changes"
+
+#: view/settings_basic.html:45
+msgid "Preferences successfully saved."
+msgstr "Preferences have been saved."
+
+#: view/settings_basic.html:49
+msgid "Failed to save preferences."
+msgstr "Failed to save preferences."
+
+#: view/twitter_accounts.html:1 view/twitter_add_column.html:1
+msgid "There is no account of Twitter."
+msgstr "There is no Twitter account."
+
+#: view/twitter_add_column.html:1
+msgid "List"
+msgstr "List"
+
+#: view/twitter_add_column.html:1
+msgid "Select the type of feed."
+msgstr "Select the type of feed."
+
+#: view/twitter_add_column.html:1
+msgid "Select the list."
+msgstr "Select a list."
+
+#: view/yammer_accounts.html:1 view/yammer_add_column.html:1
+msgid "There is no account of Yammer."
+msgstr "There is no Yammer account."
+
+#: view/yammer_add_column.html:1
+msgid "Please select an network."
+msgstr "Please select a network."
+
+#: view/yammer_authorize.html:30
+msgid ""
+"<h2>1. Get an access code from Yammer</h2><p>Login to Yammer and grant Crowy "
+"access to your Yammer Account. After 4 digit access code is displayed, enter "
+"the code into the text box of No.2.<br></p>"
+msgstr ""
+"<h2>1. Retrieve your access code from Yammer</h2><p>Login to Yammer and "
+"grant Crowy access to your Yammer Account. <br>After the 4-digit access code "
+"is displayed, enter the code into the text box of No. 2.<br></p>"
+
+#: view/yammer_authorize.html:32
+msgid "Get access code from Yammer"
+msgstr "Retrieve access code from Yammer"
+
+#: view/yammer_authorize.html:36
+msgid ""
+"<h2>2. Enter an access code.</h2><p>Enter the access code and click the "
+"following button.</p>"
+msgstr ""
+"<h2>2. Enter an access code.</h2><p>Enter the access code and click the "
+"button below.</p>"
+
+#: view/yammer_authorize.html:40
+msgid "Connect with Yammer"
+msgstr "Connect with Yammer"
+
+#: view/youroom_accounts.html:1 view/youroom_add_column.html:1
+msgid "There is no account of youRoom."
+msgstr "There is no youRoom account."
+
+#~ msgid "Message successfully retweeted."
+#~ msgstr "Message has been retweeted."
+
+#~ msgid "Failed to retweet message."
+#~ msgstr "Failed to retweet message."
+
+#~ msgid "View Conversation"
+#~ msgstr "View Conversation"
+
+#~ msgid "Forum"
+#~ msgstr "Forum"
+
+#~ msgid "Old RT"
+#~ msgstr "RT"
+
+#~ msgid "lang"
+#~ msgstr "lang"
+
+#, fuzzy
+#~ msgid "Please select the type of Google+."
+#~ msgstr "Please select the type of timeline."
+
+#~ msgid "File"
+#~ msgstr "Attachment"
+
+#~ msgid "URL:"
+#~ msgstr "URL:"
+
+#~ msgid "Shrink"
+#~ msgstr "Shrink"

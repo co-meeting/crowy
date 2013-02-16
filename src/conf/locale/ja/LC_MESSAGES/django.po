@@ -1,0 +1,875 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-11-16 21:35+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: httplib2/__init__.py:358
+#, python-format
+msgid "Content purported to be compressed with %s but failed to decompress."
+msgstr ""
+
+#: httplib2/__init__.py:468
+#, python-format
+msgid "Unsupported value for qop: %s."
+msgstr ""
+
+#: httplib2/__init__.py:471 httplib2/__init__.py:532
+#, python-format
+msgid "Unsupported value for algorithm: %s."
+msgstr ""
+
+#: httplib2/__init__.py:529
+msgid "The challenge doesn't contain a server nonce, or this one is empty."
+msgstr ""
+
+#: httplib2/__init__.py:535
+#, python-format
+msgid "Unsupported value for pw-algorithm: %s."
+msgstr ""
+
+#: httplib2/__init__.py:924
+msgid "Redirected but the response is missing a Location: header."
+msgstr ""
+
+#: httplib2/__init__.py:949
+msgid "Redirected more times than rediection_limit allows."
+msgstr ""
+
+#: view/500.html:74
+msgid "Sorry."
+msgstr "ごめんね"
+
+#: view/500.html:75
+msgid "Something is wrong with me."
+msgstr "たまには僕も調子が悪くなるんです…"
+
+#: view/500.html:82 view/index-en.html:107 view/index.html:111
+#: view/main.html:145
+msgid "Terms"
+msgstr "利用規約"
+
+#: view/chatter_accounts.html:1 view/cybozulive_accounts.html:1
+#: view/facebook_accounts.html:1 view/linkedin_accounts.html:1
+#: view/twitter_accounts.html:1 view/yammer_accounts.html:1
+#: view/youroom_accounts.html:1
+msgid "The following accounts are registered."
+msgstr "以下のアカウントが登録されています。"
+
+#: view/chatter_accounts.html:1 view/chatter_add_column.html:1
+#: view/cybozulive_accounts.html:1 view/cybozulive_add_column.html:1
+#: view/facebook_accounts.html:1 view/facebook_add_column.html:1
+#: view/linkedin_accounts.html:1 view/linkedin_add_column.html:1
+#: view/twitter_accounts.html:1 view/twitter_add_column.html:1
+#: view/yammer_accounts.html:1 view/yammer_add_column.html:1
+#: view/youroom_accounts.html:1 view/youroom_add_column.html:1
+msgid "Add Another Account"
+msgstr "別のアカウントを追加"
+
+#: view/chatter_accounts.html:1 view/cybozulive_accounts.html:1
+#: view/facebook_accounts.html:1 view/i18n_js.html:20
+#: view/linkedin_accounts.html:1 view/main.html:221
+#: view/twitter_accounts.html:1 view/yammer_accounts.html:1
+#: view/youroom_accounts.html:1
+msgid "Delete"
+msgstr "削除"
+
+#: view/chatter_accounts.html:1 view/chatter_add_column.html:1
+msgid "There is no account of Chatter."
+msgstr "まだChatterのアカウントがありません。"
+
+#: view/chatter_accounts.html:1 view/chatter_add_column.html:1
+#: view/cybozulive_accounts.html:1 view/cybozulive_add_column.html:1
+#: view/facebook_accounts.html:1 view/facebook_add_column.html:1
+#: view/linkedin_accounts.html:1 view/twitter_accounts.html:1
+#: view/twitter_add_column.html:1 view/yammer_accounts.html:1
+#: view/yammer_add_column.html:1 view/youroom_accounts.html:1
+#: view/youroom_add_column.html:1
+msgid "Add Account"
+msgstr "アカウントを追加"
+
+#: view/chatter_add_column.html:1 view/cybozulive_add_column.html:1
+#: view/facebook_add_column.html:1 view/linkedin_add_column.html:1
+#: view/twitter_add_column.html:1 view/youroom_add_column.html:1
+msgid "Please select an account."
+msgstr "アカウントを選択してください。"
+
+#: view/chatter_add_column.html:1 view/cybozulive_add_column.html:1
+#: view/facebook_add_column.html:1 view/googleplus_add_column.html:1
+#: view/linkedin_add_column.html:1 view/twitter_add_column.html:1
+#: view/yammer_add_column.html:1 view/youroom_add_column.html:1
+msgid "Please select the type of timeline."
+msgstr "メッセージのタイプを選択してください。"
+
+#: view/cybozulive_accounts.html:1 view/cybozulive_add_column.html:1
+msgid "There is no account of Cybozu Live."
+msgstr "まだサイボウズLiveのアカウントがありません。"
+
+#: view/cybozulive_add_column.html:1 view/i18n_js.html:64
+msgid "All Updates"
+msgstr "すべての新着情報"
+
+#: view/cybozulive_add_column.html:1
+msgid "My Schedule"
+msgstr "マイスケジュール"
+
+#: view/cybozulive_add_column.html:1
+msgid "Group Events"
+msgstr "グループイベント"
+
+#: view/cybozulive_add_column.html:1
+msgid "Messages"
+msgstr "メッセージ"
+
+#: view/cybozulive_add_column.html:1
+msgid "ToDo List"
+msgstr "ToDoリスト"
+
+#: view/cybozulive_add_column.html:1
+msgid "Forum Cybozu"
+msgstr "掲示板"
+
+#: view/cybozulive_add_column.html:1
+msgid "Share Folder"
+msgstr "共有フォルダ"
+
+#: view/cybozulive_add_column.html:1
+msgid "Join/Leave Group"
+msgstr "グループへの入退会"
+
+#: view/facebook_accounts.html:1 view/facebook_add_column.html:1
+msgid "There is no account of Facebook."
+msgstr "まだFacebookのアカウントがありません。"
+
+#: view/facebook_add_column.html:1 view/twitter_add_column.html:1
+msgid "Feed"
+msgstr "フィード"
+
+#: view/facebook_add_column.html:1
+msgid "Groups"
+msgstr "グループ"
+
+#: view/facebook_add_column.html:1
+msgid "Your pages"
+msgstr "あなたの管理しているFacebookページ"
+
+#: view/facebook_add_column.html:1
+msgid "Your favorite pages"
+msgstr "あなたがいいね！と言っているFacebookページ"
+
+#: view/facebook_add_column.html:1 view/googleplus_add_column.html:1
+#: view/i18n_js.html:73 view/twitter_add_column.html:1
+msgid "Search"
+msgstr "検索"
+
+#: view/facebook_add_column.html:1
+msgid "Friend list"
+msgstr "友達リスト"
+
+#: view/facebook_add_column.html:1
+msgid "Your applications"
+msgstr "あなたのFacebookアプリ"
+
+#: view/facebook_add_column.html:1
+msgid "Select a friend list."
+msgstr "友達リストを選択してください。"
+
+#: view/facebook_add_column.html:1
+msgid "Select a group."
+msgstr "グループを選択してください。"
+
+#: view/facebook_add_column.html:1 view/googleplus_add_column.html:1
+#: view/twitter_add_column.html:1
+msgid "Enter a search term."
+msgstr "検索キーワードを入力してください。"
+
+#: view/facebook_add_column.html:1
+msgid "Select a page."
+msgstr "Facebookページを選択してください。"
+
+#: view/facebook_add_column.html:1
+msgid "Select an app."
+msgstr "Facebookアプリを選択してください。"
+
+#: view/i18n_js.html:8
+msgid "Load More"
+msgstr "ギャップを取得"
+
+#: view/i18n_js.html:9
+msgid "Loading More..."
+msgstr "ギャップを取得中"
+
+#: view/i18n_js.html:10
+msgid "You must re-authenticate to get these information. Please click here."
+msgstr "この情報を取得するには再認可が必要です。こちらをクリックしてください。"
+
+#: view/i18n_js.html:11
+msgid "Failed to load timeline. Click to reload."
+msgstr "読み込みに失敗しました。クリックで再読み込みします。"
+
+#: view/i18n_js.html:12
+msgid "More"
+msgstr "もっと読む"
+
+#: view/i18n_js.html:13
+msgid "Loading"
+msgstr "読み込み中"
+
+#: view/i18n_js.html:14
+msgid ""
+"You cannot use desktop notifications. This feature is available in Google "
+"Chrome only."
+msgstr ""
+"デスクトップ通知はこのブラウザでは使用できません。現在はGoogle Chromeのみでご"
+"利用いただけます。"
+
+#: view/i18n_js.html:15
+msgid ""
+"Crowy don't notify you as the overall settings for the notification feature "
+"is off. Would you like to enable the settings?"
+msgstr ""
+"全体のデスクトップ通知設定がOFFのため、通知は行われません。全体の設定もONにし"
+"ますか？"
+
+#: view/i18n_js.html:16
+msgid "Desktop notifications of \"$(name)\" successfully changed."
+msgstr "「$(name)」のデスクトップ通知を切り替えました。"
+
+#: view/i18n_js.html:17
+msgid "Failed to change desktop notifications of \"$(name)\"."
+msgstr "「$(name)」のデスクトップ通知の切り替えに失敗しました。"
+
+#: view/i18n_js.html:18
+msgid "Are you sure you want to delete this column \"$(name)\"?"
+msgstr "本当にカラム「$(name)」を削除していいですか？"
+
+#: view/i18n_js.html:19
+msgid "Desktop notifications($(status))"
+msgstr "デスクトップ通知(現在$(status))"
+
+#: view/i18n_js.html:21
+msgid "Message posted."
+msgstr "投稿しました。"
+
+#: view/i18n_js.html:22
+msgid "Failed to post message."
+msgstr "投稿に失敗しました。"
+
+#: view/i18n_js.html:23
+msgid "Press Shift+Enter to post."
+msgstr "Shift+Enterで投稿"
+
+#: view/i18n_js.html:24
+msgid "Close"
+msgstr "閉じる"
+
+#: view/i18n_js.html:25 view/main.html:256
+msgid "Send"
+msgstr "投稿"
+
+#: view/i18n_js.html:26 view/main.html:257
+msgid "Clear"
+msgstr "クリア"
+
+#: view/i18n_js.html:27
+msgid "Advanced"
+msgstr "詳細編集"
+
+#: view/i18n_js.html:28
+msgid ""
+"Are you sure you'd like to add automatically major timelines of this service?"
+msgstr "このサービスの主なタイムラインを自動で追加します。よろしいですか？"
+
+#: view/i18n_js.html:29
+msgid "Delete Tab"
+msgstr "タブの削除"
+
+#: view/i18n_js.html:30
+msgid "You cannot delete the last tab."
+msgstr "タブを一つくらいは残してください。"
+
+#: view/i18n_js.html:31
+msgid "Are you sure you want to delete this tab?"
+msgstr "本当にこのタブを削除していいですか？"
+
+#: view/i18n_js.html:32
+msgid "Cancel"
+msgstr "キャンセル"
+
+#: view/i18n_js.html:33 view/main.html:108 view/main.html.py:178
+msgid "Add Column"
+msgstr "カラム追加"
+
+#: view/i18n_js.html:34
+msgid "Message posted to \"$(name)\"."
+msgstr "$(name)へ投稿しました。"
+
+#: view/i18n_js.html:35
+msgid "Failed to post message to \"$(name)\"."
+msgstr "$(name)への投稿に失敗しました。"
+
+#: view/i18n_js.html:36
+msgid "Please enter a new shortcut name."
+msgstr "ショートカットのラベルを入力してください。"
+
+#: view/i18n_js.html:37
+msgid "Shortcut \"$(name)\" successfully saved."
+msgstr "ショートカット「$(name)」を保存しました。"
+
+#: view/i18n_js.html:38
+msgid "Failed to save shortcut \"$(name)\"."
+msgstr "ショートカット「$(name)」の保存に失敗しました。"
+
+#: view/i18n_js.html:39
+msgid "Failed to shrink URL."
+msgstr "URLの短縮に失敗しました。"
+
+#: view/i18n_js.html:40
+msgid "Shortcut successfully renamed to \"$(name)\"."
+msgstr "ショートカット「$(name)」にラベルを変更しました。"
+
+#: view/i18n_js.html:41
+msgid "Failed to rename shortcut \"$(name)\"."
+msgstr "ショートカット「$(name)」のラベル名変更に失敗しました。"
+
+#: view/i18n_js.html:42
+msgid "Are you sure you want to delete this shortcut?"
+msgstr "このショートカットを削除してよろしいですか？"
+
+#: view/i18n_js.html:43
+msgid "Shortcut \"$(name)\" successfully deleted."
+msgstr "ショートカット「$(name)」を削除しました。"
+
+#: view/i18n_js.html:44
+msgid "Failed to delete shortcut \"$(name)\"."
+msgstr "ショートカット「$(name)」の削除に失敗しました。"
+
+#: view/i18n_js.html:45
+msgid "Rename"
+msgstr "ラベル名変更"
+
+#: view/i18n_js.html:46
+msgid "Label Color"
+msgstr "ラベルの色"
+
+#: view/i18n_js.html:47
+msgid "Color of the shortcut \"$(name)\" successfully changed."
+msgstr "ショートカット「$(name)」のラベルの色を変更しました。"
+
+#: view/i18n_js.html:48
+msgid "Failed to change the color of shortcut \"$(name)\"."
+msgstr "ショートカット「$(name)」のラベルの色の変更に失敗しました。"
+
+#: view/i18n_js.html:49
+msgid "Desktop notifications successfully changed."
+msgstr "デスクトップ通知を切り替えました。"
+
+#: view/i18n_js.html:50
+msgid "Failed to change desktop notifications."
+msgstr "デスクトップ通知の切り替えに失敗しました。"
+
+#: view/i18n_js.html:51
+msgid ""
+"<div>allows Crowy to display popup notifications on your desktop.<br/>If "
+"notifications setting of a column is off, Crowy don't notify you.<br/>You "
+"can set notification setting of a column in right top triangle of every "
+"column.</div>"
+msgstr ""
+"<div>デスクトップ通知をON/OFFします。<br/>カラム毎のデスクトップ通知が有効に"
+"なっていないと通知されませんので、ご注意ください。<br/>カラム毎の通知設定は各"
+"カラムの右上の「▼」より行うことができます。</div>"
+
+#: view/i18n_js.html:52
+msgid ""
+"Are you sure you want to delete account \"$(name)\"?\\nIf delete, all column "
+"of this account will be deleted."
+msgstr ""
+"本当に$(name)を削除していいですか？\\nこのアカウントで追加したカラムも消え"
+"ちゃいますよ。"
+
+#: view/i18n_js.html:53
+msgid "This account successfully deleted. Crowy reload now."
+msgstr "アカウントを削除しました。ページを再読み込みします。"
+
+#: view/i18n_js.html:54
+msgid "Failed to delete this account."
+msgstr "アカウントの削除に失敗しました。"
+
+#: view/i18n_js.html:55 view/main.html:201
+msgid "Show Conversation"
+msgstr "会話履歴の表示"
+
+#: view/i18n_js.html:56
+msgid "More>>"
+msgstr "もっと読む>>"
+
+#: view/i18n_js.html:57
+msgid "<<Close"
+msgstr "<<閉じる"
+
+#: view/i18n_js.html:58
+msgid "Retweet this to your followers?"
+msgstr "あなたのフォロワーにこれをリツイートしますか？"
+
+#: view/i18n_js.html:59
+msgid "Message has been retweeted by $(account)."
+msgstr "$(account)でリツイートしました。"
+
+#: view/i18n_js.html:60
+msgid "Failed to retweet by $(account)."
+msgstr "$(account)でのリツイートに失敗しました。"
+
+#: view/i18n_js.html:61
+msgid "Message successfully favorited"
+msgstr "お気に入りに追加しました。"
+
+#: view/i18n_js.html:62
+msgid "Failed to favorite message."
+msgstr "お気に入りへの追加に失敗しました。"
+
+#: view/i18n_js.html:63
+msgid "Failed to load comments."
+msgstr "コメントの取得に失敗しました。"
+
+#: view/i18n_js.html:65
+msgid "Message successfully liked."
+msgstr "Likeしました。"
+
+#: view/i18n_js.html:66
+msgid "Failed to like message."
+msgstr "Likeに失敗しました。"
+
+#: view/i18n_js.html:67
+msgid "Message successfully unliked."
+msgstr "Likeを取り消しました。"
+
+#: view/i18n_js.html:68
+msgid "Failed to unlike message."
+msgstr "Likeの取り消しに失敗しました。"
+
+#: view/i18n_js.html:69
+msgid "People who like this"
+msgstr "「いいね！」と言っている人"
+
+#: view/i18n_js.html:70
+msgid "Anyone don't like this."
+msgstr "誰も「いいね！」と言っていません。"
+
+#: view/i18n_js.html:71
+msgid "Your Facebook Pages"
+msgstr "あなたのFacebookページ"
+
+#: view/i18n_js.html:72
+msgid "Add"
+msgstr "追加"
+
+#: view/i18n_js.html:74
+msgid "Retweeted by $(account)"
+msgstr "$(account)がリツイート"
+
+#: view/i18n_js.html:75
+msgid "Retweeted by $(account) and $(count) others"
+msgstr "$(account)他$(count)人がリツイート"
+
+#: view/i18n_js.html:76
+msgid "OK"
+msgstr "OK"
+
+#: view/i18n_js.html:77
+msgid "$(service) returns error. Try again later."
+msgstr "$(service)でエラーが発生しました。しばらく待ってからお試しください。"
+
+#: view/i18n_js.html:78
+msgid "Cybozu Live"
+msgstr "サイボウズLive"
+
+#: view/i18n_js.html:79
+msgid "Press Ctrl+Enter to post."
+msgstr "Ctrl+Enterで投稿"
+
+#: view/i18n_js.html:80
+msgid "Can\\'t upload image in $(services)."
+msgstr "$(services)には画像をアップロードできません。"
+
+#: view/i18n_js.html:81
+msgid "This tweet has been deleted successfully."
+msgstr "ツイートを削除しました。"
+
+#: view/i18n_js.html:82
+msgid "Failed to delete this tweet"
+msgstr "ツイートの削除に失敗しました。"
+
+#: view/i18n_js.html:83
+msgid "Are you sure you want to delete this tweet?\\n$(tweet)"
+msgstr "本当にこのツイートを削除していいですか？"
+
+#: view/i18n_js.html:84
+msgid "Message successfully unfavorited"
+msgstr "お気に入りを取り消しました。"
+
+#: view/i18n_js.html:85
+msgid "Failed to unfavorite message."
+msgstr "お気に入りの取り消しに失敗しました。"
+
+#: view/i18n_js.html:86
+msgid "Anyone don't retweet this."
+msgstr "誰もリツイートしていません。"
+
+#: view/i18n_js.html:87
+msgid "Color"
+msgstr "カラムの色"
+
+#: view/i18n_js.html:88
+msgid "Color of the column \"$(name)\" has been changed."
+msgstr "カラム「$(name)」の色を変更しました。"
+
+#: view/i18n_js.html:89
+msgid "Failed to change color of the column \"$(name)\"."
+msgstr "カラム「$(name)」の色の変更に失敗しました。"
+
+#: view/i18n_js.html:90 view/main.html:209
+msgid "Retweet"
+msgstr "公式リツイート"
+
+#: view/i18n_js.html:91
+msgid "Follow"
+msgstr "フォローする"
+
+#: view/i18n_js.html:92
+msgid "Unfollow"
+msgstr "フォロー解除"
+
+#: view/i18n_js.html:93 view/i18n_js.html.py:100
+msgid "Following"
+msgstr "フォローしている"
+
+#: view/i18n_js.html:94
+msgid "Followers"
+msgstr "フォローされている"
+
+#: view/i18n_js.html:95
+msgid "Tweets"
+msgstr "ツイート"
+
+#: view/i18n_js.html:96
+msgid "Favorites"
+msgstr "お気に入り"
+
+#: view/i18n_js.html:97
+msgid "Friendships"
+msgstr "フォロー関係"
+
+#: view/i18n_js.html:98
+msgid "Friends"
+msgstr "相互フォロー"
+
+#: view/i18n_js.html:99
+msgid "Fan"
+msgstr "フォローされている"
+
+#: view/i18n_js.html:101
+msgid "Your follow request has been sent."
+msgstr "フォローリクエストが送信されました"
+
+#: view/i18n_js.html:102 view/main.html:220
+msgid "DM"
+msgstr "DM"
+
+#: view/i18n_js.html:103 view/main.html:202
+msgid "Reply"
+msgstr "返信"
+
+#: view/i18n_js.html:104
+msgid "You should connect to Twitter."
+msgstr "Twitterと連携する必要があります。"
+
+#: view/i18n_js.html:105
+msgid "Please select an account linked to the new column."
+msgstr "追加するカラムに関連付けるアカウントを選択してください。"
+
+#: view/i18n_js.html:106
+msgid "Are you sure you want to logout from Google?"
+msgstr "Googleからもログアウトしますか？"
+
+#: view/i18n_js.html:107
+msgid "Only Crowy"
+msgstr "Crowyのみ"
+
+#: view/i18n_js.html:108
+msgid "Crowy and Google"
+msgstr "CrowyとGoogle"
+
+#: view/i18n_js.html:109
+msgid ""
+"<a class=\"friend-name\"/> posted about <a class=\"this-product\">this "
+"product</a>"
+msgstr ""
+"<a class=\"friend-name\"/>さんが<a class=\"this-product\">この商品</a>"
+"についてコメントしています"
+
+#: view/index-en.html:107 view/index.html:111 view/main.html:145
+msgid "en"
+msgstr "ja"
+
+#: view/index-en.html:108 view/index.html:112 view/main.html:144
+msgid "About Us"
+msgstr "運営会社"
+
+#: view/linkedin_accounts.html:1 view/linkedin_add_column.html:1
+msgid "There is no account of LinkedIn."
+msgstr "まだLinkedInのアカウントがありません。"
+
+#: view/main.html:83 view/main.html.py:151
+msgid "Settings"
+msgstr "設定"
+
+#: view/main.html:84
+msgid "Logout"
+msgstr "ログアウト"
+
+#: view/main.html:86
+msgid "Help"
+msgstr "ヘルプ"
+
+#: view/main.html:87
+msgid "Blog"
+msgstr "ブログ"
+
+#: view/main.html:96
+msgid "Compose message"
+msgstr "メッセージの作成"
+
+#: view/main.html:104
+msgid "Add Tab"
+msgstr "タブ追加"
+
+#: view/main.html:107
+msgid "Refresh"
+msgstr "更新"
+
+#: view/main.html:123
+msgid ""
+"<h2>This tab has no column.</h2><p>You can add a column in which a timeline "
+"of various services displays.</p><button>Add Column</button>"
+msgstr ""
+"<h2>このタブにはまだカラムがありません。</h2><p>各カラムにソーシャルネット"
+"ワークのメッセージタイムラインを表示することができます。</p><button>カラム追"
+"加</button>"
+
+#: view/main.html:154
+msgid "Services"
+msgstr "連携サービス"
+
+#: view/main.html:155 view/settings_basic.html:4
+msgid "Preferences"
+msgstr "基本設定"
+
+#: view/main.html:159
+msgid ""
+"<h3>Welcome to Crowy!</h3>At first you must add other service.<br>Please "
+"click the tab which you connect with and click [Connect]."
+msgstr ""
+"<h3>Crowyにようこそ！</h3>まず初めに他のソーシャルメディアとの連携設定を行う"
+"必要があります。<br>連携したいサービスのタブをクリックし、「アカウントを追"
+"加」をクリックしてください。"
+
+#: view/main.html:161
+msgid "You can add connections with other services and remove them."
+msgstr "他のサービスとの連携設定の追加・削除を行うことができます。"
+
+#: view/main.html:171 view/main.html.py:190
+msgid "Cybozu Live(Lab)"
+msgstr "サイボウズLive(Lab)"
+
+#: view/main.html:180
+msgid "Please select the service which you want to add."
+msgstr "追加するカラムに表示したいサービスを選択してください。"
+
+#: view/main.html:199
+msgid "Like"
+msgstr "Like"
+
+#: view/main.html:200
+msgid "Unlike"
+msgstr "Unlike"
+
+#: view/main.html:201
+msgid "Thread"
+msgstr "会話"
+
+#: view/main.html:203
+msgid "Comment"
+msgstr "コメント"
+
+#: view/main.html:205
+msgid "RT"
+msgstr "公式RT"
+
+#: view/main.html:208
+msgid "Classic RT"
+msgstr "非公式RT"
+
+#: view/main.html:213
+msgid "Favorite"
+msgstr "お気に入り"
+
+#: view/main.html:214
+msgid "Unfavorite"
+msgstr "お気に入りの取消"
+
+#: view/main.html:216
+msgid "Others"
+msgstr "その他"
+
+#: view/main.html:219
+msgid "Reply all"
+msgstr "全員に返信"
+
+#: view/main.html:220
+msgid "Direct Message"
+msgstr "ダイレクトメッセージ"
+
+#: view/main.html:226
+msgid "Multi post"
+msgstr "マルチポストする"
+
+#: view/main.html:233
+msgid "To:"
+msgstr "投稿先:"
+
+#: view/main.html:262
+msgid "Add these addresses to shortcuts."
+msgstr "この宛先をショートカットして保存する"
+
+#: view/rss_add_column.html:1
+msgid "Paste a feed url."
+msgstr "フィードのURLを入力してください。"
+
+#: view/rss_add_column.html:1
+msgid "Input a valid URL."
+msgstr "正しいURLを入力してください。"
+
+#: view/settings_basic.html:6
+msgid "Display Density:"
+msgstr "表示モード："
+
+#: view/settings_basic.html:8
+msgid "Comfortable"
+msgstr "見やすさ優先"
+
+#: view/settings_basic.html:9
+msgid "Normal"
+msgstr "標準"
+
+#: view/settings_basic.html:10
+msgid "Compact"
+msgstr "コンパクト"
+
+#: view/settings_basic.html:14
+msgid "Language:"
+msgstr "言語："
+
+#: view/settings_basic.html:21
+msgid "Keyboard Shortcuts"
+msgstr "キーボードショートカット"
+
+#: view/settings_basic.html:23
+msgid "Post:"
+msgstr "投稿："
+
+#: view/settings_basic.html:30
+msgid "Save Changes"
+msgstr "変更を保存"
+
+#: view/settings_basic.html:45
+msgid "Preferences successfully saved."
+msgstr "基本設定を保存しました。"
+
+#: view/settings_basic.html:49
+msgid "Failed to save preferences."
+msgstr "基本設定の保存に失敗しました。"
+
+#: view/twitter_accounts.html:1 view/twitter_add_column.html:1
+msgid "There is no account of Twitter."
+msgstr "まだTwitterのアカウントがありません。"
+
+#: view/twitter_add_column.html:1
+msgid "List"
+msgstr "リスト"
+
+#: view/twitter_add_column.html:1
+msgid "Select the type of feed."
+msgstr "フィードを選択してください。"
+
+#: view/twitter_add_column.html:1
+msgid "Select the list."
+msgstr "リストを選択してください。"
+
+#: view/yammer_accounts.html:1 view/yammer_add_column.html:1
+msgid "There is no account of Yammer."
+msgstr "まだYammerのアカウントがありません。"
+
+#: view/yammer_add_column.html:1
+msgid "Please select an network."
+msgstr "ネットワークを選択してください。"
+
+#: view/yammer_authorize.html:30
+msgid ""
+"<h2>1. Get an access code from Yammer</h2><p>Login to Yammer and grant Crowy "
+"access to your Yammer Account. After 4 digit access code is displayed, enter "
+"the code into the text box of No.2.<br></p>"
+msgstr ""
+"<h2>1. Yammerからアクセスコードの取得</h2><p>まず、Yammerにログインし、Crowy"
+"のYammerへのアクセスを許可してください。<br>4桁のアクセスコードが表示された"
+"ら、そのアクセスコードを2. の入力ボックスに入力してください。</p>"
+
+#: view/yammer_authorize.html:32
+msgid "Get access code from Yammer"
+msgstr "Yammerにログイン"
+
+#: view/yammer_authorize.html:36
+msgid ""
+"<h2>2. Enter an access code.</h2><p>Enter the access code and click the "
+"following button.</p>"
+msgstr ""
+"<h2>2. アクセスコードの入力</h2><p>1. で取得したアクセスコードを以下の入力"
+"ボックスに入力し、下のボタンをクリックしてください。</p>"
+
+#: view/yammer_authorize.html:40
+msgid "Connect with Yammer"
+msgstr "Yammerに接続"
+
+#: view/youroom_accounts.html:1 view/youroom_add_column.html:1
+msgid "There is no account of youRoom."
+msgstr "まだyouRoomのアカウントがありません。"
+
+#~ msgid "Message successfully retweeted."
+#~ msgstr "リツイートしました。"
+
+#~ msgid "Failed to retweet message."
+#~ msgstr "リツイートに失敗しました。"
+
+#~ msgid "View Conversation"
+#~ msgstr "会話履歴の表示"
+
+#~ msgid "Forum"
+#~ msgstr "フォーラム"
+
+#~ msgid "Old RT"
+#~ msgstr "RT"
+
+#~ msgid "lang"
+#~ msgstr "ja"

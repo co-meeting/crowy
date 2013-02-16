@@ -1,0 +1,297 @@
+{% load i18n %}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="Facebook/Twitter/LinkedIn/Yammer/サイボウズLie/youRoomをまとめるソーシャル・コミュニケーション・ダッシュボード" /> 
+<meta name="keywords" content="Facebookグループ,Facebookクライアント,Twitterクライアント,Yammer,サイボウズLive,youRoom,ソーシャルメディア,グループコミュニケーション,マルチカラム" />
+<meta name="copyright" content="" /> 
+<meta property="og:title" content="Crowy - Social Communication Dashboard" />
+<meta property="og:url" content="http://www.crowy.net/" />
+<meta property="og:site_name" content="Crowy" />
+<meta property="og:image" content="http://pic.crowy.net/images/crowyStripe.png" />
+<meta property="og:type" content="article" />
+<meta property="og:description" content="Facebook/Twitter/LinkedIn/Yammer/サイボウズLie/youRoomをまとめるソーシャル・コミュニケーション・ダッシュボード">
+
+	<title>Crowy - Social Communication Dashboard</title>
+	<link rel="apple-touch-icon" href="http://pic.crowy.net/images/crowy-appletouch.png" />
+	<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/themes/black-tie/jquery-ui.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="http://pic.crowy.net/js/tipTipv13/tipTip.css" />
+	<link rel="stylesheet" type="text/css" href="http://pic.crowy.net/js/colorbox/example1/colorbox.css" />
+	<link rel="stylesheet" type="text/css" href="http://pic.crowy.net/css/reset.css" />
+	{%if production%}
+	<link rel="stylesheet" type="text/css" href="http://pic.crowy.net/css/main.min.css?{{version}}" />
+	{%else%}
+	<link rel="stylesheet" type="text/css" href="static/css/main.css?{{version}}" />
+	{%endif%}
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="http://pic.crowy.net/js/jquery.livequery.js"></script>
+	<script type="text/javascript" src="http://pic.crowy.net/js/jquery-dom.js"></script>
+	<script type="text/javascript" src="http://pic.crowy.net/js/tipTipv13/jquery.tipTip.min.js"></script>
+	<script type="text/javascript" src="http://pic.crowy.net/js/jquery.mousewheel.min.js"></script>
+	<script type="text/javascript" src="http://pic.crowy.net/js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="http://pic.crowy.net/js/jquery.growing-textarea.js"></script>
+	<script type="text/javascript" src="http://pic.crowy.net/js/colorbox/jquery.colorbox-min.js"></script>
+	<script type="text/javascript" src="http://pic.crowy.net/js/plupload/plupload.full.js"></script>
+	<script type="text/javascript" src="http://pic.crowy.net/js/plupload/jquery.plupload.queue/jquery.plupload.queue.js"></script>
+
+	<script type="text/javascript" src="i18n.js"></script>
+	<script type="text/javascript">
+	var tabConfs = {{tabs}};
+	var notificationStatus = {%if user.notification%}true{%else%}false{%endif%};
+	var loginService = "{{user.service}}";
+	var postKey = "{%if user.post_key%}{{user.post_key}}{%else%}shift{%endif%}";
+	var displayDensity = "{%if user.display_density%}{{user.display_density}}{%else%}normal{%endif%}";
+	var STATIC_URL ="{{static_url}}";
+	var EXPAND_URL = "{{expand_url}}";
+	var AD_HTML = "{{ad_html}}";
+	</script>
+	{%if production%}
+	<script type="text/javascript" src="http://pic.crowy.net/js/main.min.js?{{version}}"></script>
+	{%else%}
+	<script type="text/javascript" src="static/js/main.js?{{version}}"></script>
+	{%endif%}
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-19252844-1']);
+  _gaq.push(['_setDomainName', 'crowy.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+	<script type="text/javascript" src="https://www.google.com/jsapi?key=ABQIAAAA9glPXBNU4uhKJv6xsm52MxRfaZtykQO7ORuPBfwho9xjomFuFxSZyMM-WCFT3W5ZiVEDMl7tUDp6Ag"></script>
+	<script>google.load("feeds", "1");</script>
+</head>
+<body class="{%if user.display_density%}{{user.display_density}}{%else%}normal{%endif%}">
+	<ul id="right-header">
+		<li id="desktop-notifier" class="notifier-off">
+			<a href="javascript:toggleNotification()" id="notification-switch">desktop notifier</a>
+		</li>
+		<!-- classを"notifier-offに変更するとデスクトップ通知OFFアイコンになる -->
+		
+		<li id="account-name">{{user.name}}</li>
+		<li id="account-info">
+			<img class="account-thumb" src="http://pic.crowy.net/images/noprofileimage.gif" alt="icon-dummy" width="20" height="20" />
+			<a href="#" id="user-menu">Account</a>
+		</li>
+	</ul>
+	<div id="top-menu-more" style="display:none;">
+		<a href="#" id="settings">{% trans "Settings" %}</a>
+		<a href="logout" id="logout">{% trans "Logout" %}</a>
+		<div class="separator"></div>
+		<a href="http://docs.crowy.net/" target="_blank">{% trans "Help" %}</a>
+		<a href="http://crowyjp.wordpress.com/" target="_blank">{% trans "Blog" %}</a>
+		<a href="http://www.facebook.com/crowy.net" target="_blank">Facebook</a>
+		<a href="http://twitter.com/crowy_jp" target="_blank">Twitter</a>
+	</div>
+	<div id="tabs">
+		<div id="tabs-background">
+		</div>
+		<div id="tabs-navi-cover-left" class="tabs-navi-cover">
+			<div id="crowy"></div>
+			<div id="multiPost" title="{% trans "Compose message" %}"><a href="#">Multi-post</a></div>
+			<div id="multiPost-bookmark"><a href="#">Address</a></div>
+			<div id="tabs-prev" class="button"><a href="#">&lt;</a></div>
+		</div>
+		<ul id="tabs-navi">
+		</ul>
+		<div id="tabs-navi-cover-right" class="tabs-navi-cover">
+			<div id="tabs-next" class="button"><a href="#">&gt;</a></div>
+			<div id="add-tab" class="button" title="{% trans "Add Tab" %}"><a href="#">-</a></div>
+		</div>
+		<div id="tab-tool-bar">
+			<div id="refresh-tab" title="{% trans "Refresh" %}"><a href="#"><div class="icon"></div>{% trans "Refresh" %}</a></div>
+			<div id="add-column" title="{% trans "Add Column" %}"><a href="#"><div class="icon"></div>{% trans "Add Column" %}</a></div>
+			
+			<!-- 検索領域 -->
+			<!-- classを"twsearch"に変更すると、Twitter検索表示になる
+			クリックされたら、メニュー表示で切り替え？ -->
+			<div id="searchBkgnd">
+				<form id="search-form">
+					<div id="searchType-menu" class="twsearch"><a href="#">Search</a></div>
+					<input type="text" id="search-keyword" value="">
+				</form>
+			</div>
+		</div>
+		<div class="tab-content">
+		</div>
+		<div id="nocolumn" style="display:none">
+			{% blocktrans %}<h2>This tab has no column.</h2><p>You can add a column in which a timeline of various services displays.</p><button>Add Column</button>{% endblocktrans %}
+		</div>
+	</div>
+	<div id="address-shortcut"></div>
+	<div id="footer">
+		<div class="ads">
+	<script type="text/javascript"><!--
+google_ad_client = "pub-0344855665929262";
+/* 728x15, 作成済み 10/10/30 */
+google_ad_slot = "8427478710";
+google_ad_width = 728;
+google_ad_height = 15;
+//-->
+</script>
+<!--script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script-->
+			<div id="footer-message">
+			</div>
+		</div>
+		<div class="footer-right">
+			<div class="footer-link"><a href="http://about.co-meeting.com/" target="_blank">{% trans "About Us" %}</a></div>
+			<div class="footer-link"><a href="http://pic.crowy.net/terms_{% trans "en" %}.html" target="_blank">{% trans "Terms" %}</a></div>
+			<div class="copyright">
+				co-meeting &copy;2011
+			</div>
+		</div>
+	</div>
+	<div id="settings-popup" title="{% trans "Settings" %}" style="display:none">
+		<div id="settings-tabs">
+			<ul>
+				<li><a href="#settings-services">{% trans "Services" %}</a></li>
+				<li><a href="settings/basic">{% trans "Preferences" %}</a></li>
+			</ul>
+			<div id="settings-services">
+				<div class="desc1">
+					{% blocktrans %}<h3>Welcome to Crowy!</h3>At first you must add other service.<br>Please click the tab which you connect with and click [Connect].{% endblocktrans %}
+				</div>
+				<div class="desc2">{% trans "You can add connections with other services and remove them." %}</div>
+				<table id="account-tabs">
+					<tr><td>
+					<ul class="service-list">
+						<li><a href="twitter/accounts" class="twitter button">Twitter</a></li>
+						<li><a href="facebook/accounts" class="facebook button">Facebook</a></li>
+						<li><a href="linkedin/accounts" class="linkedin button">LinkedIn</a></li>
+						<!--li><a href="chatter/accounts" class="chatter button">Chatter</a></li-->
+						<li><a href="yammer/accounts" class="yammer button">Yammer</a></li>
+						<li><a href="youroom/accounts" class="youroom button">youRoom</a></li>
+						<li><a href="cybozulive/accounts" class="cybozulive button">{% trans "Cybozu Live(Lab)" %}</a></li>
+					</ul>
+					</td></tr>
+				</table>
+			</div>
+		</div>
+	</div>
+	<div id="add-column-popup" title="{% trans "Add Column" %}" style="display:none">
+		<p>
+			<p>{% trans "Please select the service which you want to add." %}</p>
+			<table id="add-column-tabs">
+				<tr><td class="service-list-td">
+				<ul class="service-list">
+					<li><a href="twitter/add_column" class="twitter button">Twitter</a></li>
+					<li><a href="facebook/add_column" class="facebook button">Facebook</a></li>
+					<li><a href="linkedin/add_column" class="linkedin button">LinkedIn</a></li>
+					<!--li><a href="chatter/add_column" class="chatter button">Chatter</a></li-->
+					<li><a href="yammer/add_column" class="yammer button">Yammer</a></li>
+					<li><a href="youroom/add_column" class="youroom button">youRoom</a></li>
+					<li><a href="cybozulive/add_column" class="cybozulive button">{% trans "Cybozu Live(Lab)" %}</a></li>
+					<!-- li><a href="googleplus/add_column" class="googleplus button">Google+(Lab)</a></li -->
+					<li><a href="rss/add_column" class="rss button">RSS(Lab)</a></li>
+				</ul>
+				</td></tr>
+			</table>
+		</p>
+	</div>
+	<div id="message-command" style="display:none">
+		<div rel="like" class="like menu-item" title="{% trans "Like" %}"><a href="#">{% trans "Like" %}</a></div>
+		<div rel="unlike" class="unlike menu-item" title="{% trans "Unlike" %}"><a href="#">{% trans "Unlike" %}</a></div>
+		<div rel="thread" class="thread menu-item" title="{% trans "Show Conversation" %}"><a href="#">{% trans "Thread" %}</a></div>
+		<div rel="reply" class="reply menu-item" title="{% trans "Reply"%}"><a href="#">{% trans "Reply" %}</a></div>
+		<div rel="comment" class="comment menu-item" title="{% trans "Comment"%}"><a href="#">{% trans "Comment" %}</a></div>
+		<div rel="group" class="retweet menu-group">
+			<a href="#">{% trans "RT" %}</a>
+			<div class="menu-group-cover">
+				<ul>
+					<li rel="rt" class="rt menu-item" title="{% trans "Classic RT" %}"><a href="#">{% trans "Classic RT" %}</a></li>
+					<li rel="retweet" class="retweet menu-item" title="{% trans "Retweet" %}"><a href="#">{% trans "Retweet" %}</a></li>
+				</ul>
+			</div>
+		</div>
+		<div rel="favorites" class="favorites menu-item" title="{% trans "Favorite" %}"><a href="#">{% trans "Favorite" %}</a></div>
+		<div rel="unfavorite" class="favorites-on menu-item" title="{% trans "Unfavorite" %}"><a href="#">{% trans "Unfavorite" %}</a></div>
+		<div rel="group" class="menu menu-group">
+			<a href="#">{% trans "Others" %}</a>
+			<div class="menu-group-cover">
+				<ul>
+					<li rel="replyall" class="replyall menu-item" title="{% trans "Reply all" %}"><a href="#">{% trans "Reply all" %}</a></li>
+					<li rel="dm" class="dm menu-item" title="{% trans "Direct Message" %}"><a href="#">{% trans "DM" %}</a></li>
+					<li rel="delete" class="delete menu-item" title="{% trans "Delete" %}"><a href="#">{% trans "Delete" %}</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div id="message-post-dialog" title="{% trans "Multi post" %}" style="display:none;">
+		<div id="message-post-loading"></div>
+		<div id="reply-to-message"></div>
+		<div class="inputField">
+			<div class="sns-send">
+				<table>
+					<tr>
+						<td class="label"><span class="send-label">{% trans "To:" %}</span></td>
+						<td class="field" colspan="2"><input type="text" id="message-from"></td>
+					</tr>
+				</table>
+			</div>
+			<div class="colText-field-open">
+				<textarea id="message-body"></textarea>
+				<div id="message-body-footer">
+					<div id="message-counter" class="counter">0</div>
+					<div id="message-over-twitter" class="icon"></div>
+					<div id="message-over-linkedin" class="icon"></div>
+					<div id="message-over-youroom" class="icon"></div>
+				</div>
+			</div>
+			<div class="filelist"></div>
+			<div id="upload-image-warning"></div>
+			<div class="col-field-tool">
+				<td class="field">
+					<div id="filecontainer">
+					</div>
+				</td>
+				<div id="message-help"></div>
+				<input type="hidden" value="" name="reply-to" id="reply-to"/>
+				<p class="submit-btn2" id="message-post-ok"><a href="#">{% trans "Send" %}</a></p>
+				<p class="clear-btn" id="message-post-clear"><a href="#">{% trans "Clear" %}</a></p>
+			</div>
+		</div>
+		<p class="shortcut">
+			<input type="checkbox" id="address-shortcut-check" />
+			<label for="address-shortcut-check">{% trans "Add these addresses to shortcuts." %}</label>
+		</p>
+	</div>
+	<div id="information" title="お知らせ" style="display:none;">
+		<img src="http://pic.crowy.net/images/crowy-banner.png">
+		<h3>Crowyを大幅リニューアルしました！</h3>
+		<p></p>
+		<p>
+			デザイン/ユーザインターフェースを刷新し、さらに快適で楽しく使えるツールになりました。
+			他にも大幅に機能追加しています。
+		</p>
+		<ul>
+			<li>Facebookグループ/Facebookページに対応</li>
+			<li>Twitter/Facebook/Yammer/LinkedIn/youRoomの画像添付に対応</li>
+			<li>LinkedInに対応</li>
+			<li>Yammerグループに対応</li>
+			<li>その他多くの機能改善</li>
+		</ul>
+		<p>&nbsp;</p>
+		<h3>[注意]Crowy既存ユーザでFacebookと連携済みの方へ</h3>
+		<p>Facebook対応機能を大幅アップしたため、再認可が必要です。下のボタンからFacebookに接続し、再認可を行なってください。</p>
+		<p style="text-align:center;margin:10px;">
+			<a href="javascript:popup('/facebook/oauth')" class="reconnect-facebook">Facebookに接続</a>
+		</p>
+	</div>
+	<div id="notice" style="display:none">
+	</div>
+	<div id="notification" class="ui-widget-header" style="display:none">
+		<div class="ui-icon ui-icon-close"></div>
+		<div class="content"></div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,822 @@
+/* メッセージ入力フォーム */
+#message-button{
+}
+#message-post-dialog table{
+	margin:0;
+	padding:0;
+	width:100%;
+}
+#message-post-dialog .label{
+	width:35px;
+	text-align:right;
+}
+#message-post-dialog .field{
+	border:1px solid #BBB;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	margin:1px;
+	padding:1px 4px;
+	background:#FFF;
+}
+#message-post-dialog .field input, 
+#message-post-dialog .field textarea{
+	width:100%;
+	border:none;
+	outline: none;
+	resize: none;
+}
+#message-post-dialog .field input#message-from{
+	width:50px;
+	margin:3px 0;
+	height:16px;
+	padding:1px 0;
+	float:left;
+}
+#message-post-dialog .message-from-added{
+	float:left;
+	-moz-box-shadow: #DDD 0px -1px 2px, white 0px 0px 0px 1px inset;
+	-webkit-box-shadow: #DDD 0px -1px 2px, white 0px 0px 0px 1px inset;
+	box-shadow: #DDD 0px -1px 2px, white 0px 0px 0px 1px inset;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	background: #FFF2F4 no-repeat 1px 1px;
+	border: 1px solid #CCC;
+	color: #555;
+	padding:1px 3px 1px 20px;
+	margin:1px 5px 1px 0;
+	line-height:16px;
+	font-weight:normal;
+}
+#message-post-dialog .message-from-added.ui-state-active{
+	background-color:#4297D7;
+	color:#FFF;
+	-moz-box-shadow: #DDD 0px -1px 2px, #4297D7 0px 0px 0px 1px inset;
+	-webkit-box-shadow: #DDD 0px -1px 2px, #4297D7 0px 0px 0px 1px inset;
+	box-shadow: #DDD 0px -1px 2px, #4297D7 0px 0px 0px 1px inset;
+}
+#message-post-dialog .message-from-added .ui-icon{
+	cursor:pointer;
+}
+.ui-autocomplete .ui-menu-item a{
+	padding-left:19px;
+	background-repeat:no-repeat;
+	background-position:1px 1px;
+}
+#message-post-dialog .message-from-added.youroom,
+.ui-autocomplete .ui-menu-item .youroom{
+	background-image:url(../images/youroom.png);
+}
+#message-post-dialog .message-from-added.twitter,
+.ui-autocomplete .ui-menu-item .twitter{
+	background-image:url(../images/twitter.png);
+}
+#message-post-dialog .message-from-added.yammer,
+.ui-autocomplete .ui-menu-item .yammer{
+	background-image:url(../images/yammer.png);
+}
+#message-post-dialog .message-from-added.facebook,
+.ui-autocomplete .ui-menu-item .facebook{
+	background-image:url(../images/facebook.png);
+}
+#message-post-dialog .message-from-added.cybozulive,
+.ui-autocomplete .ui-menu-item .cybozulive{
+	background-image:url(../images/cybozulive.png);
+}
+#message-post-dialog .message-from-added .ui-icon{
+	float:right;
+}
+#message-post-dialog textarea{
+	height:100px;
+}
+#message-help{
+	position:relative;
+	height:19px;
+	line-height:19px;
+	overflow:hidden;
+	color:#BBB;
+}
+#message-help div.counter{
+	display:block;
+}
+#message-post-dialog .counter, #tabs .message-input .counter{
+	position:absolute;
+	-moz-box-shadow: #DDD 0px -1px 2px, white 0px 0px 0px 1px inset;
+	-webkit-box-shadow: #DDD 0px -1px 2px, white 0px 0px 0px 1px inset;
+	box-shadow: #DDD 0px -1px 2px, white 0px 0px 0px 1px inset;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	border: 1px solid #CCC;
+	background: #F2F2F4;
+	color: #AFB1B3;
+	font-weight:bold;
+	font-size:12px;
+	display:none;
+	bottom:1px;
+	line-height:16px;
+	padding:0 3px;
+	right:2px;
+}
+#message-post-dialog .counter.over, #tabs .message-input .counter.over{
+	border: 1px solid #BB3333;
+	background: #A55;
+	color: #DDD;
+	-moz-box-shadow: 0 -1px 2px #BB3333, 0 0 0 1px #AA5555 inset;
+	-webkit-box-shadow: 0 -1px 2px #BB3333, 0 0 0 1px #AA5555 inset;
+	box-shadow: 0 -1px 2px #BB3333, 0 0 0 1px #AA5555 inset;
+}
+#message-post-dialog .counter.over, #tabs .message-input .counter.over{
+	border: 1px solid #BB3333;
+	background: #A55;
+	color: #DDD;
+	-moz-box-shadow: 0 -1px 2px #BB3333, 0 0 0 1px #AA5555 inset;
+	-webkit-box-shadow: 0 -1px 2px #BB3333, 0 0 0 1px #AA5555 inset;
+	box-shadow: 0 -1px 2px #BB3333, 0 0 0 1px #AA5555 inset;
+}
+/*#message-container{
+	position:absolute;
+	background-color:#FFF;
+	padding:3px;
+	margin-left:28px;
+	top:0;
+	left:0;
+}
+#message-container.focus{
+	z-index:20;
+	-moz-box-shadow: 0px 0px 10px #000000;
+	-webkit-box-shadow: 0px 0px 10px #000000;
+	box-shadow: 0px 0px 10px #000000;
+}
+#message-container .status-container{
+	float:left;
+	border: 1px solid #A6C9E2;
+	width: 380px;
+	background-color:#FFF;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	-moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2) inset, 0 1px 0 #A6C9E2;
+	-webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2) inset, 0 1px 0 #A6C9E2;
+	box-shadow: 0 0 6px rgba(0, 0, 0, 0.2) inset, 0 1px 0 #A6C9E2;
+	position:relative;
+	height:32px\9;
+}
+#status-box{
+	width: 375px;
+	height: 20px;
+	border: none;
+	position: relative;
+	color: #AAA;
+	padding: 0;
+	margin: 3px;
+	outline: none;
+	resize: none;
+	overflow:hidden;
+	font-size:1.1em;
+}
+#message-container.focus #status-box{
+	color: #222;
+	height:80px;
+	overflow-y:scroll;
+}
+#status-box-help{
+	color: #AAA;
+	display: block;
+	position: absolute;
+	top: 6px;
+	left: 10px;
+	font-size:1.1em;
+}
+#message-container .status-box-outer{
+	position:relative;
+}
+#message-container.focus .status-container .counter{
+	display:block;
+}
+#message-container .status-container .counter, #tabs .message-input .counter{
+	position:absolute;
+	bottom:5px;
+	right:18px;
+	-moz-box-shadow: #DDD 0px -1px 2px, white 0px 0px 0px 1px inset;
+	-webkit-box-shadow: #DDD 0px -1px 2px, white 0px 0px 0px 1px inset;
+	box-shadow: #DDD 0px -1px 2px, white 0px 0px 0px 1px inset;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	border: 1px solid #CCC;
+	background: #F2F2F4;
+	color: #AFB1B3;
+	font-weight:bold;
+	padding:1px 5px;
+	font-size:12px;
+	display:none;
+}
+#message-container .status-container .counter.over, #tabs .message-input .counter.over{
+	border: 1px solid #BB3333;
+	background: #A55;
+	color: #DDD;
+	-moz-box-shadow: 0 -1px 2px #BB3333, 0 0 0 1px #AA5555 inset;
+	-webkit-box-shadow: 0 -1px 2px #BB3333, 0 0 0 1px #AA5555 inset;
+	box-shadow: 0 -1px 2px #BB3333, 0 0 0 1px #AA5555 inset;
+}
+#message-container .status-tools{
+	position:absolute;
+	right:0;
+	top:0;
+	zoom:1;
+}
+#message-container.focus .status-tools{
+	position:relative;
+	background:#F0F0F0;
+}
+#message-container .status-tools .meta{
+	display:none;
+}
+#message-container.focus .status-tools .meta{
+	display:block;
+	padding:3px 0 0 10px;
+}
+#message-container.focus #send-button{
+	position:absolute;
+	right:0;
+	top:3px;
+}
+#uploaded-file{
+	display:inline;
+}
+#send-button{
+	float:right;
+}
+#select-profile{
+	float:left;
+}
+#select-profile .profile-logo{
+	display:none;
+	clear:both;
+}
+#message-container.focus #select-profile .profile-logo{
+	display:block;
+	padding:2px 3px 0px;
+}
+#select-profile .profile-logo img{
+	/*height:35px;*/
+}
+#select-profile .profile-logo .second-logo{
+	float:left;
+	border:1px solid #222;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	background:#FFF;
+	height:33px;
+}
+#select-profile .profile-logo .second-logo img{
+	height:29px;
+	margin:2px;
+}
+#select-profile .profiles{
+	border: 1px solid #A6C9E2;
+	padding:4px;
+	margin-left:2px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	-moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2) inset, 0 1px 0 #A6C9E2;
+	-webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2) inset, 0 1px 0 #A6C9E2;
+	box-shadow: 0 0 6px rgba(0, 0, 0, 0.2) inset, 0 1px 0 #A6C9E2;
+	height:19px;
+	float:left;
+}
+#profile-icon{
+	width:16px;
+	height:16px;
+	float:left;
+}
+#select-profile select{
+	border:none;
+	height:18px;
+	width:230px;
+}
+#profile-icon.youRoom, #select-profile optgroup.youRoom{
+	background:url(../images/youroom.png) no-repeat;
+}
+#profile-icon.twitter, #select-profile optgroup.twitter{
+	background:url(../images/twitter.png) no-repeat;
+}
+#profile-icon.yammer, #select-profile optgroup.yammer{
+	background:url(../images/yammer.png) no-repeat;
+}
+#profile-icon.facebook, #select-profile optgroup.facebook{
+	background:url(../images/facebook.png) no-repeat;
+}
+#profile-icon.cybozulive, #select-profile optgroup.cybozulive{
+	background:url(../images/cybozulive.png) no-repeat;
+}
+#select-profile optgroup{
+	padding-left: 16px;
+}*/
+
+/* タブ */
+#tabs{
+	border:none;
+	padding: 0;
+	text-align:center\9;
+}
+#tabs *{
+	text-align:left\9;
+}
+#tabs-navi{
+	padding-left:26px;
+}
+#tabs-navi li{
+	height:43px;
+	padding-left:2px;
+	padding-right:2px;
+	width:auto;
+	text-align:right\9;/* IE8 and below */
+}
+#tabs-navi li input{
+	float:left;
+	margin:1px 2px;
+	padding:1px 0 0 0;
+	border: 1px solid #A6C9E2;
+	-moz-box-shadow: 0 0 2px rgba(0, 0, 0, 0.2) inset, 0 1px 0 #A6C9E2;
+	-webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.2) inset, 0 1px 0 #A6C9E2;
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.2) inset, 0 1px 0 #A6C9E2;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+}
+#tabs-navi .tab-name{
+	padding:2px 5px;
+}
+#tabs-navi li .ui-icon {
+	float: right;
+	float: none\9;
+	margin: 2px 3px 0 0;
+	cursor: pointer;
+}
+#tabs-navi .ui-sortable-helper .ui-icon{
+	display: none;
+}
+#command-menu{
+	position:absolute;
+	left:0;
+	top:3px;
+}
+#command-menu.show{
+	z-index:15;
+	background:url("http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/themes/redmond/images/ui-bg_gloss-wave_55_5c9ccc_500x100.png") repeat-x scroll 50% 50% #5C9CCC;
+	height:46px;
+}
+#command-menu-wrapper{
+	position:absolute;
+	z-index:10;
+	top:-40;
+	left:-20;
+	height:300px;
+	width:400px;
+	display:none;
+}
+#command-menu .buttons{
+	display:none;
+	margin:10px 2px 5px -200px;
+	float:left;
+}
+#command-menu .button{
+	float:left;
+	border: 1px solid #A6C9E2;
+	padding:0;
+	margin:0 2px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	-moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2) inset, 0 1px 0 #A6C9E2;
+	-webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2) inset, 0 1px 0 #A6C9E2;
+	box-shadow: 0 0 6px rgba(0, 0, 0, 0.2) inset, 0 1px 0 #A6C9E2;
+	height:42px;
+	line-height:32px;
+	cursor:pointer;
+	width:20px;
+	position:relative;
+}
+#command-menu .button .ui-icon{
+	position:absolute;
+	left:1px;
+	top:14px;
+}
+#tabs .tab-content{
+	overflow:auto;
+	overflow-y:hidden;
+	clear:both;
+}
+#tabs .tab-content .tab .ui-state-highlight{
+	float:left;
+}
+#tabs .ui-tabs-panel{
+	padding: 2px 0 0 0;
+}
+#tabs .column{
+	float:left;
+	width: 200px;
+	border: 1px solid #AAA;
+	border-bottom:none;
+	position:relative;
+	background:#F6F8F9;
+}
+#tabs .column .new-count{
+	position:absolute;
+	top:14px;
+	left:1px;
+	padding:1px 4px;
+	-moz-box-shadow: #000 0 2px 3px;
+	-webkit-box-shadow: #000 0 2px 3px;
+	box-shadow: #000 0 2px 3px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	z-index:10;
+	color:#FFF;
+	background-color:#AA2222;
+	display:none;
+	cursor:pointer;
+}
+#tabs .column-header{
+	height: 30px;
+	font-size: 14px;
+	padding-left: 17px;
+	line-height: 30px;
+	position: relative;
+	cursor:move;
+	overflow:hidden;
+}
+#tabs .column-header .icon{
+	width:16px;
+	height:16px;
+	position:absolute;
+	top:0;
+	left:0;
+}
+#tabs .column-header .icon.youroom{
+	background:url(../images/youroom.png) no-repeat;
+}
+#tabs .column-header .icon.twitter{
+	background:url(../images/twitter.png) no-repeat;
+}
+#tabs .column-header .icon.yammer{
+	background:url(../images/yammer.png) no-repeat;
+}
+#tabs .column-header .icon.facebook{
+	background:url(../images/facebook.png) no-repeat;
+}
+#tabs .column-header .icon.cybozulive{
+	background:url(../images/cybozulive.png) no-repeat;
+}
+#tabs .column-header .icon.rss{
+	background:url(../images/rss.png) no-repeat;
+}
+#tabs .column-header .icon.loading{
+	background:url(../images/ajax-loader.gif) no-repeat;
+}
+#tabs .column-header-icon {
+	border: medium none;
+	height: 30px;
+	margin: 1px;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+#tabs .column-header-icon .ui-icon{
+	margin:5px 2px 0 0;
+	cursor:pointer;
+	float:left;
+}
+#tabs .column-content{
+	overflow:auto;
+	overflow-x:hidden;
+}
+#tabs .column-content p{
+	height:800px;
+}
+.shortcuts{
+	clear:both;
+	height:22px;
+	float:left;
+}
+.shortcuts div.icon{
+	width:12px;
+	height:12px;
+	float:left;
+	margin:0 3px;
+	cursor:pointer;
+	padding:3px;
+	-moz-box-shadow: #000 1px 2px 3px;
+	-webkit-box-shadow: #000 1px 2px 3px;
+	box-shadow: #000 1px 2px 3px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+}
+.shortcuts .ui-state-highlight{
+	width:16px;
+	height:16px;
+	margin:0 3px;
+	float:left;
+}
+.shortcuts div.icon:hover{
+	border:1px solid #CCC;
+	padding:2px;
+}
+.shortcuts .youroom{
+	background:url(../images/youroom.png) no-repeat center center;
+}
+.shortcuts .twitter{
+	background:url(../images/twitter.png) no-repeat center center;
+}
+.shortcuts .yammer{
+	background:url(../images/yammer.png) no-repeat center center;
+}
+.shortcuts .facebook{
+	background:url(../images/facebook.png) no-repeat center center;
+}
+.shortcuts .cybozulive{
+	background:url(../images/cybozulive.png) no-repeat center center;
+}
+.shortcuts .rss{
+	background:url(../images/rss.png) no-repeat center center;
+}
+.shortcuts .new{
+	background-color:#AA2222;
+}
+.shortcuts div.new:hover{
+	border-color:#DD6666;
+}
+#tabs #nocolumn{
+	margin:0 auto;
+	width: 400px;
+	padding-top:80px;
+}
+#tabs #nocolumn p{
+	font-size: 1.3em;
+	margin: 0 0 5px 0;
+}
+/*カラム内メッセージ入力*/
+#tabs .message-input{
+	position:relative;
+	border:1px solid #BBB;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	margin:1px;
+	padding:1px 4px;
+	background:#FFF;
+	zoom:1;
+}
+#tabs .message-input textarea{
+	font-family:Arial,Helvetica,sans-serif;
+	font-size:12px;
+	width:100%;
+	height:20px;
+	resize: none;
+	outline:none;
+	overflow:hidden;
+	border:none;
+	line-height:16px;
+	max-height:300px;
+	word-wrap:break-word;
+	white-space:pre-wrap;
+}
+.growing-dummy{
+	font-family:Arial,Helvetica,sans-serif;
+	font-size:12px;
+	word-wrap:break-word;
+	white-space:pre-wrap;
+}
+#tabs .message-input .help{
+	color:#BBB;
+	font-style:italic;
+	position:absolute;
+	padding-left:3px;
+	left:2px;
+	top:2px;
+	overflow:hidden;
+	line-height:19px;
+	height:19px;
+	background-color:#FFF;
+	cursor:text;
+}
+#tabs .message-input.focus textarea{
+	width:100%;
+	height:70px;
+}
+#tabs .message-input.focus .help{
+	position:static;
+	text-align:left !important;
+}
+#tabs .message-input .counter{
+	display:none;
+	bottom:1px;
+	line-height:16px;
+	padding:0 3px;
+	right:2px;
+}
+#tabs .message-input.focus .counter{
+	display:block;
+}
+#tabs .message-input.loading, #tabs .message-input.loading .help{
+	background:#EEE;
+}
+#tabs .message-input.loading textarea{
+	background:url(../images/ajax-loader.gif) no-repeat center center;
+}
+/*タイムライン表示*/
+#messages{
+	background:#FFF;
+}
+.message-list{
+	background-color:#F6F8F9;
+	color: #222;
+}
+.message-list .error{
+	background-color:#f9f29e;
+	color:#222;
+	text-align:center !important;
+	padding:10px;
+	cursor:pointer;
+}
+.message{
+	border-bottom: 1px solid #AAA;
+	padding: 5px 5px 5px 30px;
+	position: relative;
+	zoom:1;
+}
+.rss .message, .cybozulive .message{
+	padding-left:5px;
+}
+.cybozulive .message .author{
+	float:right;
+}
+.message.new{
+	background-color:#FAFACC;
+}
+.message a{
+	text-decoration: none;
+	color: #239CB9;
+}
+.message .profile-image{
+	position: absolute;
+	top: 10px;
+	left: 0;
+}
+.message .profile-image img{
+	width: 24px;
+	height: 24px;
+	border: none;
+}
+.message a.user-name{
+	font-weight:bold;
+	color:#4E763E;
+	white-space:nowrap;
+}
+.message .time{
+	white-space:nowrap;
+}
+.message .time img{
+	vertical-align:middle;
+	padding-right:5px;
+}
+.message .time a{
+	color:#999;
+}
+.message .message-text{
+	margin-top:3px;
+	margin-left:-30px;
+}
+.message .message-text.short{
+	max-height:30px;
+	overflow:hidden;
+}
+.message .files a{
+	display:block;
+	background:url(../images/attachment.gif) no-repeat;
+	padding-left:21px;
+	line-height:16px;
+}
+.message .files, .message .images{
+	margin-top:5px;
+}
+.message .images img{
+	border:1px solid #CCC;
+	margin:2px;
+}
+.facebook .message{
+	overflow:hidden;
+}
+.facebook .message .attachment{
+	padding:5px 0;
+	border-top:1px solid #CCC;
+	margin-top:5px;
+}
+.facebook .message .attachment div{
+	color:#999;
+}
+.facebook .message .attachment .image-link{
+	margin-right:5px;
+	border:1px solid #CCC;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	float:left;
+	display:block;
+}
+.facebook .message .time .comment-count{
+	margin-left:5px;
+	color:#239CB9;
+}
+.facebook .comment{
+	margin-top:3px;
+}
+.facebook .comment .message{
+	border-bottom: none;
+	border-top: 1px solid #CCC;
+	background: #EEE;
+}
+.more-message, .loading-message{
+	text-align:center !important;
+	height:31px;
+	line-height:28px;
+	background-color:#55AACC;
+	color:#DDD;
+	text-shadow:0 1px 0 #FFF;
+	cursor:pointer;
+}
+.loading-message span{
+	background:url(../images/ajax-loader.gif) no-repeat;
+	padding-left:21px;
+}
+#message-command{
+	position:absolute;
+	z-index:3;
+	border:none;
+	background:none;
+}
+#message-command div{
+	cursor:pointer;
+	float:left;
+	margin-left:5px;
+	color:#F2F4F5;
+	background:#4297D7;
+	padding:1px 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	height:16px;
+	line-height:17px;
+}
+#message-command div:hover{
+	background:#79B7E7;
+}
+
+/* カラム追加ダイアログ */
+#add-column-tabs .ui-tabs-panel label{
+	display:block;
+}
+#add-column-tabs .ui-tabs-panel select{
+	display:block;
+}
+#add-column-popup .another-account{
+	float:right;
+	margin:5px;
+}
+
+/* AdSense */
+#footer{
+	margin-top:5px;
+	position:relative;
+	width:100%;
+}
+#footer .ads{
+	float:left;
+}
+#footer-message{
+	padding-left:5px;
+}
+#footer-message a{
+	text-decoration:none;
+	color:#222;
+}
+#footer-message a:hover{
+	text-decoration:underline;
+}
+#footer .footer-right{
+	/*position:absolute;*/
+	top:0;
+	right:0;
+	background:#FFF;
+}
+#footer .terms, #footer .copyright{
+	float:right;
+	margin-left:10px;
+}

@@ -1,0 +1,45 @@
+{% load i18n %}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Crowy - Yammer</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link type="text/css" href="/static/js/jquery-ui/css/redmond/jquery-ui-1.8.2.custom.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="/static/css/main.css" />
+
+	<script type="text/javascript" src="/static/js/jquery/jquery-1.4.2.js"></script>
+	<script type="text/javascript" src="/static/js/jquery-ui/jquery-ui-1.8.2.custom.min.js"></script>
+	
+	<script type="text/javascript">
+	$(function(){
+		var auth_window = null;
+		
+		$("#login-button").button();
+		$("#login-button").click(function(){
+			auth_window = window.open('/oauth/yammer/request', null, "width=1024,height=768,scrollbars=yes");
+		});
+		
+		$("#connect-button").button();
+		$("#connect-button").click(function(){
+			auth_window.close();
+		});
+	});
+	</script>
+</head>
+<body style="margin:20px">
+	<div>
+		{% blocktrans %}<h2>1. Get an access code from Yammer</h2><p>Login to Yammer and grant Crowy access to your Yammer Account. After 4 digit access code is displayed, enter the code into the text box of No.2.<br></p>{% endblocktrans %}
+		<p>
+			<button id="login-button">{% trans "Get access code from Yammer" %}</button>
+		</p>
+	</div>
+	<div>
+		{% blocktrans %}<h2>2. Enter an access code.</h2><p>Enter the access code and click the following button.</p>{% endblocktrans %}
+		<form method="GET" action="/oauth/yammer/callback">
+			<p>
+				<input name="oauth_verifier" type="text"/>
+				<input type="submit" id="connect-button" value="{% trans "Connect with Yammer" %}"/>
+			</p>
+		</form>
+	</div>
+</body>
+</html>

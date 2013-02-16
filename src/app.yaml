@@ -1,0 +1,30 @@
+application: crowyapp
+#version: 20121204a
+version: dev
+runtime: python
+api_version: 1
+
+handlers:
+- url: /static
+  static_dir: static
+
+- url: /favicon.ico
+  static_files: static/images/favicon.ico
+  upload: static/images/favicon.ico
+
+#- url: /admin/.*
+#  script: controller/admin.py
+#  login: admin
+
+- url: .*
+  script: controller/main.py
+  secure: optional
+
+#メンテナンス中
+#- url: .*
+#  static_files: static/maintenance.html
+#  upload: static/maintenance.html
+
+builtins:
+- remote_api: on
+- datastore_admin: on

@@ -1,0 +1,233 @@
+@charset "utf-8";
+
+body {
+	font-family: Meiryo, "Helvetica Neue", Helvetica, sans-serif;
+	background: #6698be;
+}
+
+body.en {
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+
+#top-bar {
+	height: 100px;
+	background: url(../images/main-image-white.jpg) center top no-repeat;
+}
+
+/* メインビジュアル 要素 */
+#mainVisual {
+	height: 564px;
+	background: white url(../images/main-image.jpg) center top no-repeat;
+}
+
+	header {
+		width: 999px;
+		height: 564px;
+		position: relative;
+		margin: 0px auto;
+	}
+	
+	/* マスコット */
+	#crowyLogo {
+		position: absolute;
+		top: 0px;
+		left: 69px;
+		width: 264px;
+		height: 289px;
+		background: url(../images/crowyStripe.png) 0px 0px no-repeat;
+	}
+	
+	/* メインロゴ */
+	#mainLogo {
+		top: 310px;
+		left: 20px;
+		position: absolute;
+		width: 364px;
+		height: 142px;
+		background: url(../images/crowyLogo.png) 0px 0px no-repeat;
+	}
+	
+	/* メインロゴ内要素 消去 */
+	#mainLogo * {
+		height: 12px;
+		font-size: 12px;
+		overflow: hidden;
+		text-indent: -9999px;
+	}
+	
+	/* Crowy 説明文 */
+	header section p {
+		position: absolute;
+		font-size: 12px;
+		color: #4f5a61;
+		width: 410px;
+		top: 470px;
+		left: 10px;
+		line-height: 140%;
+		font-weight: bolder;
+	}
+	
+	.en header section p {
+		font-size: 14px;
+		line-height: 130%;
+	}
+	
+	/* ナビゲーション要素 現在非表示 */
+	#grobalNav { display: none; }
+	
+	/* ログインボタン */
+	#loginItems {
+		position: absolute;
+		top: 10px;
+		right: 0px;
+		width: 500px;
+		height: 55px;
+	}
+	
+	#loginItems li {
+		position: absolute;
+		top: 0px;
+		width: 234px;
+		height: 55px;
+	}
+	
+	#loginItems li a {
+		display: block;
+		height: 55px;
+		text-indent: -9999px;
+		overflow: hidden;
+	}
+	
+	#fbLogin { right: 0px; }
+	#fbLogin a { background: url(../images/login-button.png) -234px 0px no-repeat; }
+	#fbLogin a:hover { background: url(../images/login-button.png) -234px -55px no-repeat; }
+	
+	#googleLogin { right: 234px; }
+	#googleLogin a { background: url(../images/login-button.png) -0px 0px no-repeat; }
+	#googleLogin a:hover { background: url(../images/login-button.png) -0px -55px no-repeat; }
+	
+	#remember-me{
+		display:block;
+		position:absolute;
+		top:72px;
+		right:10px;
+		color:#4F5A61;
+		font-size:12px;
+	}
+	#remember-me span{
+		padding-left:5px;
+	}
+
+/* 説明文 要素 */
+#explanation {
+	height: 125px;
+	padding-top: 32px;
+	background: url(../images/expBkgnd.png) 0px 0px repeat-x;
+}
+
+.en #explanation {
+	height: 132px;
+	padding-top: 20px;
+}
+
+	/* 機能概要 ヘッドライン */
+	#articleHeader {
+		display: none;
+	}
+
+	/* 記事表示領域 */
+	article {
+		width: 999px;
+		height: 157px;
+		margin: 0px auto;
+	}
+	
+	/* 各セクション領域 */
+	#explanation section {
+		float: left;
+		padding-left: 93px;
+		width: 240px;
+	}
+	
+	
+	/* セクション ヘッド */
+	#explanation section h1 {
+		font-size: 12px;
+		font-weight: bolder;
+		line-height: 100%;
+		margin-bottom: 10px;
+		color: #04378d;
+		text-shadow: 0px 1px 0px #fff;
+	}
+	
+	.en #explanation section h1 {
+		font-size: 14px;
+		margin-bottom: 6px;
+	}
+	
+	#explanation section p {
+		font-size: 11px;
+		line-height: 140%;
+		color: #021c48;
+		text-shadow: 0px 1px 0px #fff;
+	}
+	
+	.en #explanation section p {
+		font-size: 13px;
+		line-height: 130%;
+	}
+	
+	/* 詳細表示ボタン */
+	.detailButton { display: none; }
+	
+	/* FB Group説明　アイコン */
+	#facebook-page { background: url(../images/fbGroup-icon.png) 18px 0px no-repeat; }
+	
+	/* ビジネス用コミュニケーション */
+	#groupCommunication { background: url(../images/businessBag.png) 20px 0px no-repeat; }
+	
+	/* カラム表示 アイコン */
+	#columnView { background: url(../images/columStream.png) 23px 0px no-repeat; }
+
+/* フッター関連 要素 */
+footer {
+	height: 40px;
+	background: url(../images/footerBkgnd.png) 0px 0px repeat-x;
+}
+
+#footerItems {
+	width: 999px;
+	margin: 0px auto;
+	font-size: 12px;
+	line-height: 100%;
+}
+
+#footerItems a {
+	color: #fff;
+	text-decoration: none;
+	text-shadow: 0px 1px 3px #000;
+}
+
+#footerItems a:hover {
+	text-decoration: underline;
+}
+
+#footerItems ul {
+	padding-top: 15px;
+}
+
+#footerItems li {
+	float: left;
+	margin-left: 10px;
+	padding-left: 15px;
+	padding-right: 10px;
+	height: 16px;
+	font-weight: bolder;
+	background: url(../images/arrow.png) 0px -2px no-repeat;
+}
+
+#footerItems p {
+	color: #dbe5e9;
+	text-align: right;
+	text-shadow: 0px 1px 3px #000;
+}

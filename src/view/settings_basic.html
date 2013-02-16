@@ -1,0 +1,55 @@
+{% load i18n %}
+{% get_available_languages as LANGUAGES %}
+<div class="form1">
+<h3>{% trans "Preferences" %}</h3>
+<div class="named-field clearfix">
+	<label>{% trans "Display Density:" %}</label>
+	<select id="settings-basic-display_density">
+		<option value="comfortable" {%ifequal display_density "comfortable"%}selected{%endifequal%}>{% trans "Comfortable" %}</option>
+		<option value="normal" {%ifequal display_density "normal"%}selected{%endifequal%}>{% trans "Normal" %}</option>
+		<option value="compact" {%ifequal display_density "compact"%}selected{%endifequal%}>{% trans "Compact" %}</option>
+	</select>
+</div>
+<div class="named-field clearfix">
+	<label>{% trans "Language:" %}</label>
+	<select id="settings-basic-lang">
+	{% for LANG in LANGUAGES %}
+		<option value="{{LANG.0}}" {%ifequal lang LANG.0%}selected{%endifequal%}>{{LANG.1}}</option>
+	{% endfor %}
+	</select>
+</div>
+<h3>{% trans "Keyboard Shortcuts" %}</h3>
+<div class="named-field clearfix">
+	<label>{% trans "Post:" %}</label>
+	<select id="settings-basic-post_key">
+		<option value="shift" {%ifequal post_key "shift"%}selected{%endifequal%}>Shift+Enter</option>
+		<option value="control" {%ifequal post_key "control"%}selected{%endifequal%}>Ctrl+Enter</option>
+	</select>
+</div>
+<div class="buttons clearfix">
+<button id="settings-basic-save">{% trans "Save Changes" %}</button>
+<script>
+$('#settings-basic-save').button().click(function(){
+	var lang = $('#settings-basic-lang').val();
+	var postKey = $('#settings-basic-post_key').val();
+	var displayDensity = $('#settings-basic-display_density').val();
+	$.ajax({
+		type:"POST",
+		url:"settings/update",
+		data:{
+			'lang':lang,
+			'post_key': postKey,
+			'display_density': displayDensity
+		},
+		success: function(){
+			showNotice("{% trans "Preferences successfully saved." %}");
+			setTimeout(function(){location.reload();}, 1000);
+		},
+		error: function(){
+			showError("{% trans "Failed to save preferences." %}");
+		}
+	});
+});
+</script>
+</div>
+</div>

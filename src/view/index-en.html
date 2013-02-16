@@ -1,0 +1,117 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="description" content="Crowy is a free communication dashboard supports multiple group communications services, incluging Twitter (with hashtag supprot), Facebook profile/page/group, LinkedIn, youRoom, and Yammer." /> 
+<meta name="keywords" content="Facebook Group,Facebook Client,Twitter Client,Yammer,Social Media,Group communication" />
+<meta name="copyright" content="" /> 
+<meta property="og:title" content="Crowy - Social Communication Dashboard" />
+<meta property="og:url" content="http://www.crowy.net/" />
+<meta property="og:site_name" content="Crowy" />
+<meta property="og:image" content="http://pic.crowy.net/images/crowyStripe.png" />
+<meta property="og:type" content="article" />
+<meta property="og:description" content="Crowy is a free communication dashboard supports multiple group communications services, incluging Twitter (with hashtag supprot), Facebook profile/page/group, LinkedIn, youRoom, and Yammer.">
+<link rel="apple-touch-icon" href="http://pic.crowy.net/images/crowy-appletouch.png" />
+{%if production%}
+<link rel="stylesheet" type="text/css" href="http://pic.crowy.net/css/index_link.css?{{version}}" />
+{%else%}
+<link rel="stylesheet" type="text/css" href="static/css/index_link.css?{{version}}" />
+{%endif%}
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://pic.crowy.net/js/jquery.cookie.js"></script>
+{%if production%}
+<script type="text/javascript" src="http://pic.crowy.net/js/index.min.js?{{version}}"></script>
+{%else%}
+<script type="text/javascript" src="static/js/index.js?{{version}}"></script>
+{%endif%}
+<title>Crowy - Social Communication Dashboard</title>
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<style>
+  article, aside, dialog, figure, footer, header,
+  hgroup, menu, nav, section { display: block; }
+  #description-window {display:none;}
+</style>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-19252844-1']);
+  _gaq.push(['_setDomainName', 'crowy.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+
+<body class="en">
+
+<div id="mainVisual"><!-- mainVisual -->
+	<div id="top-bar">
+		<header>
+			<section>
+				<hgroup id="mainLogo">
+					<h1>Crowy</h1>
+					<h2>Beta</h2>
+					<h2>Social Communication Dashboard</h2>
+				</hgroup>
+				<div id="crowyLogo"></div>
+				<p>Crowy is a free communication dashboard supports multiple group communications services, incluging Twitter (with hashtag supprot), Facebook profile/page/group, LinkedIn, youRoom, and Yammer.</p>
+			</section>
+			
+			<nav>
+				<ul id="loginItems"><!-- loginItems -->
+					<li id="googleLogin"><a href="login">Google Login</a></li>
+					<li id="fbLogin"><a href="facebook/login">Facebook Login</a></li>
+				</ul><!-- /loginItems -->
+				<label id="remember-me">
+					<input type="checkbox" value="on" checked="checked">
+					<span>Remember me</span>
+				</label>
+			</nav>
+		</header>
+	</div>
+</div><!-- /mainVisual -->
+
+<div id="explanation"><!-- explanation -->
+	<article>
+		<h1 id="articleHeader">Crowy Features Overview</h1>
+		<section id="facebook-page"><!-- facebook-page -->
+			<h1>Supports Facebook Pages and Groups</h1>
+			<p>Crowy supports Facebook pages and groups in addtion to personal newsfeeds. We even lets you search Facebook timeline!</p>
+			<div class="detailButton"><a href="#;">Read More...</a></div>
+		</section><!-- /facebook-page -->
+		
+		<section id="groupCommunication"><!-- groupCommunication -->
+			<h1>With More Group Communication Services</h1>
+			<p>No more tab-bloat or multi-browser login for different groupware accounts. You can just log into Crowy once and use more than one account for Yammer, youRoom, Cybouzu Live, and Linkedin.</p>
+			<div class="detailButton"><a href="#;">Read More...</a></div>
+		</section><!-- /groupCommunication -->
+		
+		<section id="columnView"><!-- columnView -->
+			<h1>Super Fast Multi-Column View</h1>
+			<p>You'll love crowy's multi-column view that lets you see all kinds of timelines in one pane. Check you Twitter mention, Facebook group, and LinkedIn or Yammer Timeline, all in one pane or divited in several groups.</p>
+			<div class="detailButton"><a href="#;">Read More...</a></div>
+		</section><!-- /columnView -->
+	</article>
+</div><!-- /explanation -->
+
+<footer>
+	<div id="footerItems">
+		<ul id="footerNav"><!-- footerNav -->
+			<li id="termOfService"><a href="http://pic.crowy.net/terms_{% trans "en" %}.html" target="_blank">{% trans "Terms" %}</a></li>
+			<li id="companyInfo"><a href="http://about.co-meeting.com/" target="_blank">{% trans "About Us" %}</a></li>
+		</ul><!-- /footerNav -->
+		
+		<p>&copy;2011 co-meeting, Inc. All Rights Reserved.</p>
+	</div>
+</footer>
+
+</body>
+</html>

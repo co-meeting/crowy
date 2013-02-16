@@ -1,0 +1,32 @@
+<html>
+<head>
+<script lang="JavaScript">
+var _op = window.opener;
+if(_op){
+	if(_op.loadAccounts){
+		_op.loadAccounts();
+	}
+	//if from add-column-popup
+	if(_op.addColumnPopup && _op.addColumnPopup.dialog('isOpen')){
+		_op.$('.service-list .button.selected', _op.addColumnPopup).click();
+		if(_op.addDefaultColumn)
+			_op.addDefaultColumn("{{account.service}}", "{{account.account_name}}", "{{account.display_name}}");
+	}
+	//if from settings-popup
+	else if(_op.settingsPopup && _op.settingsPopup.dialog('isOpen')){
+		_op.$('.service-list .button.selected', _op.settingsPopup).click();
+		if(_op.addDefaultColumn)
+			_op.addDefaultColumn("{{account.service}}", "{{account.account_name}}", "{{account.display_name}}");
+	}
+	//if 401 or 403, reauthorization
+	else {
+		_op.$(".reauth").each(function(){
+			_op.loadColumn(_op.$(this).parents(".column"), true);
+		});
+	}
+}
+window.close();
+</script>
+</head>
+<body></body>
+</html>

@@ -110,7 +110,7 @@ class TwitterHandler(BaseHandler):
             response, content = oauth.TwitterHandler.request(
                 self.session.get_user(),
                 account,
-                "http://api.twitter.com/1.1/%s" % path,
+                "https://api.twitter.com/1.1/%s" % path,
                 method="GET")
             if response["status"] != "200":
                 raise Exception(response["status"] + ", path=" + path + ", content=" + content)
@@ -219,7 +219,7 @@ class TwitterHandler(BaseHandler):
             response, content = oauth.TwitterHandler.request(
                 user,
                 account,
-                "http://api.twitter.com/1.1/%s" % path,
+                "https://api.twitter.com/1.1/%s" % path,
                 params = self.request.POST,
                 method="POST")
             if response["status"] != "200":

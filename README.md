@@ -3,6 +3,11 @@ Crowy - Social Communication Dashboard
 
 Crowy is a communication dashboard supports multiple group communications services, incluging Twitter (with hashtag supprot), Facebook profile/page/group, Yammer, LinkedIn, Cybozu Live and youRoom.
 
+Help us!
+-------------
+Now [Crowy.net](http://www.crowy.net/) is not able to continue its service. We make Crowy as an open-source, and looking for volunteers to make Crowy continue. ( for details :[English](https://github.com/co-meeting/crowy/wiki/Now-Crowy-is-not-able-to-continue-its-service) / [Japanese](http://crowyjp.wordpress.com/2013/02/18/crowy-oss/) ）
+
+
 Support Services
 -------------
 - Twitter

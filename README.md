@@ -1,3 +1,5 @@
+![Crowy Banner](https://raw.github.com/co-meeting/crowy/master/chrome-web-store/images/crowy-banner2-xl.png)
+
 Crowy - Social Communication Dashboard
 =======================================
 
@@ -22,7 +24,7 @@ Dependencies
 -------------
 
 - This app is designed to run in the [Google App Engine](https://developers.google.com/appengine/).
-- It depends on the Python 2.5.x.
+- It depends on **Python 2.5.x**.
 
 Quick Start
 -------------
@@ -40,6 +42,10 @@ Edit src/conf/settings.py and configure TWITTER_CONSUMER_KEY and other propertie
     cd crowy
     dev_appserver.py src
 
+Screen Shots
+-------------
+
+https://github.com/co-meeting/crowy/tree/master/chrome-web-store/images
 
 Authors
 -------------

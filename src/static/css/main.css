@@ -1839,16 +1839,16 @@ li#account-name {
 	bottom:-5px;
 	right:-5px;
 }
-.message a.user-name{
+.message .user-fullname{
 	font-weight:bold;
 	color:#16636A;
+	padding-right: 5px;
 	white-space:nowrap;
 }
-.message .user-fullname{
+.message a.user-name{
 	color: #999;
 	font-size: 11px;
 	font-weight:normal;
-	padding-left: 5px;
 	white-space:nowrap;
 }
 .message .time{
@@ -1856,6 +1856,7 @@ li#account-name {
 	font-size: 11px;
 	margin-bottom: 7px;
 	white-space:nowrap;
+	float: right;
 }
 .message .time img{
 	vertical-align:middle;

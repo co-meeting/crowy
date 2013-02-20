@@ -2108,6 +2108,7 @@ function buildSearch(){
 		var loading = $('<p class="loading"/>').text("Loading...");
 		var popup = $("<div/>").append(loading).appendTo(document.body);
 		var type = "search/"+keyword;
+		var account_name = "";
 		var columnInfo = {
 			"name": keyword+"/Search",
 			"service": "twitter",
@@ -2115,13 +2116,18 @@ function buildSearch(){
 			"account_label": "Search",
 			type:type
 		};
+		if(accounts.length == 0){
+			alert($I.R103);
+		}else{
+			account_name = accounts[0].account_name;
+		}
 		popup.dialog({
 			title: $I.R071 + " / " + keyword,
 			height: 400,
 			width:400,
 			dialogClass: "thread",
 			open: function(){
-				$.get("twitter/messages/?type=" + encodeURIComponent(type),
+				$.get("twitter/messages/"+account_name+"?type=" + encodeURIComponent(type),
 					function(data){
 						loading.remove();
 						$.each(data.messages, function(idx, entry){
@@ -2990,24 +2996,28 @@ var twitter = {
 									$('<td class="friendships-status"/>').append($('<span/>').text('Loading...')),
 									$('<td class="friendships-button"/>').append(
 										$('<div class="button follow-btn"/>').append($('<a href="#"/>').text($I.R090).click(function(){
-											var path = "friendships/create.json?screen_name="+user.screen_name,
+											var path = "friendships/create.json",
 												url = "twitter/api/"+account.account_name+"?path="+encodeURIComponent(path),
+												data = {screen_name:user.screen_name},
 												tr = $(this).parents('tr');
 											$.ajax({
 												type:"POST",
 												url:url,
+												data:data,
 												success:function(){
 													renderFriendships(tr);
 												}
 											});
 										})),
 										$('<div class="button unfollow-btn"/>').append($('<a href="#"/>').text($I.R091).click(function(){
-											var path = "friendships/destroy.json?screen_name="+user.screen_name,
+											var path = "friendships/destroy.json",
 												url = "twitter/api/"+account.account_name+"?path="+encodeURIComponent(path),
+												data = {screen_name:user.screen_name},
 												tr = $(this).parents('tr');
 											$.ajax({
 												type:"POST",
 												url:url,
+												data:data,
 												success:function(){
 													renderFriendships(tr);
 												}
@@ -3175,10 +3185,11 @@ var twitter = {
 		if(!isDM){
 			if(entry.favorited){
 				messageElm.addClass('favorited').data('unfavorite', function(){
-					var url = "twitter/api/"+columnInfo.account_name + "?path="+encodeURIComponent("favorites/destroy/"+entry.id+".json");
+					var url = "twitter/api/"+columnInfo.account_name + "?path="+encodeURIComponent("favorites/destroy.json");
 					$.ajax({
 						type:"POST",
 						url:url,
+						data: {id: entry.id},
 						success: function(){
 							entry.favorited = false;
 							showNotice($I.R083);
@@ -3293,10 +3304,11 @@ var twitter = {
 			if(user.screen_name == columnInfo.account_name){
 				messageElm.data('delete', function(){
 					if(!confirm($I.R082({tweet:entry.text}))) return false;
-					var url = "twitter/api/"+columnInfo.account_name+"?path="+ encodeURIComponent("statuses/destroy/"+entry.id+".json");
+					var url = "twitter/api/"+columnInfo.account_name+"?path=statuses/destroy/.json";
 					$.ajax({
 						type:"POST",
 						url:url,
+						data: {id: entry.id},
 						success: function(){
 							showNotice($I.R080);
 							messageElm.remove();
@@ -3312,10 +3324,11 @@ var twitter = {
 			if((entry.user || entry.sender).screen_name == columnInfo.account_name){
 				messageElm.data('delete', function(){
 					if(!confirm($I.R082({tweet:entry.text}))) return false;
-					var url = "twitter/api/"+columnInfo.account_name+"?path="+ encodeURIComponent("direct_messages/destroy/"+entry.id+".json");
+					var url = "twitter/api/"+columnInfo.account_name+"?path=direct_messages/destroy.json";
 					$.ajax({
 						type:"POST",
 						url:url,
+						data: {id: entry.id},
 						success: function(){
 							showNotice($I.R080);
 							messageElm.remove();
@@ -3363,20 +3376,20 @@ var twitter = {
 					width:400,
 					dialogClass: "likes",
 					open: function(event, ui){
-						$.getJSON('/twitter/api/'+columnInfo.account_name, {path:'statuses/'+entry.rt_id+'/retweeted_by.json'},function(data){
+						$.getJSON('/twitter/api/'+columnInfo.account_name, {path:'statuses/retweets/'+entry.rt_id+'.json'},function(data){
 							popup.empty();
 							if(!data || data.length == 0){
 								popup.text($I.R085);
 								return;
 							}
 							$.each(data, function(){
-								var user = this;
+								var user = this.user;
 								$('<div class="like-user"/>').append(
 									$('<a/>')
-										.attr({href:"http://twitter.com/"+this.screen_name, target:'_blank'})
-										.text(this.screen_name + ' / ' + this.name)
+										.attr({href:"http://twitter.com/"+user.screen_name, target:'_blank'})
+										.text(user.screen_name + ' / ' + user.name)
 										.click(function(event){twitter.openProfile(user, columnInfo, event);})
-										.append($('<img/>').attr('src', this.profile_image_url))
+										.append($('<img/>').attr('src', user.profile_image_url))
 								).appendTo(popup);
 							});
 						});

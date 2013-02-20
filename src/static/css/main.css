@@ -2824,14 +2824,22 @@ ul.service-list{
 .compact .message-text, .compact .message a{
 	line-height:130%;
 }
+.compact .message-text{
+	margin-top: 13px;
+}
 .compact .message .time{
 	margin-bottom:0px;
 }
 .compact .message{
 	padding-left:5px;
+	padding-bottom:6px;
 }
 .compact .message .user-name, .compact .message .time{
 	margin-left:30px;
+}
+.compact .message .profile-image img{
+	height: 20px;
+	width: 20px;
 }
 .compact .message .comment, .compact .message .comment-count, .compact .message .column-input{
 	margin-left:10px;

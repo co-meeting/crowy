@@ -2082,8 +2082,9 @@ function renderMsgCommand(){
 			});
 			var offset = msgElm.offset();
 			msgCmd.show();
+			var top = offset.top + msgElm.innerHeight() - msgCmd.outerHeight();
 			var left = offset.left + msgElm.innerWidth() - msgCmd.outerWidth();
-			msgCmd.css({"top":offset.top, "left":left});
+			msgCmd.css({"top": top, "left": left});
 			currentMsg = msgElm;
 		}, 200);
 		event.stopPropagation();
@@ -2309,6 +2310,21 @@ function toLocalTime(formattedDate){
 	var localtime = new Date(Date.parse(formattedDate) - tzoffset);
 	return formatDate(localtime);
 }
+function toDiffTime(formattedDate){
+	var diffSec = ((new Date()).getTime() - (Date.parse(formattedDate) - tzoffset)) / 1000;
+	if (diffSec < 60) {
+		return Math.floor(diffSec) + 's';
+	}
+	var diffMinute = diffSec / 60;
+	if (diffMinute < 60) {
+		return Math.floor(diffMinute) +'m';
+	}
+	var diffHour = diffMinute / 60;
+	if (diffHour < 24) {
+		return Math.floor(diffHour) + 'h';
+	}
+	return toLocalTime(formattedDate).split(' ')[0];
+}	
 
 function buildURL(url, params){
 	url += "?";
@@ -3085,13 +3101,13 @@ var twitter = {
 					className:"user-name open-profile",
 					target:"_blank"
 				},
-				(isDMSent? "To: " : "") + user.screen_name,
-				$.SPAN({className:'user-fullname'}, user.name || '')
+				$.SPAN({className:'user-fullname'}, user.name || ''),
+				(isDMSent? "To: " : "") + '@' + user.screen_name
 			),
 			$.DIV({className:"time"},
 				$.A(
 					timeLinkOpt,
-					toLocalTime(entry.display_time)
+					toDiffTime(entry.display_time)
 				)
 			),
 			$.DIV({className:"message-text"})
@@ -3172,10 +3188,12 @@ var twitter = {
 				twitter.openProfile(_user, columnInfo, event);
 			});
 		
+/*
 		if(entry.source){
 			var source = " from " + entry.source;
 			$(".time", messageElm).append(source).find("a").attr("target","_blank");
 		}
+*/
 		
 		function sendDM(){
 			var account_name = columnInfo.account_name;

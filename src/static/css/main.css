@@ -1839,16 +1839,16 @@ li#account-name {
 	bottom:-5px;
 	right:-5px;
 }
-.message .user-fullname{
+.message a.user-name{
 	font-weight:bold;
 	color:#16636A;
-	padding-right: 5px;
 	white-space:nowrap;
 }
-.message a.user-name{
+.message .user-fullname{
 	color: #999;
 	font-size: 11px;
 	font-weight:normal;
+	padding-right: 5px;
 	white-space:nowrap;
 }
 .message .time{
@@ -1856,7 +1856,6 @@ li#account-name {
 	font-size: 11px;
 	margin-bottom: 7px;
 	white-space:nowrap;
-	float: right;
 }
 .message .time img{
 	vertical-align:middle;
@@ -1964,6 +1963,21 @@ li#account-name {
 	padding-left:5px;
 	line-height:30px;
 }
+.twitter .message .user-fullname{
+	font-weight:bold;
+	color:#16636A;
+	padding-right: 5px;
+	white-space:nowrap;
+}
+.twitter .message a.user-name{
+	color: #999;
+	font-size: 11px;
+	font-weight:normal;
+	white-space:nowrap;
+}
+.twitter .message .time{
+	float:right;
+}
 .twitter .message.favorited{
 	background-image: url("../images/favorite-corner.png");
 	background-position: right bottom;
@@ -1978,6 +1992,16 @@ li#account-name {
 	background-image: url("../images/retweet-fav-corner.png");
 	background-position: right bottom;
 	background-repeat: no-repeat;
+}
+.compact .twitter .message{
+	padding-bottom:6px;
+}
+.compact .twitter .message-text{
+	margin-top: 13px;
+}
+.compact .twitter .message .profile-image img{
+	height: 20px;
+	width: 20px;
 }
 .retweet-dialog{
 	padding:5px;
@@ -2824,22 +2848,14 @@ ul.service-list{
 .compact .message-text, .compact .message a{
 	line-height:130%;
 }
-.compact .message-text{
-	margin-top: 13px;
-}
 .compact .message .time{
 	margin-bottom:0px;
 }
 .compact .message{
 	padding-left:5px;
-	padding-bottom:6px;
 }
 .compact .message .user-name, .compact .message .time{
 	margin-left:30px;
-}
-.compact .message .profile-image img{
-	height: 20px;
-	width: 20px;
 }
 .compact .message .comment, .compact .message .comment-count, .compact .message .column-input{
 	margin-left:10px;

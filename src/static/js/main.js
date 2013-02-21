@@ -2107,7 +2107,7 @@ function buildSearch(){
 		if(!$.trim(keyword)) return false;
 		$("#search-keyword").val("");
 		var loading = $('<p class="loading"/>').text("Loading...");
-		var popup = $("<div/>").append(loading).appendTo(document.body);
+		var popup = $('<div class="twitter"/>').append(loading).appendTo(document.body);
 		var type = "search/"+keyword;
 		var account_name = "";
 		var columnInfo = {
@@ -3133,8 +3133,8 @@ var twitter = {
 				if(this.text)
 					displayText += '<a href="http://twitter.com/#!/search/%23'+encodeURIComponent(this.text)+'" target="_blank">#'+this.text+'</a>';
 				if(this.url) {
-					displayText += '<a href="'+(this.expanded_url || this.url)+'" target="_blank">'+(this.display_url || this.url)+'</a>';
-					getImageThumb(this.expanded_url || this.url, function(thumbData){
+					displayText += '<a href="'+this.url+'" target="_blank">'+(this.display_url || this.url)+'</a>';
+					getImageThumb(this.url, function(thumbData){
 						var thumb = $(thumbData.thumb).load(function(){
 							createAmazonLink(thumbData.original, {
 								type:'amazon',

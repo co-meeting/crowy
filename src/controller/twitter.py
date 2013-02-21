@@ -51,23 +51,23 @@ class TwitterHandler(BaseHandler):
             elif type.startswith("search/") :
                 types = type.split("/", 1)
                 url = "https://api.twitter.com/1.1/search/tweets.json"
-                query["q"] = types[1].encode('utf-8')
+                query["q"] = types[1]
             elif type.startswith("user/") :
                 types = type.split("/", 1)
                 url = "https://api.twitter.com/1.1/statuses/user_timeline.json"
-                query["screen_name"] = types[1].encode('utf-8')
+                query["screen_name"] = types[1]
             elif type == "favorites" :
                 url = "https://api.twitter.com/1.1/favorites/list.json"
             elif type.startswith("favorites/") :
                 types = type.split("/", 1)
                 url = "https://api.twitter.com/1.1/favorites/list.json"
-                query["id"] = types[1].encode('utf-8')
+                query["id"] = types[1]
             elif type == "mentions" :
                 url = "https://api.twitter.com/1.1/statuses/mentions_timeline.json"
             elif type.startswith("mentions/") :
                 types = type.split("/", 1)
                 url = "https://api.twitter.com/1.1/search/tweets.json"
-                query["q"] = "@"+types[1].encode('utf-8')
+                query["q"] = "@"+types[1]
             elif type.startswith("direct_messages") :
                 url = "https://api.twitter.com/1.1/"+type+".json"
             else:
@@ -77,7 +77,9 @@ class TwitterHandler(BaseHandler):
                 query["max_id"] = self.request.get("max_id")
             if self.request.get("page"):
                 query["page"] = self.request.get("page")
-            url += "?" + urllib.urlencode(query)
+            url += '?'
+            for k, v in query.items():
+                url += k + '=' + v.encode('utf-8') + '&'
             template_values, status = self.get_messages(account, url)
             if status == "401" or status == "403":
                 self.error(int(status))

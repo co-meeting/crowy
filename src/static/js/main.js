@@ -3429,7 +3429,7 @@ var twitter = {
 		if((!opts || !opts.is_conversation) && (entry.in_reply_to_status_id || (entry.is_search && entry.text.indexOf('@')==0))){
 			var convDiv = $('<a class="conversation" href="#"/>').text($I.R049).click(function(){
 				var loading = $('<p class="loading"/>').text("Loading...");
-				var popup = $('<div class="column"/>').data('id', entry["id_str"])
+				var popup = $('<div class="column twitter"/>').data('id', entry["id_str"])
 					.append($('<div/>'), loading).appendTo(document.body);
 				function loadReply(id){
 					$.get("twitter/status/"+columnInfo.account_name+"/?id="+id,

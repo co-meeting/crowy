@@ -223,14 +223,14 @@ class OAuthHandler(BaseHandler):
 
 class TwitterHandler(OAuthHandler):
     service = 'twitter'
-    request_token_url = 'http://twitter.com/oauth/request_token'
-    access_token_url = 'http://twitter.com/oauth/access_token'
-    authorize_url = 'http://twitter.com/oauth/authorize'
+    request_token_url = 'https://twitter.com/oauth/request_token'
+    access_token_url = 'https://twitter.com/oauth/access_token'
+    authorize_url = 'https://twitter.com/oauth/authorize'
     consumer_key = settings.TWITTER_CONSUMER_KEY
     consumer_secret = settings.TWITTER_CONSUMER_SECRET
     
     def get_account_info(self):
-        resp, content = self.oauth_request("http://api.twitter.com/1/account/verify_credentials.json")
+        resp, content = self.oauth_request("https://api.twitter.com/1.1/account/verify_credentials.json")
         if resp["status"] == "200":
             result = simplejson.loads(content)
             return result["screen_name"], None, result["profile_image_url"], content

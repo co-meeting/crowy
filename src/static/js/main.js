@@ -2066,7 +2066,7 @@ function renderMsgCommand(){
 		if(onScrolling) return;
 		if(msgCommandTimer > 0) clearTimeout(msgCommandTimer);
 		msgCommandTimer = setTimeout(function(){
-			//var service = msgElm.parents(".column").data("conf").service;
+			var service = msgElm.parents(".column").data("conf").service;
 			var msgCmd = $("#message-command");
 			var zindex = msgElm.parents(".ui-dialog").css("z-index") || 2;
 			msgCmd.css({"z-index":parseInt(zindex)+1, "left":0});
@@ -2082,9 +2082,13 @@ function renderMsgCommand(){
 			});
 			var offset = msgElm.offset();
 			msgCmd.show();
-			var top = offset.top + msgElm.innerHeight() - msgCmd.outerHeight();
 			var left = offset.left + msgElm.innerWidth() - msgCmd.outerWidth();
-			msgCmd.css({"top": top, "left": left});
+			if(service == 'twitter') {
+				var top = offset.top + msgElm.innerHeight() - msgCmd.outerHeight();
+				msgCmd.css({"top": top, "left": left});
+			} else {
+				msgCmd.css({"top":offset.top, "left":left});
+			}
 			currentMsg = msgElm;
 		}, 200);
 		event.stopPropagation();

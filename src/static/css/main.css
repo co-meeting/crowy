@@ -1963,6 +1963,9 @@ li#account-name {
 	padding-left:5px;
 	line-height:30px;
 }
+.twitter .message{
+	padding-bottom: 18px;
+}
 .twitter .message .user-fullname{
 	font-weight:bold;
 	color:#16636A;
@@ -1994,14 +1997,10 @@ li#account-name {
 	background-repeat: no-repeat;
 }
 .compact .twitter .message{
-	padding-bottom:6px;
+	padding-left:35px;
 }
-.compact .twitter .message-text{
-	margin-top: 13px;
-}
-.compact .twitter .message .profile-image img{
-	height: 20px;
-	width: 20px;
+.compact .twitter .message .user-name, .compact .twitter .message .time{
+	margin-left: 0;
 }
 .retweet-dialog{
 	padding:5px;

@@ -9,6 +9,9 @@ Help us!
 -------------
 Unfortunately, [Crowy.net](http://www.crowy.net/) can no longer develop/support its service, due to lack of development resources. So, we've decided to make Crowy as an open-source project, and look (and pray..) for volunteers to help Crowy. We will greatly appreciate for any help! ( for more details :[English](https://github.com/co-meeting/crowy/wiki/Now-Crowy-is-not-able-to-continue-its-service) / [Japanese](http://crowyjp.wordpress.com/2013/02/18/crowy-oss/) ）
 
+Developer Community (Japanese Only)
+-------------
+https://www.co-meeting.com/p/crowy-dev
 
 Support Services
 -------------

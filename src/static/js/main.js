@@ -2117,10 +2117,12 @@ function buildSearch(){
 			"account_label": "Search",
 			type:type
 		};
-		if(accounts.length == 0){
+		var twitterAccounts = twitter.getOtherAccount();
+		if(twitterAccounts.length == 0){
 			alert($I.R103);
-		}else{
-			account_name = accounts[0].account_name;
+			return;
+		} else {
+			account_name = twitterAccounts[0].account_name;
 		}
 		popup.dialog({
 			title: $I.R071 + " / " + keyword,
@@ -2144,12 +2146,11 @@ function buildSearch(){
 				{
 					text:$I.R027,
 					click: function(){
-						var accounts = twitter.getOtherAccount();
-						if(accounts.length == 0){
+						if(twitterAccounts.length == 0){
 							alert($I.R103);
-						}else if(accounts.length == 1){
-							columnInfo.account_name = accounts[0].account_name;
-							columnInfo.account_label = accounts[0].account_name;
+						}else if(twitterAccounts.length == 1){
+							columnInfo.account_name = twitterAccounts[0].account_name;
+							columnInfo.account_label = twitterAccounts[0].account_name;
 							addColumn(columnInfo, function(){
 								popup.dialog("close");
 							});
@@ -2163,12 +2164,12 @@ function buildSearch(){
 										accountsSelect
 									)
 								);
-							$.each(accounts, function(){
+							$.each(twitterAccounts, function(){
 								$('<option/>')
 									.text(this.account_name).val(this.account_name).data('account', this)
 									.appendTo(accountsSelect);
 							});
-							accountImg.attr('src', accounts[0].profile_image_url);
+							accountImg.attr('src', twitterAccounts[0].profile_image_url);
 							accountsSelect.change(function(){
 								var _account = $('option:selected', accountsSelect).data('account');
 								accountImg.attr('src', _account.profile_image_url);

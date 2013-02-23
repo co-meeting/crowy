@@ -3504,8 +3504,10 @@ var twitter = {
 			maxId = lastMsg.data("entry").id;
 		$this.hide().next().show();
 		$.getJSON(buildURL(url, {type:conf.type, "max_id":maxId}), function(data){
+			var columnOffsetTopBeforeRender = columnContent.parent().offset().top - columnContent.offset().top;
 			data.messages.shift();//Twitterでmax_idを指定した場合、最初のメッセージは表示済みの最後のメッセージと必ず重複するので削除
 			renderMessages(twitter, data, columnContent, conf, $this);
+			columnContent.parent().scrollTop(columnOffsetTopBeforeRender);
 		});
 	},
 	moreMessages: function(){

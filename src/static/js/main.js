@@ -3347,7 +3347,7 @@ var twitter = {
 			if(user.screen_name == columnInfo.account_name){
 				messageElm.data('delete', function(){
 					if(!confirm($I.R082({tweet:entry.text}))) return false;
-					var url = "twitter/api/"+columnInfo.account_name+"?path=statuses/destroy/.json";
+					var url = "twitter/api/"+columnInfo.account_name+"?path=statuses/destroy/"+entry.id+".json";
 					$.ajax({
 						type:"POST",
 						url:url,

@@ -2874,7 +2874,7 @@ var twitter = {
 		if(event && event.preventDefault) event.preventDefault();
 		var tempId = "profile-" + new Date().getTime();
 		var profileDialog = $('<div class="profile"/>').append(
-			$('<div class="profile-tabs"/>').append(
+			$('<div class="profile-tabs twitter"/>').append(
 				$('<ul/>').append(
 					$('<li class="profile-tab"><a href="#profile-tab-'+tempId+'"><span/></a></li>'),
 					$('<li class="timeline-tab"><a href="#timeline-tab-'+tempId+'"><span/></a></li>'),

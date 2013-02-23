@@ -3,6 +3,7 @@ var tabs, currentTab, currentMsgId, settingsPopup, addColumnPopup, focusedColumn
 	maxMessageCount = 50,
 	leftScrollSpeed = 150, onScrolling = false, scrollingTimer = -1,
 	reloadTimer = -1, reloadBackTimer = -1, msgCommandTimer = -1,
+	updateTimeTimer = -1,
 	adItems = null, adIndex = 0, stopAdTime = 0, AD_SPACE_NUM = 10, AD_STOPPING_SPAN = 60*60*1000,
 	REPLY_PREFIX = 'RE:', REPLY_PREFIX_LENGTH = REPLY_PREFIX.length,
 	POST_KEY_MSG = postKey == 'shift' ? $I.R017 : $I.R078,
@@ -2310,22 +2311,45 @@ function toLocalTime(formattedDate){
 	var localtime = new Date(Date.parse(formattedDate) - tzoffset);
 	return formatDate(localtime);
 }
-function toDiffTime(formattedDate){
-	var diffSec = ((new Date()).getTime() - (Date.parse(formattedDate) - tzoffset)) / 1000;
-	if (diffSec < 60) {
-		return Math.floor(diffSec) + 's';
-	}
-	var diffMinute = diffSec / 60;
-	if (diffMinute < 60) {
-		return Math.floor(diffMinute) +'m';
-	}
-	var diffHour = diffMinute / 60;
-	if (diffHour < 24) {
-		return Math.floor(diffHour) + 'h';
-	}
-	return toLocalTime(formattedDate).split(' ')[0];
-}	
-
+function getTimeUTC(formattedLocalDateTime) {
+// formattedLocalDateTime is like: "Thu Feb 21 23:27:07 2013"
+	return Date.parse(formattedLocalDateTime) - tzoffset;
+}
+var monthNames = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+function toElapsedTimeStr(timeUTC) {
+// timeUTC: msec since 1 January 1970 00:00:00 UTC
+	var now = new Date().getTime();
+	var elapsed = now - timeUTC;
+	elapsed /= 1000.0; // sec
+	var sec = Math.round(elapsed);
+	if (sec < 60) return sec+"s";
+	elapsed /= 60.0; // min
+	var min = Math.round(elapsed);
+	if (min < 60)  return min+"m";
+	elapsed /= 60.0; // hour
+	var hour = Math.round(elapsed);
+	if (hour < 24) return hour+"h";
+	var d = new Date(timeUTC);
+	var date = d.getDate();
+	var month = monthNames[d.getMonth()];
+	return date + " " + month;
+}
+var updateTimeTimerInterval = 57*1000;
+// about 1 min. make it 57 rather than 60 to avoid syncing with other updates.
+function updateTime() {
+	var now = new Date().getTime();
+	var margin = 1*1000; // for safty aginst the interval fluctuation
+	var limit = now - updateTimeTimerInterval - 23.5*60*60*1000 - margin;
+	// The 23.5 is enough since it is rounded up to 24
+	$(".time").each(function() {
+		var time = $(this).data("time");
+		if (time > limit) {
+		// update only elapsed time displays, i,e. within 24h
+			var timeStr = toElapsedTimeStr(time);
+			$(this).find("a").text(timeStr);
+		}
+	});
+}
 function buildURL(url, params){
 	url += "?";
 	var index = 0;
@@ -2415,6 +2439,8 @@ $(function(){
 	setTimeout(reloadBackTabContent, 10*1000);
 	//60分ごとに裏タブを更新
 	reloadBackTimer = setInterval(reloadBackTabContent, 60*60*1000);
+	// 経過時刻の更新
+	updateTimeTimer = setInterval(updateTime, updateTimeTimerInterval);
 	
 	//設定画面を開くハンドラーをつける
 	$("#settings").click(showSettings);
@@ -3077,14 +3103,18 @@ var twitter = {
 			isDMSent = columnInfo.type == "direct_messages/sent";
 		if(isDMSent)
 			user = entry.recipient || user;
-		var timeLinkOpt = {};
+		var timeLinkOpt = {
+			title: toLocalTime(entry.display_time)
+		};
 		if(!isDM){
 			timeLinkOpt = {
 				href:baseUrl+user.screen_name+"/status/"+entry.id,
-				target:"_blank"
+				target:"_blank",
+				title: toLocalTime(entry.display_time)
 			}
 		}
-		
+
+		var timeUTC = getTimeUTC(entry.display_time);
 		var messageElm = $.DIV({className:"message"},
 			$.A({
 					href:baseUrl+user.screen_name,
@@ -3107,9 +3137,9 @@ var twitter = {
 			$.DIV({className:"time"},
 				$.A(
 					timeLinkOpt,
-					toDiffTime(entry.display_time)
+					toElapsedTimeStr(timeUTC)
 				)
-			),
+			).data("time", timeUTC),
 			$.DIV({className:"message-text"})
 		).data("entry", entry).data('id', entry["id_str"]);
 		

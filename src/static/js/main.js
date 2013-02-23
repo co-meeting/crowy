@@ -466,7 +466,7 @@ function renderMessages(service, data, columnContent, columnInfo, refresh){
 	if(service.onAfterRenderMessages)
 		service.onAfterRenderMessages(data, columnContent, columnInfo);
 }
-function loadColumn(column, refresh){
+function loadColumn(column, refresh, scrollToTop){
 	var init = column.data("init");
 	column.data("init",true);
 	$(".column-header .icon", column).addClass("loading");
@@ -487,7 +487,9 @@ function loadColumn(column, refresh){
 			renderAccountImage(service, column, conf);
 			if(service.moreMessages)
 				column.find(".more-message").show();
-
+			if (scrollToTop) {
+				columnContent.parent().animate({ scrollTop: 0 });
+			}
 			//一番初めのカラムだったら広告を挿入
 			if(column.parents('.tab').attr('id') == currentTab.attr('id') && column.prevAll('.column').length == 0 && stopAdTime < (new Date().getTime()-AD_STOPPING_SPAN)){
 				function showAd(){
@@ -1402,7 +1404,7 @@ function renderTabs(){
 	//カラム更新処理
 	$('#tabs .column-header .reloadButton').livequery('click', function() {
 		var column = $(this).parents(".column");
-		loadColumn(column, true);
+		loadColumn(column, true, true);
 	});
 	//新着表示クリア処理
 	$('.column .new-count').livequery('click', function(){

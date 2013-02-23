@@ -2816,19 +2816,7 @@ var twitter = {
 		}
 	},
 	getIconClass: function(conf){
-		var type = conf.type;
-		if(type) {
-			if(type.indexOf("search/") == 0){
-				return "icon-twitter-search";
-			} else if(type.indexOf("list/") == 0){
-				return "icon-twitter-list";
-			} else if(type == "user_timeline"){
-				return "icon-twitter-sent";
-			} else if(type == "mentions"){
-				return "icon-twitter-mention";
-			}
-		}
-		return 'icon-'+conf.service;
+		return 'icon-twitter';
 	},
 	getPostUrl: function(conf){
 		if(conf.currentAccount)

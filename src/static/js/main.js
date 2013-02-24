@@ -3,7 +3,7 @@ var tabs, currentTab, currentMsgId, settingsPopup, addColumnPopup, focusedColumn
 	maxMessageCount = 50,
 	leftScrollSpeed = 150, onScrolling = false, scrollingTimer = -1,
 	reloadTimer = -1, reloadBackTimer = -1, msgCommandTimer = -1,
-	updateTimeTimer = -1,
+	updateTimestampTimer = -1,
 	adItems = null, adIndex = 0, stopAdTime = 0, AD_SPACE_NUM = 10, AD_STOPPING_SPAN = 60*60*1000,
 	REPLY_PREFIX = 'RE:', REPLY_PREFIX_LENGTH = REPLY_PREFIX.length,
 	POST_KEY_MSG = postKey == 'shift' ? $I.R017 : $I.R078,
@@ -2323,39 +2323,63 @@ function getTimeUTC(formattedLocalDateTime) {
 	return Date.parse(formattedLocalDateTime) - tzoffset;
 }
 var monthNames = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-function toElapsedTimeStr(timeUTC) {
+function toTweetTimestampStr(timeUTC) {
 // timeUTC: msec since 1 January 1970 00:00:00 UTC
+// return: [timestampStr, isRelativeTime]
 	var now = new Date().getTime();
 	var elapsed = now - timeUTC;
 	elapsed /= 1000.0; // sec
 	var sec = Math.round(elapsed);
-	if (sec < 60) return sec+"s";
+	if (sec < 60) return [sec+"s", true];
 	elapsed /= 60.0; // min
 	var min = Math.round(elapsed);
-	if (min < 60)  return min+"m";
+	if (min < 60)  return [min+"m", true];
 	elapsed /= 60.0; // hour
 	var hour = Math.round(elapsed);
-	if (hour < 24) return hour+"h";
+	if (hour < 24) return [hour+"h", true];
 	var d = new Date(timeUTC);
 	var date = d.getDate();
 	var month = monthNames[d.getMonth()];
-	return date + " " + month;
+	return [date + " " + month, false];
 }
-var updateTimeTimerInterval = 57*1000;
+var updateTimestampTimerInterval = 57*1000;
 // about 1 min. make it 57 rather than 60 to avoid syncing with other updates.
-function updateTime() {
-	var now = new Date().getTime();
-	var margin = 1*1000; // for safty aginst the interval fluctuation
-	var limit = now - updateTimeTimerInterval - 23.5*60*60*1000 - margin;
-	// The 23.5 is enough since it is rounded up to 24
-	$(".time").each(function() {
+function updateTimestamp() {
+	$(".relative-time").each(function() {
 		var time = $(this).data("time");
-		if (time > limit) {
-		// update only elapsed time displays, i,e. within 24h
-			var timeStr = toElapsedTimeStr(time);
-			$(this).find("a").text(timeStr);
+		var tts = toTweetTimestampStr(time);
+		var timestampStr = tts[0], isRelativeTime = tts[1];
+		$(this).find("a").text(timestampStr);
+		if (!isRelativeTime) {
+			$(this).removeClass("relative-time");
 		}
 	});
+}
+function createTimestampDiv(display_time, entryUrl, isDM) {
+	var timeLinkOpt = {
+		title: toLocalTime(display_time)
+	};
+	if(!isDM){
+		timeLinkOpt = {
+			href:entryUrl,
+			target:"_blank",
+			title: toLocalTime(display_time)
+		}
+	}
+	var timeUTC = getTimeUTC(display_time);
+	var tts = toTweetTimestampStr(timeUTC);
+	var timestampStr = tts[0], isRelativeTime = tts[1];
+	var div = $.DIV({className:"time"},
+		$.A(
+			timeLinkOpt,
+			timestampStr
+		)
+	);
+	div.data("time", timeUTC);
+	if (isRelativeTime) {
+		div.addClass("relative-time");
+	}
+	return div;
 }
 function buildURL(url, params){
 	url += "?";
@@ -2447,7 +2471,7 @@ $(function(){
 	//60分ごとに裏タブを更新
 	reloadBackTimer = setInterval(reloadBackTabContent, 60*60*1000);
 	// 経過時刻の更新
-	updateTimeTimer = setInterval(updateTime, updateTimeTimerInterval);
+	updateTimestampTimer = setInterval(updateTimestamp, updateTimestampTimerInterval);
 	
 	//設定画面を開くハンドラーをつける
 	$("#settings").click(showSettings);
@@ -3098,18 +3122,7 @@ var twitter = {
 			isDMSent = columnInfo.type == "direct_messages/sent";
 		if(isDMSent)
 			user = entry.recipient || user;
-		var timeLinkOpt = {
-			title: toLocalTime(entry.display_time)
-		};
-		if(!isDM){
-			timeLinkOpt = {
-				href:baseUrl+user.screen_name+"/status/"+entry.id,
-				target:"_blank",
-				title: toLocalTime(entry.display_time)
-			}
-		}
-
-		var timeUTC = getTimeUTC(entry.display_time);
+		var entryUrl = baseUrl+user.screen_name+"/status/"+entry.id;
 		var messageElm = $.DIV({className:"message"},
 			$.A({
 					href:baseUrl+user.screen_name,
@@ -3129,15 +3142,10 @@ var twitter = {
 				$.SPAN({className:'user-fullname'}, user.name || ''),
 				(isDMSent? "To: " : "") + '@' + user.screen_name
 			),
-			$.DIV({className:"time"},
-				$.A(
-					timeLinkOpt,
-					toElapsedTimeStr(timeUTC)
-				)
-			).data("time", timeUTC),
+			createTimestampDiv(entry.display_time, entryUrl, isDM),
 			$.DIV({className:"message-text"})
 		).data("entry", entry).data('id', entry["id_str"]);
-		
+
 		var imageDiv = $('<div class="images"/>');
 		messageElm.append(imageDiv);
 		

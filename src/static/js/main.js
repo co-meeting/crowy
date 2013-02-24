@@ -3167,7 +3167,7 @@ var twitter = {
 					displayText += '<a href="http://twitter.com/#!/search/%23'+encodeURIComponent(this.text)+'" target="_blank">#'+this.text+'</a>';
 				if(this.url) {
 					displayText += '<a href="'+this.url+'" target="_blank">'+(this.display_url || this.url)+'</a>';
-					getImageThumb(this.url, function(thumbData){
+					getImageThumb((this.expanded_url || this.url), function(thumbData){
 						var thumb = $(thumbData.thumb).load(function(){
 							createAmazonLink(thumbData.original, {
 								type:'amazon',

@@ -228,8 +228,11 @@ class ChatterHandler(BaseHandler):
             if not url.startswith("http") :
                 url = account_info["urls"]["rest"].replace("{version}", "22.0") + url
         headers = {"Authorization": "OAuth " + access_token}
-        query = urllib.urlencode(params)
+        
+        #query = urllib.urlencode(params) 念のためコメントアウト
+        query  = utils.encoded_urlencode(params)
         response = None
+        
         if method == "get":
             response = urlfetch.fetch(url+"?"+query, headers=headers)
         elif method == "post":

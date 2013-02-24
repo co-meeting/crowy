@@ -41,7 +41,7 @@ class FacebookLoginHandler(BaseHandler):
                 "https://graph.facebook.com/me?" +
                 urllib.urlencode(dict(access_token=access_token))).read(),'utf-8')
             profile = simplejson.loads(profile_res)
-            
+          
             user = None
             is_not_login = False
             try:
@@ -141,7 +141,9 @@ class FacebookHandler(BaseHandler):
                 query["q"] = type.split('/',1)[1]
             else:
                 url = "https://graph.facebook.com/"+type
+            
             template_values, status = self.get_messages(account, url, query)
+            
             if status == 400:#TODO 本当はレスポンスボディがOAuthExceptionだったら
                 self.error(401)
                 return
@@ -377,8 +379,10 @@ def call(user, account, url, params={}, method="get"):
             account,
             user.key()).get()
     params["access_token"] = account.access_token
-    query = urllib.urlencode(params)
+    
+    query = utils.encoded_urlencode(params)
     response = None
+    
     if method == "get":
         response = urlfetch.fetch(url+"?"+query, deadline=3)
     elif method == "post":

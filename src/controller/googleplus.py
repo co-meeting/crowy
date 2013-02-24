@@ -27,7 +27,8 @@ class GooglePlusHandler(BaseHandler):
             if type.startswith("search/"):
                 url = "https://www.googleapis.com/plus/v1/activities"
                 query["query"] = type.split('/',1)[1]
-                url += "?" + urllib.urlencode(query)
+                #url += "?" + urllib.urlencode(query)念のためコメントアウト
+                url += "?" + utils.encoded_urlencode(params)
                 json = memcache.get(url)
                 if json is None:
                     response = urlfetch.fetch(url)

@@ -134,12 +134,12 @@ class OAuthHandler(BaseHandler):
         if int(error_count) >= ERROR_COUNT_LIMIT: #連続して規定回数のエラーが起きたらそのサービスはダウンしていると判断
             logging.warn("Maybe %s is down now." % cls.service)
             return {"status":"999"}, ""
-        for key,value in params.items():
-            params[key] = value.encode('utf-8')
-        params = urllib.urlencode(params)
+        
+        params = utils.encoded_urlencode(params)
         
         token = oauth.Token(account.access_token, account.secret)
         client = cls.newOAuthClient(token)
+        
         try:
             resp, content = client.request(url, method, params, deadline=deadline)
             status = int(resp["status"])

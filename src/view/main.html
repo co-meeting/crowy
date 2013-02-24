@@ -37,7 +37,7 @@
 	<script type="text/javascript" src="http://pic.crowy.net/js/plupload/jquery.plupload.queue/jquery.plupload.queue.js"></script>
 
 	<script type="text/javascript" src="i18n.js"></script>
-	<script type="text/javascript">
+	{% autoescape off %}<script type="text/javascript">
 	var tabConfs = {{tabs}};
 	var notificationStatus = {%if user.notification%}true{%else%}false{%endif%};
 	var loginService = "{{user.service}}";
@@ -46,7 +46,7 @@
 	var STATIC_URL ="{{static_url}}";
 	var EXPAND_URL = "{{expand_url}}";
 	var AD_HTML = "{{ad_html}}";
-	</script>
+	</script>{% endautoescape %}
 	{%if production%}
 	<script type="text/javascript" src="http://pic.crowy.net/js/main.min.js?{{version}}"></script>
 	{%else%}

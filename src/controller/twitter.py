@@ -44,7 +44,7 @@ class TwitterHandler(BaseHandler):
                 return self.response.out.write("[]")
             elif type.startswith("list/") :
                 types = type.split("/")
-                list_name = types[2].encode('utf-8')
+                list_name = types[2]
                 url = "https://api.twitter.com/1.1/lists/statuses.json"
                 query["slug"] = list_name
                 query["owner_screen_name"] = types[1]
@@ -78,7 +78,7 @@ class TwitterHandler(BaseHandler):
             if self.request.get("page"):
                 query["page"] = self.request.get("page")
             url += '?'
-            for k, v in query.items():
+            for k, v in query.items():                
                 url += k + '=' + v.encode('utf-8').replace('#','%23') + '&'
             template_values, status = self.get_messages(account, url)
             if status == "401" or status == "403":

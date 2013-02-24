@@ -55,7 +55,7 @@ SIGNATURE_METHOD = 'PLAINTEXT'
 
 
 from google.appengine.api import urlfetch
-
+import logging
 
 class Error(RuntimeError):
     """Generic exception class."""
@@ -422,6 +422,11 @@ class Request(dict):
             # must be python <2.5
             query = base_url[4]
         query = parse_qs(query)
+        for k in query.keys():          
+            v_l = query[k]
+            v_t = v_l[0]
+            v_l = [v_t.encode('utf-8')]
+            query[k] = v_l    
         for k, v in self.items():
             query.setdefault(k, []).append(v)
         

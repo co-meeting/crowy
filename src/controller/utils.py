@@ -19,10 +19,20 @@ from google.appengine.ext.webapp import template
 from django.utils import translation
 from google.appengine.api import users
 from lib.cookies import Cookies
-
+import urllib
 import controller
 from controller.model import User
 from controller.session import Session, TempSession
+
+def encoded_urlencode(params,encode='utf-8'):
+    """
+    unicode文字列をエンコードしてからURLエンコード
+    """
+    p = {}
+    for k,v in params.items():
+        p[k] = v.encode(encode)
+    query = urllib.urlencode(p)
+    return query 
 
 class BaseHandler(webapp.RequestHandler):
     def initialize(self, request, response):

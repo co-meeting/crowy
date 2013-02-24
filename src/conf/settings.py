@@ -5,9 +5,9 @@ USE_I18N = True
 LANGUAGES = (
     # 'en', 'zh_TW' should match the directories in conf/locale/*
     ('en', 'English'),
-    ('es', 'Español'),
+    ('es', 'Espanol'),
     ('ja', '日本語'),
-    ('zh_CN', '中文(简体)'),
+    ('zh_CN', '中文(?体)'),
     )
 
 # This is a default language

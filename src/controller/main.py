@@ -111,7 +111,7 @@ class MainHandler(BaseHandler):
             formated_tabs.append(formated_tab)
         
         expand_url_num = 0 if controller.is_dev else random.randint(0, 5)
-        logging.info(formated_tabs)
+        
         template_values = {
             'user': user,
             'tabs': simplejson.dumps(formated_tabs),

@@ -7,7 +7,7 @@ import sys
 stdin = sys.stdin
 stdout = sys.stdout
 reload(sys)
-sys.setdefaultencoding('utf-8')
+#sys.setdefaultencoding('utf-8')
 sys.stdin = stdin
 sys.stdout = stdout
 
@@ -17,8 +17,9 @@ import urllib
 import datetime
 import re
 import random
+import webapp2 as webapp
+#from google.appengine.ext import webapp
 
-from google.appengine.ext import webapp
 from google.appengine.ext import blobstore
 from google.appengine.ext.webapp import blobstore_handlers
 from google.appengine.ext.webapp import template
@@ -514,58 +515,57 @@ class I18nResourcesHandler(BaseHandler):
         tmpl = os.path.join(os.path.dirname(__file__), view)
         return self.response.out.write(template.render(tmpl, {}))
 
-def main():
-    application = webapp.WSGIApplication([
-                                          ('/twitter/(.*)/(.*)/(.*)', twitter.TwitterHandler),
-                                          ('/twitter/(.*)/(.*)', twitter.TwitterHandler),
-                                          ('/twitter/(.*)', twitter.TwitterHandler),
-                                          ('/youroom/(.*)/(.*)/(.*)', youroom.YouRoomHandler),
-                                          ('/youroom/(.*)/(.*)', youroom.YouRoomHandler),
-                                          ('/youroom/(.*)', youroom.YouRoomHandler),
-                                          ('/yammer/(.*)/(.*)/(.*)', yammer.YammerHandler),
-                                          ('/yammer/(.*)/(.*)', yammer.YammerHandler),
-                                          ('/yammer/(.*)', yammer.YammerHandler),
-                                          ('/facebook/(login|oauth|mlogin)', facebook.FacebookLoginHandler),
-                                          ('/facebook/(.*)/(.*)/(.*)', facebook.FacebookHandler),
-                                          ('/facebook/(.*)/(.*)', facebook.FacebookHandler),
-                                          ('/facebook/(.*)', facebook.FacebookHandler),
-                                          ('/chatter/(.*)/(.*)/(.*)', chatter.ChatterHandler),
-                                          ('/chatter/(.*)/(.*)', chatter.ChatterHandler),
-                                          ('/chatter/(.*)', chatter.ChatterHandler),
-                                          ('/cybozulive/(.*)/(.*)/(.*)', cybozulive.CybozuliveHandler),
-                                          ('/cybozulive/(.*)/(.*)', cybozulive.CybozuliveHandler),
-                                          ('/cybozulive/(.*)', cybozulive.CybozuliveHandler),
-                                          ('/linkedin/(.*)/(.*)/(.*)', linkedin.LinkedInHandler),
-                                          ('/linkedin/(.*)/(.*)', linkedin.LinkedInHandler),
-                                          ('/linkedin/(.*)', linkedin.LinkedInHandler),
-                                          ('/rss/([^/]*)/?', rss.RssHandler),
-                                          ('/googleplus/([^/]*)/?', googleplus.GooglePlusHandler),
-                                          ('/oauth/twitter/(\w*)', oauth.TwitterHandler),
-                                          ('/oauth/youroom/(\w*)', oauth.YouRoomHandler),
-                                          ('/oauth/yammer/(\w*)', oauth.YammerHandler),
-                                          ('/oauth/cybozulive/(\w*)', oauth.CybozuliveHandler),
-                                          ('/oauth/linkedin/(\w*)', oauth.LinkedInHandler),
-                                          ('/tab/(\w*)', TabHandler),
-                                          ('/column/(\w*)', ColumnHandler),
-                                          ('/account/(\w*)', AccountHandler),
-                                          ('/file/(\w*)', UploadHandler),
-                                          #('/download/(.*)', DownloadHandler),
-                                          ('/url', UrlHandler),
-                                          ('/url/([\w\.]*)', UrlHandler),
-                                          ('/ad', AdHandler),
-                                          ('/shortcut/([\w\.]*)', AddressShortcutHandler),
-                                          ('/settings/([\w\.]*)', UserSettingsHandler),
-                                          ('/i18n.js', I18nResourcesHandler),
-                                          ('/login', googlelogin.GoogleLoginHandler),
-                                          ('/google/(mlogin)', googlelogin.GoogleLoginHandler),
-                                          ('/rakuten', RakutenHandler),
-                                          ('/mhome', MobileHandler),
-                                          ('/(home|logout|top)', MainHandler),
-                                          ('/', MainHandler)
-                                          ],
-                                         debug=False)
-    util.run_wsgi_app(application)
+
+application = webapp.WSGIApplication([
+                                      ('/twitter/(.*)/(.*)/(.*)', twitter.TwitterHandler),
+                                      ('/twitter/(.*)/(.*)', twitter.TwitterHandler),
+                                      ('/twitter/(.*)', twitter.TwitterHandler),
+                                      ('/youroom/(.*)/(.*)/(.*)', youroom.YouRoomHandler),
+                                      ('/youroom/(.*)/(.*)', youroom.YouRoomHandler),
+                                      ('/youroom/(.*)', youroom.YouRoomHandler),
+                                      ('/yammer/(.*)/(.*)/(.*)', yammer.YammerHandler),
+                                      ('/yammer/(.*)/(.*)', yammer.YammerHandler),
+                                      ('/yammer/(.*)', yammer.YammerHandler),
+                                      ('/facebook/(login|oauth|mlogin)', facebook.FacebookLoginHandler),
+                                      ('/facebook/(.*)/(.*)/(.*)', facebook.FacebookHandler),
+                                      ('/facebook/(.*)/(.*)', facebook.FacebookHandler),
+                                      ('/facebook/(.*)', facebook.FacebookHandler),
+                                      ('/chatter/(.*)/(.*)/(.*)', chatter.ChatterHandler),
+                                      ('/chatter/(.*)/(.*)', chatter.ChatterHandler),
+                                      ('/chatter/(.*)', chatter.ChatterHandler),
+                                      ('/cybozulive/(.*)/(.*)/(.*)', cybozulive.CybozuliveHandler),
+                                      ('/cybozulive/(.*)/(.*)', cybozulive.CybozuliveHandler),
+                                      ('/cybozulive/(.*)', cybozulive.CybozuliveHandler),
+                                      ('/linkedin/(.*)/(.*)/(.*)', linkedin.LinkedInHandler),
+                                      ('/linkedin/(.*)/(.*)', linkedin.LinkedInHandler),
+                                      ('/linkedin/(.*)', linkedin.LinkedInHandler),
+                                      ('/rss/([^/]*)/?', rss.RssHandler),
+                                      ('/googleplus/([^/]*)/?', googleplus.GooglePlusHandler),
+                                      ('/oauth/twitter/(\w*)', oauth.TwitterHandler),
+                                      ('/oauth/youroom/(\w*)', oauth.YouRoomHandler),
+                                      ('/oauth/yammer/(\w*)', oauth.YammerHandler),
+                                      ('/oauth/cybozulive/(\w*)', oauth.CybozuliveHandler),
+                                      ('/oauth/linkedin/(\w*)', oauth.LinkedInHandler),
+                                      ('/tab/(\w*)', TabHandler),
+                                      ('/column/(\w*)', ColumnHandler),
+                                      ('/account/(\w*)', AccountHandler),
+                                      ('/file/(\w*)', UploadHandler),
+                                      #('/download/(.*)', DownloadHandler),
+                                      ('/url', UrlHandler),
+                                      ('/url/([\w\.]*)', UrlHandler),
+                                      ('/ad', AdHandler),
+                                      ('/shortcut/([\w\.]*)', AddressShortcutHandler),
+                                      ('/settings/([\w\.]*)', UserSettingsHandler),
+                                      ('/i18n.js', I18nResourcesHandler),
+                                      ('/login', googlelogin.GoogleLoginHandler),
+                                      ('/google/(mlogin)', googlelogin.GoogleLoginHandler),
+                                      ('/rakuten', RakutenHandler),
+                                      ('/mhome', MobileHandler),
+                                      ('/(home|logout|top)', MainHandler),
+                                      ('/', MainHandler)
+                                      ],
+                                     debug=False)
+  
 
 
-if __name__ == '__main__':
-    main()
+

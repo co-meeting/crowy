@@ -59,13 +59,9 @@ except ImportError:
     socks = None
 
 # Build the appropriate socket wrapper for ssl
-try:
-    import ssl # python 2.6
-    _ssl_wrap_socket = ssl.wrap_socket
-except ImportError:
-    def _ssl_wrap_socket(sock, key_file, cert_file):
-        ssl_sock = socket.ssl(sock, key_file, cert_file)
-        return httplib.FakeSocket(sock, ssl_sock)
+def _ssl_wrap_socket(sock, key_file, cert_file):
+    ssl_sock = socket.ssl(sock, key_file, cert_file)
+    return httplib.FakeSocket(sock, ssl_sock)
 
 
 if sys.version_info >= (2,3):

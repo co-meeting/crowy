@@ -1,8 +1,9 @@
 application: crowyapp
 #version: 20121204a
 version: dev
-runtime: python
+runtime: python27
 api_version: 1
+threadsafe: true
 
 handlers:
 - url: /static
@@ -17,7 +18,7 @@ handlers:
 #  login: admin
 
 - url: .*
-  script: controller/main.py
+  script: controller.main.application
   secure: optional
 
 #メンテナンス中
@@ -27,4 +28,10 @@ handlers:
 
 builtins:
 - remote_api: on
-- datastore_admin: on
+
+
+libraries:
+- name: django
+  version: latest
+- name: webapp2
+  version: latest

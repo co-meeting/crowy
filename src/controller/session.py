@@ -53,7 +53,7 @@ class Session():
         self.delete_cache()
 
         expires = time.strftime("%a, %d-%b-%Y %H:%M:%S GMT", time.gmtime(0))
-        cookie_val = self.sid_name + '=null' + ';expires=' + expires
+        cookie_val = str(self.sid_name + '=null' + ';expires=' + expires)
         self.res.headers.add_header('Set-Cookie', cookie_val)
     
     def set_cookie(self, ssl=False):
@@ -66,7 +66,7 @@ class Session():
         
         if ssl:
             cookie_val += ';secure'
-
+        cookie_val = str(cookie_val)
         self.res.headers.add_header('Set-Cookie', cookie_val)
         self.res.headers.add_header(
             "P3P",

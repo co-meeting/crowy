@@ -13,8 +13,8 @@ import oauth2
 import logging
 
 from xml.sax import saxutils
-
-from google.appengine.ext import webapp
+import webapp2 as webapp
+#from google.appengine.ext import webapp
 from google.appengine.ext.webapp import template
 from django.utils import translation
 from google.appengine.api import users

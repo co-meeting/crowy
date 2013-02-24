@@ -112,8 +112,8 @@ class OAuthHandler(BaseHandler):
             account.request_token = request_token['oauth_token']
             account.secret = request_token['oauth_token_secret']
             account.put()
-            
-            self.response.headers.add_header('Set-Cookie', 'oauth_key=%s;' % str(account_key))
+            cookie_val  = str('oauth_key=%s;' % str(account_key))
+            self.response.headers.add_header('Set-Cookie', cookie_val)
             self.redirect(self.authorize_url + "?oauth_token=" + request_token['oauth_token'])
             return
         self.error(400)

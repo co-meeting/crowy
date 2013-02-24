@@ -79,7 +79,7 @@ class TwitterHandler(BaseHandler):
                 query["page"] = self.request.get("page")
             url += '?'
             for k, v in query.items():
-                url += k + '=' + v.encode('utf-8') + '&'
+                url += k + '=' + v.encode('utf-8').replace('#','%23') + '&'
             template_values, status = self.get_messages(account, url)
             if status == "401" or status == "403":
                 self.error(int(status))

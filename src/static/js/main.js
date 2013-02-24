@@ -3,6 +3,7 @@ var tabs, currentTab, currentMsgId, settingsPopup, addColumnPopup, focusedColumn
 	maxMessageCount = 50,
 	leftScrollSpeed = 150, onScrolling = false, scrollingTimer = -1,
 	reloadTimer = -1, reloadBackTimer = -1, msgCommandTimer = -1,
+	updateTimestampTimer = -1,
 	adItems = null, adIndex = 0, stopAdTime = 0, AD_SPACE_NUM = 10, AD_STOPPING_SPAN = 60*60*1000,
 	REPLY_PREFIX = 'RE:', REPLY_PREFIX_LENGTH = REPLY_PREFIX.length,
 	POST_KEY_MSG = postKey == 'shift' ? $I.R017 : $I.R078,
@@ -465,7 +466,7 @@ function renderMessages(service, data, columnContent, columnInfo, refresh){
 	if(service.onAfterRenderMessages)
 		service.onAfterRenderMessages(data, columnContent, columnInfo);
 }
-function loadColumn(column, refresh){
+function loadColumn(column, refresh, scrollToTop){
 	var init = column.data("init");
 	column.data("init",true);
 	$(".column-header .icon", column).addClass("loading");
@@ -486,7 +487,9 @@ function loadColumn(column, refresh){
 			renderAccountImage(service, column, conf);
 			if(service.moreMessages)
 				column.find(".more-message").show();
-
+			if (scrollToTop) {
+				columnContent.parent().animate({ scrollTop: 0 });
+			}
 			//一番初めのカラムだったら広告を挿入
 			if(column.parents('.tab').attr('id') == currentTab.attr('id') && column.prevAll('.column').length == 0 && stopAdTime < (new Date().getTime()-AD_STOPPING_SPAN)){
 				function showAd(){
@@ -1401,7 +1404,7 @@ function renderTabs(){
 	//カラム更新処理
 	$('#tabs .column-header .reloadButton').livequery('click', function() {
 		var column = $(this).parents(".column");
-		loadColumn(column, true);
+		loadColumn(column, true, true);
 	});
 	//新着表示クリア処理
 	$('.column .new-count').livequery('click', function(){
@@ -2315,22 +2318,69 @@ function toLocalTime(formattedDate){
 	var localtime = new Date(Date.parse(formattedDate) - tzoffset);
 	return formatDate(localtime);
 }
-function toDiffTime(formattedDate){
-	var diffSec = ((new Date()).getTime() - (Date.parse(formattedDate) - tzoffset)) / 1000;
-	if (diffSec < 60) {
-		return Math.floor(diffSec) + 's';
+function getTimeUTC(formattedLocalDateTime) {
+// formattedLocalDateTime is like: "Thu Feb 21 23:27:07 2013"
+	return Date.parse(formattedLocalDateTime) - tzoffset;
+}
+var monthNames = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+function toTweetTimestampStr(timeUTC) {
+// timeUTC: msec since 1 January 1970 00:00:00 UTC
+// return: [timestampStr, isRelativeTime]
+	var now = new Date().getTime();
+	var elapsed = now - timeUTC;
+	elapsed /= 1000.0; // sec
+	var sec = Math.round(elapsed);
+	if (sec < 60) return [sec+"s", true];
+	elapsed /= 60.0; // min
+	var min = Math.round(elapsed);
+	if (min < 60)  return [min+"m", true];
+	elapsed /= 60.0; // hour
+	var hour = Math.round(elapsed);
+	if (hour < 24) return [hour+"h", true];
+	var d = new Date(timeUTC);
+	var date = d.getDate();
+	var month = monthNames[d.getMonth()];
+	return [date + " " + month, false];
+}
+var updateTimestampTimerInterval = 57*1000;
+// about 1 min. make it 57 rather than 60 to avoid syncing with other updates.
+function updateTimestamp() {
+	$(".relative-time").each(function() {
+		var time = $(this).data("time");
+		var tts = toTweetTimestampStr(time);
+		var timestampStr = tts[0], isRelativeTime = tts[1];
+		$(this).find("a").text(timestampStr);
+		if (!isRelativeTime) {
+			$(this).removeClass("relative-time");
+		}
+	});
+}
+function createTimestampDiv(display_time, entryUrl, isDM) {
+	var timeLinkOpt = {
+		title: toLocalTime(display_time)
+	};
+	if(!isDM){
+		timeLinkOpt = {
+			href:entryUrl,
+			target:"_blank",
+			title: toLocalTime(display_time)
+		}
 	}
-	var diffMinute = diffSec / 60;
-	if (diffMinute < 60) {
-		return Math.floor(diffMinute) +'m';
+	var timeUTC = getTimeUTC(display_time);
+	var tts = toTweetTimestampStr(timeUTC);
+	var timestampStr = tts[0], isRelativeTime = tts[1];
+	var div = $.DIV({className:"time"},
+		$.A(
+			timeLinkOpt,
+			timestampStr
+		)
+	);
+	div.data("time", timeUTC);
+	if (isRelativeTime) {
+		div.addClass("relative-time");
 	}
-	var diffHour = diffMinute / 60;
-	if (diffHour < 24) {
-		return Math.floor(diffHour) + 'h';
-	}
-	return toLocalTime(formattedDate).split(' ')[0];
-}	
-
+	return div;
+}
 function buildURL(url, params){
 	url += "?";
 	var index = 0;
@@ -2420,6 +2470,8 @@ $(function(){
 	setTimeout(reloadBackTabContent, 10*1000);
 	//60分ごとに裏タブを更新
 	reloadBackTimer = setInterval(reloadBackTabContent, 60*60*1000);
+	// 経過時刻の更新
+	updateTimestampTimer = setInterval(updateTimestamp, updateTimestampTimerInterval);
 	
 	//設定画面を開くハンドラーをつける
 	$("#settings").click(showSettings);
@@ -2788,19 +2840,7 @@ var twitter = {
 		}
 	},
 	getIconClass: function(conf){
-		var type = conf.type;
-		if(type) {
-			if(type.indexOf("search/") == 0){
-				return "icon-twitter-search";
-			} else if(type.indexOf("list/") == 0){
-				return "icon-twitter-list";
-			} else if(type == "user_timeline"){
-				return "icon-twitter-sent";
-			} else if(type == "mentions"){
-				return "icon-twitter-mention";
-			}
-		}
-		return 'icon-'+conf.service;
+		return 'icon-twitter';
 	},
 	getPostUrl: function(conf){
 		if(conf.currentAccount)
@@ -2846,7 +2886,7 @@ var twitter = {
 		if(event && event.preventDefault) event.preventDefault();
 		var tempId = "profile-" + new Date().getTime();
 		var profileDialog = $('<div class="profile"/>').append(
-			$('<div class="profile-tabs"/>').append(
+			$('<div class="profile-tabs twitter"/>').append(
 				$('<ul/>').append(
 					$('<li class="profile-tab"><a href="#profile-tab-'+tempId+'"><span/></a></li>'),
 					$('<li class="timeline-tab"><a href="#timeline-tab-'+tempId+'"><span/></a></li>'),
@@ -3082,14 +3122,7 @@ var twitter = {
 			isDMSent = columnInfo.type == "direct_messages/sent";
 		if(isDMSent)
 			user = entry.recipient || user;
-		var timeLinkOpt = {};
-		if(!isDM){
-			timeLinkOpt = {
-				href:baseUrl+user.screen_name+"/status/"+entry.id,
-				target:"_blank"
-			}
-		}
-		
+		var entryUrl = baseUrl+user.screen_name+"/status/"+entry.id;
 		var messageElm = $.DIV({className:"message"},
 			$.A({
 					href:baseUrl+user.screen_name,
@@ -3109,15 +3142,10 @@ var twitter = {
 				$.SPAN({className:'user-fullname'}, user.name || ''),
 				(isDMSent? "To: " : "") + '@' + user.screen_name
 			),
-			$.DIV({className:"time"},
-				$.A(
-					timeLinkOpt,
-					toDiffTime(entry.display_time)
-				)
-			),
+			createTimestampDiv(entry.display_time, entryUrl, isDM),
 			$.DIV({className:"message-text"})
 		).data("entry", entry).data('id', entry["id_str"]);
-		
+
 		var imageDiv = $('<div class="images"/>');
 		messageElm.append(imageDiv);
 		
@@ -3327,7 +3355,7 @@ var twitter = {
 			if(user.screen_name == columnInfo.account_name){
 				messageElm.data('delete', function(){
 					if(!confirm($I.R082({tweet:entry.text}))) return false;
-					var url = "twitter/api/"+columnInfo.account_name+"?path=statuses/destroy/.json";
+					var url = "twitter/api/"+columnInfo.account_name+"?path=statuses/destroy/"+entry.id+".json";
 					$.ajax({
 						type:"POST",
 						url:url,
@@ -3509,8 +3537,10 @@ var twitter = {
 			maxId = lastMsg.data("entry").id;
 		$this.hide().next().show();
 		$.getJSON(buildURL(url, {type:conf.type, "max_id":maxId}), function(data){
+			var columnOffsetTopBeforeRender = columnContent.parent().offset().top - columnContent.offset().top;
 			data.messages.shift();//Twitterでmax_idを指定した場合、最初のメッセージは表示済みの最後のメッセージと必ず重複するので削除
 			renderMessages(twitter, data, columnContent, conf, $this);
+			columnContent.parent().scrollTop(columnOffsetTopBeforeRender);
 		});
 	},
 	moreMessages: function(){

@@ -850,7 +850,7 @@ function createColumn(id, name, conf, container){
 	var column = $('<div class="column"/>').attr('id', id).addClass(conf.prefs.bg_color || '')
 		.append($('<div class="new-count"/>'))
 		.append($('<div class="column-header">')
-			.append($('<div class="icon"/>').addClass(service.getIconClass(conf)))
+			.append($('<a href="https://twitter.com" target="_blank"><div class="icon icon-twitter"/></a>'))
 			.append($('<img class="account-image"/>').attr('src', STATIC_URL + 'images/noprofileimage.gif'))
 			//.append($('<span class="column-name"/>').text(name))
 			.append(columnName)

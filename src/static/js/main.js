@@ -3413,13 +3413,15 @@ var twitter = {
 			}
 		}
 		if(entry.retweet_user){
-			var rtUser = entry.retweet_user.screen_name;
+			var rtUser = entry.retweet_user.name;
 			var rtUserText = null;
 			if(entry.retweet_count > 1)
 				rtUserText = $I.R073({account:rtUser, count:entry.retweet_count-1});
 			else
 				rtUserText = $I.R072({account:rtUser});
-			messageElm.addClass('retweeted').append($('<a class="rt-user" href="#"/>').text(rtUserText).click(function(){
+			messageElm.addClass('retweeted').append($('<a class="rt-user" href="#"/>')
+			.text(rtUserText)
+			.click(function(){
 				var popup = $.DIV().append($('<p class="loading"/>').text("Loading...")).appendTo(document.body);
 				popup.dialog({
 					title: rtUserText,

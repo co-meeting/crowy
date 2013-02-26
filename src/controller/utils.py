@@ -17,6 +17,7 @@ from xml.sax import saxutils
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp import template
 from django.utils import translation
+from django.conf import settings
 from google.appengine.api import users
 from lib.cookies import Cookies
 
@@ -64,8 +65,9 @@ class BaseHandler(webapp.RequestHandler):
             else:
                 view = '../view/index-en.html'
             template_values = {
-               'version' : controller.version,
-               'production' : not controller.is_dev
+                'version' : controller.version,
+                'production' : not controller.is_dev,
+                'settings' : settings,
             }
             tmpl = os.path.join(os.path.dirname(__file__), view)
             return self.response.out.write(template.render(tmpl, template_values))

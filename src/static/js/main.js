@@ -3221,13 +3221,6 @@ var twitter = {
 				twitter.openProfile(_user, columnInfo, event);
 			});
 		
-/*
-		if(entry.source){
-			var source = " from " + entry.source;
-			$(".time", messageElm).append(source).find("a").attr("target","_blank");
-		}
-*/
-		
 		function sendDM(){
 			var account_name = columnInfo.account_name;
 			openColumnInput(messageElm.parents('.column'), columnInfo, "d "+user.screen_name+" ", "");
@@ -3514,6 +3507,12 @@ var twitter = {
 					}
 				}).data('reload',startLoadReply);
 			}).appendTo(messageElm);
+		}
+		if(entry.source){
+			var source = "from " + entry.source;
+			var sourceDiv = $('<div class="source">'+source+'</div>');
+			sourceDiv.find("a").attr("target","_blank");
+			messageElm.append(sourceDiv);
 		}
 		return messageElm;
 	},

@@ -361,7 +361,6 @@ function getImageThumb(url, callback){
 
 function showInformation(){
 	if($('#information').data('init')) return;
-	$('#information a.reconnect-facebook').button();
 	$('#information').dialog({
 		modal:true,
 		width:600
@@ -1765,12 +1764,14 @@ function initMessagePost(){
 			showSettings();
 			//callOnlyInitial({key:'crowy-20111007vup'});
 		} else {
-			/*callOnlyInitial({
-				key:'crowy-20111007vup',
-				callback: function(){
-					showInformation();
-				}
-			});*/
+			if(information_key) {
+				callOnlyInitial({
+					key: information_key,
+					callback: function(){
+						showInformation();
+					}
+				});
+			}
 		}
 		var facebookUser = null, hasNoFacebookAccount = false;
 		$.each(accounts, function(){
@@ -1782,9 +1783,6 @@ function initMessagePost(){
 		if(facebookUser){
 			if(!hasNoFacebookAccount && loginService == 'facebook' && $('.column').length == 0)
 				addDefaultColumn('facebook', facebookUser.account_name, facebookUser.name, true);
-			if(!facebookUser.scope || facebookUser.scope.indexOf('manage_pages') < 0){
-				showInformation();
-			}
 		}
 		$("#message-from").autocomplete({
 			minLength:0,

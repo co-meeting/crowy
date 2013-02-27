@@ -117,7 +117,8 @@ class MainHandler(BaseHandler):
             'production' : not controller.is_dev,
             'expand_url' : settings.EXPAND_URL_SERVICE_URL % expand_url_num,
             'static_url' : "/static/" if controller.is_dev else settings.STATIC_FILE_SERVER_URL,
-            'ad_html' : re.sub(r'\s', ' ', settings.AD_HTML).replace('"', '\'')
+            'ad_html' : re.sub(r'\s', ' ', settings.AD_HTML).replace('"', '\''),
+            'settings' : settings,
         }
         view = '../view/m_main.html' if self.is_mobile else '../view/main.html'
         tmpl = os.path.join(os.path.dirname(__file__), view)

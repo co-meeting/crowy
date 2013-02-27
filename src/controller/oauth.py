@@ -223,9 +223,9 @@ class OAuthHandler(BaseHandler):
 
 class TwitterHandler(OAuthHandler):
     service = 'twitter'
-    request_token_url = 'https://twitter.com/oauth/request_token'
-    access_token_url = 'https://twitter.com/oauth/access_token'
-    authorize_url = 'https://twitter.com/oauth/authorize'
+    request_token_url = 'https://api.twitter.com/oauth/request_token'
+    access_token_url = 'https://api.twitter.com/oauth/access_token'
+    authorize_url = 'https://api.twitter.com/oauth/authorize'
     consumer_key = settings.TWITTER_CONSUMER_KEY
     consumer_secret = settings.TWITTER_CONSUMER_SECRET
     

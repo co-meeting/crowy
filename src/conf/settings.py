@@ -46,6 +46,12 @@ EXPAND_URL_SERVICE_URL = "http://expand-url%s.example.com/"
 # 静的ファイル配置サーバー（devでは使用しない）
 STATIC_FILE_SERVER_URL = "http://static.example.com/"
 
+# お知らせを表示する際のクッキーのキー（表示しないときは空文字を指定）
+INFORMATION_COOKIE_KEY = ""
+
+# フッターのメッセージ
+FOOTER_MESSAGE = ""
+
 # 広告HTML
 AD_HTML = """
 <div style='font-size:24px;padding-top:40px;font-style:italic;color:#999;'>This is an advertisement area.</div>

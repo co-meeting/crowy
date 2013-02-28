@@ -849,7 +849,7 @@ function createColumn(id, name, conf, container){
 	var column = $('<div class="column"/>').attr('id', id).addClass(conf.prefs.bg_color || '')
 		.append($('<div class="new-count"/>'))
 		.append($('<div class="column-header">')
-			.append($('<a href="https://twitter.com" target="_blank"><div class="icon icon-twitter"/></a>'))
+			.append($('<div class="icon"/>').addClass(service.getIconClass(conf)))
 			.append($('<img class="account-image"/>').attr('src', STATIC_URL + 'images/noprofileimage.gif'))
 			//.append($('<span class="column-name"/>').text(name))
 			.append(columnName)
@@ -867,6 +867,8 @@ function createColumn(id, name, conf, container){
 		.addClass(conf.service)
 		.data("conf", conf)
 		.appendTo(container);
+	if(service.afterBuildColumn && typeof(service.afterBuildColumn) == 'function')
+		service.afterBuildColumn(column);
 	
 	//カラム毎の設定
 	var columnOpt = null;
@@ -2839,6 +2841,9 @@ var twitter = {
 	},
 	getIconClass: function(conf){
 		return 'icon-twitter';
+	},
+	afterBuildColumn: function(column){
+		column.find('.icon-twitter').wrap('<a href="https://twitter.com" target="_blank"></a>');
 	},
 	getPostUrl: function(conf){
 		if(conf.currentAccount)

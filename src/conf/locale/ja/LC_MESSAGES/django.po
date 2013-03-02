@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-16 21:35+0900\n"
+"POT-Creation-Date: 2013-03-01 18:09+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -57,8 +57,8 @@ msgstr "ごめんね"
 msgid "Something is wrong with me."
 msgstr "たまには僕も調子が悪くなるんです…"
 
-#: view/500.html:82 view/index-en.html:107 view/index.html:111
-#: view/main.html:145
+#: view/500.html:82 view/index-en.html:108 view/index.html:112
+#: view/main.html:140
 msgid "Terms"
 msgstr "利用規約"
 
@@ -81,7 +81,7 @@ msgstr "別のアカウントを追加"
 
 #: view/chatter_accounts.html:1 view/cybozulive_accounts.html:1
 #: view/facebook_accounts.html:1 view/i18n_js.html:20
-#: view/linkedin_accounts.html:1 view/main.html:221
+#: view/linkedin_accounts.html:1 view/main.html:216
 #: view/twitter_accounts.html:1 view/yammer_accounts.html:1
 #: view/youroom_accounts.html:1
 msgid "Delete"
@@ -276,11 +276,11 @@ msgstr "Shift+Enterで投稿"
 msgid "Close"
 msgstr "閉じる"
 
-#: view/i18n_js.html:25 view/main.html:256
+#: view/i18n_js.html:25 view/main.html:251
 msgid "Send"
 msgstr "投稿"
 
-#: view/i18n_js.html:26 view/main.html:257
+#: view/i18n_js.html:26 view/main.html:252
 msgid "Clear"
 msgstr "クリア"
 
@@ -309,7 +309,7 @@ msgstr "本当にこのタブを削除していいですか？"
 msgid "Cancel"
 msgstr "キャンセル"
 
-#: view/i18n_js.html:33 view/main.html:108 view/main.html.py:178
+#: view/i18n_js.html:33 view/main.html:112 view/main.html.py:173
 msgid "Add Column"
 msgstr "カラム追加"
 
@@ -408,7 +408,7 @@ msgstr "アカウントを削除しました。ページを再読み込みしま
 msgid "Failed to delete this account."
 msgstr "アカウントの削除に失敗しました。"
 
-#: view/i18n_js.html:55 view/main.html:201
+#: view/i18n_js.html:55 view/main.html:196
 msgid "Show Conversation"
 msgstr "会話履歴の表示"
 
@@ -540,7 +540,7 @@ msgstr "カラム「$(name)」の色を変更しました。"
 msgid "Failed to change color of the column \"$(name)\"."
 msgstr "カラム「$(name)」の色の変更に失敗しました。"
 
-#: view/i18n_js.html:90 view/main.html:209
+#: view/i18n_js.html:90 view/main.html:204
 msgid "Retweet"
 msgstr "公式リツイート"
 
@@ -584,11 +584,11 @@ msgstr "フォローされている"
 msgid "Your follow request has been sent."
 msgstr "フォローリクエストが送信されました"
 
-#: view/i18n_js.html:102 view/main.html:220
+#: view/i18n_js.html:102 view/main.html:215
 msgid "DM"
 msgstr "DM"
 
-#: view/i18n_js.html:103 view/main.html:202
+#: view/i18n_js.html:103 view/main.html:197
 msgid "Reply"
 msgstr "返信"
 
@@ -617,14 +617,30 @@ msgid ""
 "<a class=\"friend-name\"/> posted about <a class=\"this-product\">this "
 "product</a>"
 msgstr ""
-"<a class=\"friend-name\"/>さんが<a class=\"this-product\">この商品</a>"
-"についてコメントしています"
+"<a class=\"friend-name\"/>さんが<a class=\"this-product\">この商品</a>につい"
+"てコメントしています"
 
-#: view/index-en.html:107 view/index.html:111 view/main.html:145
+#: view/i18n_js.html:110
+msgid "d M"
+msgstr "m月d日"
+
+#: view/i18n_js.html:111
+msgid "$(second)s"
+msgstr "$(second)秒前"
+
+#: view/i18n_js.html:112
+msgid "$(minute)m"
+msgstr "$(minute)分前"
+
+#: view/i18n_js.html:113
+msgid "$(hour)h"
+msgstr "$(hour)時間前"
+
+#: view/index-en.html:108 view/index.html:112 view/main.html:140
 msgid "en"
 msgstr "ja"
 
-#: view/index-en.html:108 view/index.html:112 view/main.html:144
+#: view/index-en.html:109 view/index.html:113 view/main.html:139
 msgid "About Us"
 msgstr "運営会社"
 
@@ -632,35 +648,35 @@ msgstr "運営会社"
 msgid "There is no account of LinkedIn."
 msgstr "まだLinkedInのアカウントがありません。"
 
-#: view/main.html:83 view/main.html.py:151
+#: view/main.html:87 view/main.html.py:146
 msgid "Settings"
 msgstr "設定"
 
-#: view/main.html:84
+#: view/main.html:88
 msgid "Logout"
 msgstr "ログアウト"
 
-#: view/main.html:86
+#: view/main.html:90
 msgid "Help"
 msgstr "ヘルプ"
 
-#: view/main.html:87
+#: view/main.html:91
 msgid "Blog"
 msgstr "ブログ"
 
-#: view/main.html:96
+#: view/main.html:100
 msgid "Compose message"
 msgstr "メッセージの作成"
 
-#: view/main.html:104
+#: view/main.html:108
 msgid "Add Tab"
 msgstr "タブ追加"
 
-#: view/main.html:107
+#: view/main.html:111
 msgid "Refresh"
 msgstr "更新"
 
-#: view/main.html:123
+#: view/main.html:127
 msgid ""
 "<h2>This tab has no column.</h2><p>You can add a column in which a timeline "
 "of various services displays.</p><button>Add Column</button>"
@@ -669,15 +685,19 @@ msgstr ""
 "ワークのメッセージタイムラインを表示することができます。</p><button>カラム追"
 "加</button>"
 
-#: view/main.html:154
+#: view/main.html:138
+msgid "Github"
+msgstr ""
+
+#: view/main.html:149
 msgid "Services"
 msgstr "連携サービス"
 
-#: view/main.html:155 view/settings_basic.html:4
+#: view/main.html:150 view/settings_basic.html:4
 msgid "Preferences"
 msgstr "基本設定"
 
-#: view/main.html:159
+#: view/main.html:154
 msgid ""
 "<h3>Welcome to Crowy!</h3>At first you must add other service.<br>Please "
 "click the tab which you connect with and click [Connect]."
@@ -686,71 +706,71 @@ msgstr ""
 "必要があります。<br>連携したいサービスのタブをクリックし、「アカウントを追"
 "加」をクリックしてください。"
 
-#: view/main.html:161
+#: view/main.html:156
 msgid "You can add connections with other services and remove them."
 msgstr "他のサービスとの連携設定の追加・削除を行うことができます。"
 
-#: view/main.html:171 view/main.html.py:190
+#: view/main.html:166 view/main.html.py:185
 msgid "Cybozu Live(Lab)"
 msgstr "サイボウズLive(Lab)"
 
-#: view/main.html:180
+#: view/main.html:175
 msgid "Please select the service which you want to add."
 msgstr "追加するカラムに表示したいサービスを選択してください。"
 
-#: view/main.html:199
+#: view/main.html:194
 msgid "Like"
 msgstr "Like"
 
-#: view/main.html:200
+#: view/main.html:195
 msgid "Unlike"
 msgstr "Unlike"
 
-#: view/main.html:201
+#: view/main.html:196
 msgid "Thread"
 msgstr "会話"
 
-#: view/main.html:203
+#: view/main.html:198
 msgid "Comment"
 msgstr "コメント"
 
-#: view/main.html:205
+#: view/main.html:200
 msgid "RT"
 msgstr "公式RT"
 
-#: view/main.html:208
+#: view/main.html:203
 msgid "Classic RT"
 msgstr "非公式RT"
 
-#: view/main.html:213
+#: view/main.html:208
 msgid "Favorite"
 msgstr "お気に入り"
 
-#: view/main.html:214
+#: view/main.html:209
 msgid "Unfavorite"
 msgstr "お気に入りの取消"
 
-#: view/main.html:216
+#: view/main.html:211
 msgid "Others"
 msgstr "その他"
 
-#: view/main.html:219
+#: view/main.html:214
 msgid "Reply all"
 msgstr "全員に返信"
 
-#: view/main.html:220
+#: view/main.html:215
 msgid "Direct Message"
 msgstr "ダイレクトメッセージ"
 
-#: view/main.html:226
+#: view/main.html:221
 msgid "Multi post"
 msgstr "マルチポストする"
 
-#: view/main.html:233
+#: view/main.html:228
 msgid "To:"
 msgstr "投稿先:"
 
-#: view/main.html:262
+#: view/main.html:257
 msgid "Add these addresses to shortcuts."
 msgstr "この宛先をショートカットして保存する"
 

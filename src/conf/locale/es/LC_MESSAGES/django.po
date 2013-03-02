@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-16 21:35+0900\n"
+"POT-Creation-Date: 2013-03-01 18:09+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -57,8 +57,8 @@ msgstr "Lo siento."
 msgid "Something is wrong with me."
 msgstr "A veces tambien me pongo mal."
 
-#: view/500.html:82 view/index-en.html:107 view/index.html:111
-#: view/main.html:145
+#: view/500.html:82 view/index-en.html:108 view/index.html:112
+#: view/main.html:140
 msgid "Terms"
 msgstr "Condiciones de uso"
 
@@ -81,7 +81,7 @@ msgstr "Añadir Otra Cuenta"
 
 #: view/chatter_accounts.html:1 view/cybozulive_accounts.html:1
 #: view/facebook_accounts.html:1 view/i18n_js.html:20
-#: view/linkedin_accounts.html:1 view/main.html:221
+#: view/linkedin_accounts.html:1 view/main.html:216
 #: view/twitter_accounts.html:1 view/yammer_accounts.html:1
 #: view/youroom_accounts.html:1
 msgid "Delete"
@@ -276,11 +276,11 @@ msgstr "\"Shift+Enter\" para depositar."
 msgid "Close"
 msgstr "Cerrar"
 
-#: view/i18n_js.html:25 view/main.html:256
+#: view/i18n_js.html:25 view/main.html:251
 msgid "Send"
 msgstr "Enviar"
 
-#: view/i18n_js.html:26 view/main.html:257
+#: view/i18n_js.html:26 view/main.html:252
 msgid "Clear"
 msgstr "Clear"
 
@@ -309,7 +309,7 @@ msgstr "Es tas sequro de eliminar esta ?"
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: view/i18n_js.html:33 view/main.html:108 view/main.html.py:178
+#: view/i18n_js.html:33 view/main.html:112 view/main.html.py:173
 msgid "Add Column"
 msgstr "Agregar nueva columna"
 
@@ -409,7 +409,7 @@ msgstr "Crowy ha borado la cuenta correctamente.carganndo..."
 msgid "Failed to delete this account."
 msgstr "Crowy fallo al borrar la cuenta."
 
-#: view/i18n_js.html:55 view/main.html:201
+#: view/i18n_js.html:55 view/main.html:196
 msgid "Show Conversation"
 msgstr ""
 
@@ -541,7 +541,7 @@ msgstr ""
 msgid "Failed to change color of the column \"$(name)\"."
 msgstr ""
 
-#: view/i18n_js.html:90 view/main.html:209
+#: view/i18n_js.html:90 view/main.html:204
 msgid "Retweet"
 msgstr ""
 
@@ -585,11 +585,11 @@ msgstr ""
 msgid "Your follow request has been sent."
 msgstr ""
 
-#: view/i18n_js.html:102 view/main.html:220
+#: view/i18n_js.html:102 view/main.html:215
 msgid "DM"
 msgstr ""
 
-#: view/i18n_js.html:103 view/main.html:202
+#: view/i18n_js.html:103 view/main.html:197
 msgid "Reply"
 msgstr ""
 
@@ -619,11 +619,27 @@ msgid ""
 "product</a>"
 msgstr ""
 
-#: view/index-en.html:107 view/index.html:111 view/main.html:145
+#: view/i18n_js.html:110
+msgid "d M"
+msgstr "d M"
+
+#: view/i18n_js.html:111
+msgid "$(second)s"
+msgstr "$(second)s"
+
+#: view/i18n_js.html:112
+msgid "$(minute)m"
+msgstr "$(minute)m"
+
+#: view/i18n_js.html:113
+msgid "$(hour)h"
+msgstr "$(hour)h"
+
+#: view/index-en.html:108 view/index.html:112 view/main.html:140
 msgid "en"
 msgstr "en"
 
-#: view/index-en.html:108 view/index.html:112 view/main.html:144
+#: view/index-en.html:109 view/index.html:113 view/main.html:139
 msgid "About Us"
 msgstr ""
 
@@ -631,119 +647,123 @@ msgstr ""
 msgid "There is no account of LinkedIn."
 msgstr "No hay ninguna cuenta de \"Linkedln\"."
 
-#: view/main.html:83 view/main.html.py:151
+#: view/main.html:87 view/main.html.py:146
 msgid "Settings"
 msgstr "Ajustes"
 
-#: view/main.html:84
+#: view/main.html:88
 msgid "Logout"
 msgstr "Cerrar sesión"
 
-#: view/main.html:86
+#: view/main.html:90
 msgid "Help"
 msgstr "Ayuda"
 
-#: view/main.html:87
+#: view/main.html:91
 msgid "Blog"
 msgstr "Blog"
 
-#: view/main.html:96
+#: view/main.html:100
 msgid "Compose message"
 msgstr "Nuevo mensage"
 
-#: view/main.html:104
+#: view/main.html:108
 msgid "Add Tab"
 msgstr "Agregar pestaña"
 
-#: view/main.html:107
+#: view/main.html:111
 msgid "Refresh"
 msgstr "Actualizar"
 
-#: view/main.html:123
+#: view/main.html:127
 msgid ""
 "<h2>This tab has no column.</h2><p>You can add a column in which a timeline "
 "of various services displays.</p><button>Add Column</button>"
 msgstr ""
 
-#: view/main.html:154
+#: view/main.html:138
+msgid "Github"
+msgstr ""
+
+#: view/main.html:149
 msgid "Services"
 msgstr ""
 
-#: view/main.html:155 view/settings_basic.html:4
+#: view/main.html:150 view/settings_basic.html:4
 msgid "Preferences"
 msgstr ""
 
-#: view/main.html:159
+#: view/main.html:154
 msgid ""
 "<h3>Welcome to Crowy!</h3>At first you must add other service.<br>Please "
 "click the tab which you connect with and click [Connect]."
 msgstr ""
 
-#: view/main.html:161
+#: view/main.html:156
 msgid "You can add connections with other services and remove them."
 msgstr ""
 
-#: view/main.html:171 view/main.html.py:190
+#: view/main.html:166 view/main.html.py:185
 msgid "Cybozu Live(Lab)"
 msgstr ""
 
-#: view/main.html:180
+#: view/main.html:175
 msgid "Please select the service which you want to add."
 msgstr ""
 
-#: view/main.html:199
+#: view/main.html:194
 msgid "Like"
 msgstr ""
 
-#: view/main.html:200
+#: view/main.html:195
 msgid "Unlike"
 msgstr ""
 
-#: view/main.html:201
+#: view/main.html:196
 msgid "Thread"
 msgstr ""
 
-#: view/main.html:203
+#: view/main.html:198
 msgid "Comment"
 msgstr ""
 
-#: view/main.html:205
+#: view/main.html:200
 msgid "RT"
 msgstr ""
 
-#: view/main.html:208
+#: view/main.html:203
 msgid "Classic RT"
 msgstr ""
 
-#: view/main.html:213
+#: view/main.html:208
 msgid "Favorite"
 msgstr ""
 
-#: view/main.html:214
+#: view/main.html:209
 msgid "Unfavorite"
 msgstr ""
 
-#: view/main.html:216
+#: view/main.html:211
 msgid "Others"
 msgstr ""
 
-#: view/main.html:219
+#: view/main.html:214
 msgid "Reply all"
 msgstr ""
 
-#: view/main.html:220
+#: view/main.html:215
 msgid "Direct Message"
 msgstr ""
 
-#: view/main.html:226
+#: view/main.html:221
 msgid "Multi post"
 msgstr ""
 
-#: view/main.html:233
+#: view/main.html:228
 msgid "To:"
 msgstr ""
 
-#: view/main.html:262
+#: view/main.html:257
 msgid "Add these addresses to shortcuts."
 msgstr ""
 

@@ -2322,7 +2322,6 @@ function getTimeUTC(formattedLocalDateTime) {
 // formattedLocalDateTime is like: "Thu Feb 21 23:27:07 2013"
 	return Date.parse(formattedLocalDateTime) - tzoffset;
 }
-var monthNames = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 function toTweetTimestampStr(timeUTC) {
 // timeUTC: msec since 1 January 1970 00:00:00 UTC
 // return: [timestampStr, isRelativeTime]
@@ -2330,17 +2329,15 @@ function toTweetTimestampStr(timeUTC) {
 	var elapsed = now - timeUTC;
 	elapsed /= 1000.0; // sec
 	var sec = Math.round(elapsed);
-	if (sec < 60) return [sec+"s", true];
+	if (sec < 60) return [$I.R110({second:sec}), true];
 	elapsed /= 60.0; // min
 	var min = Math.round(elapsed);
-	if (min < 60)  return [min+"m", true];
+	if (min < 60)  return [$I.R111({minute:min}), true];
 	elapsed /= 60.0; // hour
 	var hour = Math.round(elapsed);
-	if (hour < 24) return [hour+"h", true];
+	if (hour < 24) return [$I.R112({hour:hour}), true];
 	var d = new Date(timeUTC);
-	var date = d.getDate();
-	var month = monthNames[d.getMonth()];
-	return [date + " " + month, false];
+	return [$.datepicker.formatDate($I.R109, d), false];
 }
 var updateTimestampTimerInterval = 57*1000;
 // about 1 min. make it 57 rather than 60 to avoid syncing with other updates.

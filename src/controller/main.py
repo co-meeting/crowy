@@ -7,7 +7,7 @@ import sys
 stdin = sys.stdin
 stdout = sys.stdout
 reload(sys)
-#sys.setdefaultencoding('utf-8')
+sys.setdefaultencoding('utf-8')
 sys.stdin = stdin
 sys.stdout = stdout
 
@@ -22,21 +22,22 @@ import webapp2 as webapp
 
 from google.appengine.ext import blobstore
 from google.appengine.ext.webapp import blobstore_handlers
-from google.appengine.ext.webapp import template
+#from controller.utils import template
 from google.appengine.ext.webapp import util
 from google.appengine.api import urlfetch
 from google.appengine.ext import db
 from google.appengine.runtime.apiproxy_errors import CapabilityDisabledError
 
-from django.utils import simplejson
+
 
 # For i18n
-os.environ['DJANGO_SETTINGS_MODULE'] = 'conf.settings'
+#os.environ['DJANGO_SETTINGS_MODULE'] = 'conf.settings'
 from django.conf import settings
 from django.utils import translation
 from lib.cookies import Cookies
+from django.utils import simplejson
 # Force Django to reload settings
-settings._target = None
+#settings._target = None
 
 import controller
 from controller import oauth,twitter,youroom,yammer,facebook,chatter,cybozulive,linkedin,rss,model,googlelogin,googleplus
@@ -480,6 +481,7 @@ class UserSettingsHandler(BaseHandler):
         user = self.session.get_user()
         if action == 'basic':
             tmpl = os.path.join(os.path.dirname(__file__), '../view/settings_basic.html')
+            
             template_values = {
                                'user': user,
                                'lang': user.lang or translation.get_language(),
@@ -565,7 +567,7 @@ application = webapp.WSGIApplication([
                                       ('/(home|logout|top)', MainHandler),
                                       ('/', MainHandler)
                                       ],
-                                     debug=False)
+                                     debug=settings.DEBUG)
   
 
 

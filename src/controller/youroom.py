@@ -9,7 +9,7 @@ import mimetypes
 
 from google.appengine.ext import webapp
 from google.appengine.ext import blobstore
-from google.appengine.ext.webapp import template
+from controller.utils import template
 from google.appengine.ext.webapp import util
 from google.appengine.ext import db
 from google.appengine.api import urlfetch
@@ -170,7 +170,7 @@ class YouRoomHandler(BaseHandler):
     
     def get_entries(self, account, url, room_id=""):
         user = self.session.get_user()
-        room_id = room_id or message["entry"]["participation"]["group"]["to_param"]
+        #room_id = room_id or message["entry"]["participation"]["group"]["to_param"]
         response, content = oauth.YouRoomHandler.request(user, account, url)
         if response["status"] != "200":
             raise Exception(response["status"] + " failed to get messages. : " + content)

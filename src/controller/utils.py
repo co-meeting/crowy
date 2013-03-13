@@ -15,7 +15,6 @@ import logging
 from xml.sax import saxutils
 import webapp2 as webapp
 #from google.appengine.ext import webapp
-from google.appengine.ext.webapp import template
 from django.utils import translation
 from google.appengine.api import users
 from lib.cookies import Cookies
@@ -23,6 +22,9 @@ import urllib
 import controller
 from controller.model import User
 from controller.session import Session, TempSession
+from django.template import Context, loader
+from  django.conf import settings
+
 
 def encoded_urlencode(params,encode='utf-8'):
     """
@@ -33,6 +35,22 @@ def encoded_urlencode(params,encode='utf-8'):
         p[k] = v.encode(encode)
     query = urllib.urlencode(p)
     return query 
+
+class template(object):
+    @staticmethod
+    def render(path,params):
+      
+           
+        
+        template = loader.get_template(path)
+        
+        context = Context(params)
+        return template.render(context)
+        
+        
+        
+        
+        
 
 class BaseHandler(webapp.RequestHandler):
     def initialize(self, request, response):

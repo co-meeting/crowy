@@ -12,7 +12,7 @@ from django.conf import settings
 from google.appengine.ext import db
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp import util
-from google.appengine.ext.webapp import template
+from controller.utils import template
 from google.appengine.api import urlfetch
 
 from controller import utils
@@ -248,8 +248,8 @@ class ChatterHandler(BaseHandler):
         logging.info(response.content)
         if response.status_code == 401 and not is_retry:
             args = dict(
-                        client_id=CHATTER_CLIENT_ID,
-                        client_secret=CHATTER_CLIENT_SECRET,
+                        client_id=settings.CHATTER_CLIENT_ID,
+                        client_secret=settings.CHATTER_CLIENT_SECRET,
                         grant_type='refresh_token',
                         refresh_token=account.refresh_token)
             account = self.get_token(args)

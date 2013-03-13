@@ -33,5 +33,5 @@ builtins:
 libraries:
 - name: django
   version: latest
-- name: webapp2
-  version: latest
+env_variables:
+  DJANGO_SETTINGS_MODULE: 'conf.settings'

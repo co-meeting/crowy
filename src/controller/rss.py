@@ -11,7 +11,7 @@ from cgi import parse_qsl
 from lib import feedparser
 
 from google.appengine.ext import webapp
-from google.appengine.ext.webapp import template
+from controller.utils import template
 from google.appengine.api import memcache
 from django.utils import simplejson
 

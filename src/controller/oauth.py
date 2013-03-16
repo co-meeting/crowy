@@ -15,7 +15,7 @@ from cgi import parse_qsl
 from lib import feedparser
 
 from google.appengine.ext import webapp
-from google.appengine.ext.webapp import template
+from controller.utils import template
 from google.appengine.ext.webapp import util
 from google.appengine.ext import db
 from google.appengine.api import memcache
@@ -112,8 +112,8 @@ class OAuthHandler(BaseHandler):
             account.request_token = request_token['oauth_token']
             account.secret = request_token['oauth_token_secret']
             account.put()
-            
-            self.response.headers.add_header('Set-Cookie', 'oauth_key=%s;' % str(account_key))
+            cookie_val  = str('oauth_key=%s;' % str(account_key))
+            self.response.headers.add_header('Set-Cookie', cookie_val)
             self.redirect(self.authorize_url + "?oauth_token=" + request_token['oauth_token'])
             return
         self.error(400)
@@ -134,12 +134,12 @@ class OAuthHandler(BaseHandler):
         if int(error_count) >= ERROR_COUNT_LIMIT: #連続して規定回数のエラーが起きたらそのサービスはダウンしていると判断
             logging.warn("Maybe %s is down now." % cls.service)
             return {"status":"999"}, ""
-        for key,value in params.items():
-            params[key] = value.encode('utf-8')
-        params = urllib.urlencode(params)
+        
+        params = utils.encoded_urlencode(params)
         
         token = oauth.Token(account.access_token, account.secret)
         client = cls.newOAuthClient(token)
+        
         try:
             resp, content = client.request(url, method, params, deadline=deadline)
             status = int(resp["status"])

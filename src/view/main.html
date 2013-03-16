@@ -37,7 +37,7 @@
 	<script type="text/javascript" src="{{static_url}}js/plupload/jquery.plupload.queue/jquery.plupload.queue.js"></script>
 
 	<script type="text/javascript" src="i18n.js"></script>
-	<script type="text/javascript">
+	{% autoescape off %}<script type="text/javascript">
 	var tabConfs = {{tabs}};
 	var notificationStatus = {%if user.notification%}true{%else%}false{%endif%};
 	var loginService = "{{user.service}}";
@@ -47,7 +47,7 @@
 	var EXPAND_URL = "{{expand_url}}";
 	var AD_HTML = "{{ad_html}}";
 	var information_key = "{{settings.INFORMATION_COOKIE_KEY}}";
-	</script>
+	</script>{% endautoescape %}
 	{%if production%}
 	<script type="text/javascript" src="{{static_url}}js/main.min.js?{{version}}"></script>
 	{%else%}

@@ -1,13 +1,15 @@
 # -*- coding: utf-8 -*-
-USE_I18N = True
+import os
+
+
 
 # Valid languages
 LANGUAGES = (
     # 'en', 'zh_TW' should match the directories in conf/locale/*
     ('en', 'English'),
-    ('es', 'Español'),
+    ('es', 'Espanol'),
     ('ja', '日本語'),
-    ('zh_CN', '中文(简体)'),
+    ('zh_CN', '中文(?体)'),
     )
 
 # This is a default language
@@ -56,3 +58,32 @@ FOOTER_MESSAGE = ""
 AD_HTML = """
 <div style='font-size:24px;padding-top:40px;font-style:italic;color:#999;'>This is an advertisement area.</div>
 """
+
+#Django関連設定
+
+#デバッグﾓｰﾄﾞ。環境変数をベースに自動的にモード変更。controller/main.pyも参考
+DEBUG = os.environ.get('SERVER_SOFTWARE', '').startswith('Development')
+TEMPLATE_DEBUG = DEBUG
+
+#テンプレート
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    #'django.template.loaders.app_directories.Loader',
+#     'django.template.loaders.eggs.Loader',
+)
+
+TEMPLATE_DIRS = (
+    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
+    # Always use forward slashes, even on Windows.
+    # Don't forget to use absolute paths, not relative paths.
+    os.path.abspath(os.path.dirname(__file__)) + '/../view',
+)
+
+
+#国際化
+
+USE_I18N = True
+USE_L10N = True
+LOCALE_PATHS = (
+     os.path.abspath(os.path.dirname(__file__)) + '/locale',
+)

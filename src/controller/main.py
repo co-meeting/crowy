@@ -17,25 +17,27 @@ import urllib
 import datetime
 import re
 import random
+import webapp2 as webapp
+#from google.appengine.ext import webapp
 
-from google.appengine.ext import webapp
 from google.appengine.ext import blobstore
 from google.appengine.ext.webapp import blobstore_handlers
-from google.appengine.ext.webapp import template
+#from controller.utils import template
 from google.appengine.ext.webapp import util
 from google.appengine.api import urlfetch
 from google.appengine.ext import db
 from google.appengine.runtime.apiproxy_errors import CapabilityDisabledError
 
-from django.utils import simplejson
+
 
 # For i18n
-os.environ['DJANGO_SETTINGS_MODULE'] = 'conf.settings'
+#os.environ['DJANGO_SETTINGS_MODULE'] = 'conf.settings'
 from django.conf import settings
 from django.utils import translation
 from lib.cookies import Cookies
+from django.utils import simplejson
 # Force Django to reload settings
-settings._target = None
+#settings._target = None
 
 import controller
 from controller import oauth,twitter,youroom,yammer,facebook,chatter,cybozulive,linkedin,rss,model,googlelogin,googleplus
@@ -110,6 +112,7 @@ class MainHandler(BaseHandler):
             formated_tabs.append(formated_tab)
         
         expand_url_num = 0 if controller.is_dev else random.randint(0, 5)
+        
         template_values = {
             'user': user,
             'tabs': simplejson.dumps(formated_tabs),
@@ -479,6 +482,7 @@ class UserSettingsHandler(BaseHandler):
         user = self.session.get_user()
         if action == 'basic':
             tmpl = os.path.join(os.path.dirname(__file__), '../view/settings_basic.html')
+            
             template_values = {
                                'user': user,
                                'lang': user.lang or translation.get_language(),
@@ -515,58 +519,57 @@ class I18nResourcesHandler(BaseHandler):
         tmpl = os.path.join(os.path.dirname(__file__), view)
         return self.response.out.write(template.render(tmpl, {}))
 
-def main():
-    application = webapp.WSGIApplication([
-                                          ('/twitter/(.*)/(.*)/(.*)', twitter.TwitterHandler),
-                                          ('/twitter/(.*)/(.*)', twitter.TwitterHandler),
-                                          ('/twitter/(.*)', twitter.TwitterHandler),
-                                          ('/youroom/(.*)/(.*)/(.*)', youroom.YouRoomHandler),
-                                          ('/youroom/(.*)/(.*)', youroom.YouRoomHandler),
-                                          ('/youroom/(.*)', youroom.YouRoomHandler),
-                                          ('/yammer/(.*)/(.*)/(.*)', yammer.YammerHandler),
-                                          ('/yammer/(.*)/(.*)', yammer.YammerHandler),
-                                          ('/yammer/(.*)', yammer.YammerHandler),
-                                          ('/facebook/(login|oauth|mlogin)', facebook.FacebookLoginHandler),
-                                          ('/facebook/(.*)/(.*)/(.*)', facebook.FacebookHandler),
-                                          ('/facebook/(.*)/(.*)', facebook.FacebookHandler),
-                                          ('/facebook/(.*)', facebook.FacebookHandler),
-                                          ('/chatter/(.*)/(.*)/(.*)', chatter.ChatterHandler),
-                                          ('/chatter/(.*)/(.*)', chatter.ChatterHandler),
-                                          ('/chatter/(.*)', chatter.ChatterHandler),
-                                          ('/cybozulive/(.*)/(.*)/(.*)', cybozulive.CybozuliveHandler),
-                                          ('/cybozulive/(.*)/(.*)', cybozulive.CybozuliveHandler),
-                                          ('/cybozulive/(.*)', cybozulive.CybozuliveHandler),
-                                          ('/linkedin/(.*)/(.*)/(.*)', linkedin.LinkedInHandler),
-                                          ('/linkedin/(.*)/(.*)', linkedin.LinkedInHandler),
-                                          ('/linkedin/(.*)', linkedin.LinkedInHandler),
-                                          ('/rss/([^/]*)/?', rss.RssHandler),
-                                          ('/googleplus/([^/]*)/?', googleplus.GooglePlusHandler),
-                                          ('/oauth/twitter/(\w*)', oauth.TwitterHandler),
-                                          ('/oauth/youroom/(\w*)', oauth.YouRoomHandler),
-                                          ('/oauth/yammer/(\w*)', oauth.YammerHandler),
-                                          ('/oauth/cybozulive/(\w*)', oauth.CybozuliveHandler),
-                                          ('/oauth/linkedin/(\w*)', oauth.LinkedInHandler),
-                                          ('/tab/(\w*)', TabHandler),
-                                          ('/column/(\w*)', ColumnHandler),
-                                          ('/account/(\w*)', AccountHandler),
-                                          ('/file/(\w*)', UploadHandler),
-                                          #('/download/(.*)', DownloadHandler),
-                                          ('/url', UrlHandler),
-                                          ('/url/([\w\.]*)', UrlHandler),
-                                          ('/ad', AdHandler),
-                                          ('/shortcut/([\w\.]*)', AddressShortcutHandler),
-                                          ('/settings/([\w\.]*)', UserSettingsHandler),
-                                          ('/i18n.js', I18nResourcesHandler),
-                                          ('/login', googlelogin.GoogleLoginHandler),
-                                          ('/google/(mlogin)', googlelogin.GoogleLoginHandler),
-                                          ('/rakuten', RakutenHandler),
-                                          ('/mhome', MobileHandler),
-                                          ('/(home|logout|top)', MainHandler),
-                                          ('/', MainHandler)
-                                          ],
-                                         debug=False)
-    util.run_wsgi_app(application)
+
+application = webapp.WSGIApplication([
+                                      ('/twitter/(.*)/(.*)/(.*)', twitter.TwitterHandler),
+                                      ('/twitter/(.*)/(.*)', twitter.TwitterHandler),
+                                      ('/twitter/(.*)', twitter.TwitterHandler),
+                                      ('/youroom/(.*)/(.*)/(.*)', youroom.YouRoomHandler),
+                                      ('/youroom/(.*)/(.*)', youroom.YouRoomHandler),
+                                      ('/youroom/(.*)', youroom.YouRoomHandler),
+                                      ('/yammer/(.*)/(.*)/(.*)', yammer.YammerHandler),
+                                      ('/yammer/(.*)/(.*)', yammer.YammerHandler),
+                                      ('/yammer/(.*)', yammer.YammerHandler),
+                                      ('/facebook/(login|oauth|mlogin)', facebook.FacebookLoginHandler),
+                                      ('/facebook/(.*)/(.*)/(.*)', facebook.FacebookHandler),
+                                      ('/facebook/(.*)/(.*)', facebook.FacebookHandler),
+                                      ('/facebook/(.*)', facebook.FacebookHandler),
+                                      ('/chatter/(.*)/(.*)/(.*)', chatter.ChatterHandler),
+                                      ('/chatter/(.*)/(.*)', chatter.ChatterHandler),
+                                      ('/chatter/(.*)', chatter.ChatterHandler),
+                                      ('/cybozulive/(.*)/(.*)/(.*)', cybozulive.CybozuliveHandler),
+                                      ('/cybozulive/(.*)/(.*)', cybozulive.CybozuliveHandler),
+                                      ('/cybozulive/(.*)', cybozulive.CybozuliveHandler),
+                                      ('/linkedin/(.*)/(.*)/(.*)', linkedin.LinkedInHandler),
+                                      ('/linkedin/(.*)/(.*)', linkedin.LinkedInHandler),
+                                      ('/linkedin/(.*)', linkedin.LinkedInHandler),
+                                      ('/rss/([^/]*)/?', rss.RssHandler),
+                                      ('/googleplus/([^/]*)/?', googleplus.GooglePlusHandler),
+                                      ('/oauth/twitter/(\w*)', oauth.TwitterHandler),
+                                      ('/oauth/youroom/(\w*)', oauth.YouRoomHandler),
+                                      ('/oauth/yammer/(\w*)', oauth.YammerHandler),
+                                      ('/oauth/cybozulive/(\w*)', oauth.CybozuliveHandler),
+                                      ('/oauth/linkedin/(\w*)', oauth.LinkedInHandler),
+                                      ('/tab/(\w*)', TabHandler),
+                                      ('/column/(\w*)', ColumnHandler),
+                                      ('/account/(\w*)', AccountHandler),
+                                      ('/file/(\w*)', UploadHandler),
+                                      #('/download/(.*)', DownloadHandler),
+                                      ('/url', UrlHandler),
+                                      ('/url/([\w\.]*)', UrlHandler),
+                                      ('/ad', AdHandler),
+                                      ('/shortcut/([\w\.]*)', AddressShortcutHandler),
+                                      ('/settings/([\w\.]*)', UserSettingsHandler),
+                                      ('/i18n.js', I18nResourcesHandler),
+                                      ('/login', googlelogin.GoogleLoginHandler),
+                                      ('/google/(mlogin)', googlelogin.GoogleLoginHandler),
+                                      ('/rakuten', RakutenHandler),
+                                      ('/mhome', MobileHandler),
+                                      ('/(home|logout|top)', MainHandler),
+                                      ('/', MainHandler)
+                                      ],
+                                     debug=settings.DEBUG)
+  
 
 
-if __name__ == '__main__':
-    main()
+

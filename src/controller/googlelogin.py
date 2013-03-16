@@ -6,7 +6,7 @@ __author__ = "Atsuhiko Kimura"
 import logging
 import datetime
 
-from google.appengine.ext.webapp.util import login_required
+from webapp2_extras.appengine.users import login_required
 from google.appengine.api import users
 
 from controller.model import User

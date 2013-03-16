@@ -6,7 +6,7 @@ import os
 import logging
 
 from google.appengine.ext import webapp
-from google.appengine.ext.webapp import template
+from controller.utils import template
 from google.appengine.api import memcache
 from google.appengine.api import urlfetch
 from django.utils import simplejson
@@ -27,7 +27,8 @@ class GooglePlusHandler(BaseHandler):
             if type.startswith("search/"):
                 url = "https://www.googleapis.com/plus/v1/activities"
                 query["query"] = type.split('/',1)[1]
-                url += "?" + urllib.urlencode(query)
+                #url += "?" + urllib.urlencode(query)念のためコメントアウト
+                url += "?" + utils.encoded_urlencode(query)
                 json = memcache.get(url)
                 if json is None:
                     response = urlfetch.fetch(url)

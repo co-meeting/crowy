@@ -11,7 +11,7 @@ from lib import feedparser
 from xml.sax import saxutils
 
 from google.appengine.ext import webapp
-from google.appengine.ext.webapp import template
+from controller.utils import template
 from google.appengine.ext.webapp import util
 from google.appengine.ext import db
 from django.utils import simplejson
